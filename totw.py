@@ -28,6 +28,7 @@ logger = logging.getLogger("totw")
 # import all libraries
 import argparse
 import subprocess
+import glob
 
 '''
   with tempfile.NamedTemporaryFile() as tmpFile:
@@ -44,10 +45,12 @@ import subprocess
 import ROOT
 
 #root_numpy
-import root_numpy as rnp
 import numpy as np
+import root_numpy as rnp
 import rootpy as rpy
+import matplotlib.pyplot as pl
 
+import plotHelpers as ph
 
 def format_arg_value(arg_val):
   """ Return a string representing a (name, value) pair.
@@ -107,8 +110,7 @@ if __name__ == "__main__":
   __short_hash__ = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], cwd=os.path.dirname(os.path.realpath(__file__))).strip()
 
   parser = argparse.ArgumentParser(description='Author: Giordon Stark. v.{0}'.format(__version__),
-                                   formatter_class=lambda prog: CustomFormatter(prog, max_help_position=30),
-                                   epilog='This is the top-level. You have no power here. If you want to get started, run `%(prog)s totw -h`.')
+                                   formatter_class=lambda prog: CustomFormatter(prog, max_help_position=30))
 
   # general arguments for all
   parser.add_argument('-v','--verbose', dest='verbose', action='count', default=0, help='Enable verbose output of various levels. Use --debug to enable output for debugging.')
@@ -137,6 +139,13 @@ if __name__ == "__main__":
 
       # do stuff here
       logger.info("Hello world")
+
+
+      hc = ph.HistsContainer()
+      for f in glob.glob("swiatlo_12_output_xAOD/hist-*.root"):
+        hc.append(ph.HistsFile(f))
+
+      import pdb; pdb.set_trace()
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")
