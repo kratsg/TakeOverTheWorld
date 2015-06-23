@@ -3,8 +3,9 @@ import os
 import operator
 from rootpy.core import Object
 from rootpy.io import File, Directory, root_open
-from rootpy.plotting.hist import _HistBase
+from rootpy.plotting.hist import _HistBase, HistStack, _Hist, _Hist2D
 from rootpy import QROOT
+from palettable import cubehelix
 
 # why must it inherit from TFile???
 class Hists(File, QROOT.TFile):
@@ -90,6 +91,17 @@ class HChain(list, object):
 
   def keys(self):
     return set.intersection(*map(lambda x: set(map(lambda y: y.GetName(), x.keys())), self))
+
+  def stack(self, colors=cubehelix.classic_16.colors):
+    if not self.isinstance((_Hist, _Hist2D)):
+      raise TypeError( "HChain does not contain only 1D and 2D histograms. You can only stack 1D and 2D histograms.")
+    newHistStack = HistStack()
+    map(lambda x: setattr(x[0], 'color', x[1]), zip(self, colors))
+    map(newHistStack.Add, self)
+    return newHistStack
+
+  def isinstance(self, objtype):
+    return reduce(lambda x, y: x&y, map(lambda x: isinstance(x, objtype),self))
 
   def __str__(self):
     if len(self) > 6:
