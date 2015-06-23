@@ -29,6 +29,7 @@ logger = logging.getLogger("totw")
 import argparse
 import subprocess
 import glob
+import yaml
 
 '''
   with tempfile.NamedTemporaryFile() as tmpFile:
@@ -49,6 +50,7 @@ import numpy as np
 import root_numpy as rnp
 import rootpy as rpy
 import matplotlib.pyplot as pl
+from rootpy.io import root_open
 
 import plotHelpers as ph
 
@@ -117,6 +119,8 @@ if __name__ == "__main__":
   parser.add_argument('--debug', dest='debug', action='store_true', help='Enable ROOT output and full-on debugging. Use this if you need to debug the application.')
   parser.add_argument('-b', '--batch', dest='batch_mode', action='store_true', help='Enable batch mode for ROOT.')
 
+  parser.add_argument('--config', required=True, type=str, dest='config_file', metavar='<file.yml>', help='YAML file specifying input files and asssociated names')
+
   # parse the arguments, throw errors if missing any
   args = parser.parse_args()
 
@@ -140,10 +144,16 @@ if __name__ == "__main__":
       # do stuff here
       logger.info("Hello world")
 
-
-      hc = ph.HChain("all")
-      for f in glob.glob("swiatlo_12_output_xAOD/hist-*.root"):
-        hc.add(ph.Hists(f))
+      data = yaml.load(file(args.config_file))
+      hall = ph.HChain()
+      for group, fnames in data.iteritems():
+        hc = ph.HGroup(group)
+        for fname in fnames:
+          for f in fname.keys():
+            for iterf in glob.glob(f):
+              hc.append(root_open(iterf))
+        hall.append(hc)
+        hall.all
 
       #hc.all
       #hc.all.jets
