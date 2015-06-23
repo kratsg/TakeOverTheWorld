@@ -1,7 +1,7 @@
 from __future__ import print_function
 import os
 import operator
-from rootpy.io import File, root_open
+from rootpy.io import File, Directory, root_open
 from rootpy import QROOT
 
 # why must it inherit from TFile???
@@ -46,7 +46,7 @@ class Hists(File, QROOT.TFile):
 
 class HChain(list):
   def __init__(self, iterable=[]):
-    super(self.__class__, self).__init__(filter(lambda x: isinstance(x, Hists), iterable))
+    super(self.__class__, self).__init__(filter(lambda x: isinstance(x, (Hists, Directory,)), iterable))
 
   def get_dids(self):
     return map(lambda x: x.get_did(), self)
@@ -55,14 +55,14 @@ class HChain(list):
     return map(lambda x: x.get_physics(), self)
 
   def append(self, item):
-    if not isinstance(item, Hists): return
+    if not isinstance(item, (Hists, Directory,)): return
     return super(self.__class__, self).append(item)
 
   def extend(self, iterable):
-    return super(self.__class__, self).extend(filter(lambda x: isinstance(x, Hists), iterable))
+    return super(self.__class__, self).extend(filter(lambda x: isinstance(x, (Hists, Directory,)), iterable))
 
   def insert(self, index, item):
-    if not isinstance(item, Hists): return
+    if not isinstance(item, (Hists, Directory,)): return
     return super(self.__class__, self).insert(index, item)
 
   def __getitem__(self, index):
@@ -76,7 +76,7 @@ class HChain(list):
     return super(self.__class__, self).__getitem__(index)
 
   def __getattr__(self, attr):
-    return type(self)((getattr(item, attr) for item in self))
+    return self.__class__([getattr(item, attr) for item in self])
 
   def keys(self):
     return set.intersection(*map(lambda x: set(map(lambda y: y.GetName(), x.keys())), self))
