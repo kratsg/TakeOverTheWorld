@@ -1,3 +1,4 @@
+PyYAML==3.11
 Pygments==2.0.2
 backports.ssl-match-hostname==3.4.0.2
 certifi==2015.04.28
