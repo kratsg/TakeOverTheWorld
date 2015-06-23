@@ -1,7 +1,9 @@
 from __future__ import print_function
 import os
 import operator
+from rootpy.core import Object
 from rootpy.io import File, Directory, root_open
+from rootpy.plotting.hist import _HistBase
 from rootpy import QROOT
 
 # why must it inherit from TFile???
@@ -44,9 +46,65 @@ class Hists(File, QROOT.TFile):
     return self.__str__()
 
 
+class HChain(list, object):
+  def __init__(self, attr):
+    self._attr = attr
+    self._parent = None
+    return super(self.__class__, self).__init__()
+
+  def _validate(self, root_file):
+    if not isinstance(root_file, Object):
+      raise TypeError("Must be a rootpy Object instance")
+    if self._attr not in map(lambda x: x.GetName(), root_file.keys()):
+      raise ValueError("%s instance does not have %s" % (self.__class__.__name__, self._attr))
+
+  def _get_parent_attr(self):
+    if self._parent is None:
+      return self._attr
+    else:
+      return '%s/%s' % ( self._parent._get_parent_attr(), self._attr )
+
+  def add(self, root_file):
+    return self.append(root_file)
+
+  def append(self, root_file):
+    self._validate(root_file)
+    return super(self.__class__, self).append(getattr(root_file, self._attr))
+
+  def extend(self, iterable):
+    map(self._validate, iterable)
+    return super(self.__class__, self).extend([getattr(root_file, self._attr) for root_file in iterable])
+
+  def insert(self, index, item):
+    self._validate(item)
+    return super(self.__class__, self).insert(index, item)
+
+  def __getitem__(self, index):
+    return super(self.__class__, self).__getitem__(index)
+
+  def __getattr__(self, attr):
+    newHChain = self.__class__(attr)
+    newHChain.extend(self)
+    newHChain._parent = self
+    return newHChain
+
+  def keys(self):
+    return set.intersection(*map(lambda x: set(map(lambda y: y.GetName(), x.keys())), self))
+
+  def __str__(self):
+    if len(self) > 6:
+      innerContent = ', ..., '.join([', '.join(map(str, self[:2])), ', '.join(map(str, self[-2:]))])
+    else:
+      innerContent = ', '.join(map(str, self))
+    return "%s('/%s')[%s]" % (self.__class__.__name__, self._get_parent_attr(), innerContent)
+
+  def __repr__(self):
+    return self.__str__()
+
+'''
 class HChain(list):
   def __init__(self, iterable=[]):
-    super(self.__class__, self).__init__(filter(lambda x: isinstance(x, (Hists, Directory,)), iterable))
+    super(self.__class__, self).__init__(filter(lambda x: isinstance(x, (Hists, Directory, _HistBase)), iterable))
 
   def get_dids(self):
     return map(lambda x: x.get_did(), self)
@@ -55,14 +113,14 @@ class HChain(list):
     return map(lambda x: x.get_physics(), self)
 
   def append(self, item):
-    if not isinstance(item, (Hists, Directory,)): return
+    if not isinstance(item, (Hists, Directory, _HistBase)): return
     return super(self.__class__, self).append(item)
 
   def extend(self, iterable):
-    return super(self.__class__, self).extend(filter(lambda x: isinstance(x, (Hists, Directory,)), iterable))
+    return super(self.__class__, self).extend(filter(lambda x: isinstance(x, (Hists, Directory, _HistBase)), iterable))
 
   def insert(self, index, item):
-    if not isinstance(item, (Hists, Directory,)): return
+    if not isinstance(item, (Hists, Directory, _HistBase)): return
     return super(self.__class__, self).insert(index, item)
 
   def __getitem__(self, index):
@@ -90,4 +148,4 @@ class HChain(list):
 
   def __repr__(self):
     return self.__str__()
-
+'''
