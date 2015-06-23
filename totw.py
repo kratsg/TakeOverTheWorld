@@ -141,10 +141,12 @@ if __name__ == "__main__":
       logger.info("Hello world")
 
 
-      hc = ph.HistsContainer()
+      hc = ph.HChain()
       for f in glob.glob("swiatlo_12_output_xAOD/hist-*.root"):
-        hc.append(ph.HistsFile(f))
+        hc.append(ph.Hists(f))
 
+      hc.all
+      hc.all.jets
       import pdb; pdb.set_trace()
 
       if not args.debug:
