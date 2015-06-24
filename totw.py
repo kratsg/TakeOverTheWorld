@@ -171,18 +171,23 @@ if __name__ == "__main__":
 
         # create a legend (an entry for each group)
         legend = Legend(len(h), leftmargin = 0.3, topmargin = 0.025, rightmargin = 0.01, textsize = 20)
+        legend.Draw()
 
         # grab the hstack
         hstack = h.stack()
 
+        # add each hist to the legend
+        for hist in hstack:
+          legend.AddEntry(hist)
+
         # draw it so we have access to the xaxis and yaxis
-        hstack.Draw(config.get('drawoptions', 'AP'))
+        hstack.Draw(config.get('drawoptions', 'hist'))
 
         # set up axes
         hstack.xaxis.SetTitle(config.get('xlabel', ''))
-        hstack.xaxis.SetRangeUser(config.get('xmin', hstack.xaxis.GetXmin()), config.get('xmax', hstack.xaxis.GetXmax()))
+        #hstack.xaxis.SetRangeUser(config.get('xmin', hstack.xaxis.GetXmin()), config.get('xmax', hstack.xaxis.GetXmax()))
         hstack.yaxis.SetTitle(config.get('ylabel', 'counts'))
-        hstack.yaxis.SetRangeUser(config.get('ymin', hstack.yaxis.GetXmin()), config.get('ymax', hstack.yaxis.GetXmax()))
+        #hstack.yaxis.SetRangeUser(config.get('ymin', hstack.yaxis.GetXmin()), config.get('ymax', hstack.yaxis.GetXmax()))
 
         # attach the ATLAS label
         label = ROOT.TText(0.3, 0.85, 'ATLAS')
