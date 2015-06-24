@@ -51,6 +51,8 @@ import root_numpy as rnp
 import rootpy as rpy
 import matplotlib.pyplot as pl
 from rootpy.io import root_open
+from rootpy.plotting.style import set_style
+from rootpy.plotting import Canvas, Legend
 
 import plotHelpers as ph
 
@@ -104,6 +106,11 @@ def echo(*echoargs, **echokwargs):
 def do_totw(args):
   pass
 
+def ensure_dir(f):
+    d = os.path.dirname(f)
+    if not os.path.exists(d):
+        os.makedirs(d)
+
 if __name__ == "__main__":
   class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter):
     pass
@@ -144,18 +151,63 @@ if __name__ == "__main__":
       # do stuff here
       logger.info("Hello world")
 
-      data = yaml.load(file(args.config_file))
+      configs = yaml.load(file(args.config_file))
       hall = ph.HChain("all")
-      for group in data['groups']:
+      for group in configs['groups']:
         hc = ph.HGroup(group)
-        for f in data['groups'][group]:
+        for f in configs['groups'][group]:
           for fname in glob.glob(f):
             hc.append(root_open(fname))
         hall.append(hc)
 
+      import pdb; pdb.set_trace()
+
+      set_style('ATLAS')
+      for h in hall.walk():
+        # get the configurations for the given path
+        config = configs['styles'].get(h.path, {})
+        # create new canvas
+        canvas = Canvas(config.get('canvas width', 700), config.get('canvas height', 500))
+
+        # create a legend (an entry for each group)
+        legend = Legend(len(h), leftmargin = 0.3, topmargin = 0.025, rightmargin = 0.01, textsize = 20)
+
+        # grab the hstack
+        hstack = h.stack()
+
+        # draw it so we have access to the xaxis and yaxis
+        hstack.Draw(config.get('drawoptions', 'AP'))
+
+        # set up axes
+        hstack.xaxis.SetTitle(config.get('xlabel', ''))
+        hstack.xaxis.SetRangeUser(config.get('xmin', hstack.xaxis.GetXmin()), config.get('xmax', hstack.xaxis.GetXmax()))
+        hstack.yaxis.SetTitle(config.get('ylabel', 'counts'))
+        hstack.yaxis.SetRangeUser(config.get('ymin', hstack.yaxis.GetYmin()), config.get('ymax', hstack.yaxis.GetYmax()))
+
+        # attach the ATLAS label
+        label = ROOT.TText(0.3, 0.85, 'ATLAS')
+        label.SetTextFont(73)
+        label.SetTextSize(25)
+        label.SetNDC()
+        label.Draw()
+
+        # attach the internal label
+        label2 = ROOT.TText(0.425, 0.85, 'Internal')
+        label2.SetTextFont(43)
+        label2.SetTextSize(25)
+        label2.SetNDC()
+        label2.Draw()
+        canvas.Modified()
+        canvas.Update()
+
+        # make file_name and directories if needed
+        file_name = "plots/{0:s}".format(h.path)
+        ensure_dir(file_name)
+        for file_ext in ["root", "pdf"]:
+          canvas.SaveAs("{0:s}.{1:s}".format(file_name, file_ext))
+
       #hc.all
       #hc.all.jets
-      import pdb; pdb.set_trace()
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")
