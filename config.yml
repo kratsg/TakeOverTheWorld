@@ -3,62 +3,51 @@
 # second level is a list of files under that group, one can also specify a wildcard to match files so they all get grouped
 # third level specifies extra information for a given file such as plots to ignore
 
+# groups can have styles
+# - norm
+# - drawstyle
+# - legendstyle
+# - integermode
+# - visible
+# - inlegend
+# - markercolor
+# - markerstyle
+# - markersize
+# - fillcolor
+# - fillstyle
+# - linecolor
+# - linestyle
+# - linewidth
+# * linecolor, fillcolor, markercolor can be set with 'color'
+
 groups:
-  data:
+  - name: data
     files:
-      - swiatlo_12_output_xAOD/hist-user.mswiatlo.00266919.physics_Main.f594_m1435_p2361_12_output_xAOD.root.root
-      - swiatlo_12_output_xAOD/hist-user.mswiatlo.00267073.physics_Main.f594_m1435_p2361_12_output_xAOD.root.root
       - swiatlo_12_output_xAOD/hist-user.mswiatlo.*.physics_Main.*.root
 
-  dijets:
+  - name: dijets
     files:
-      - swiatlo_12_output_xAOD/hist-user.mswiatlo.361022.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ2W.e3668_s2576_s2132_r6633_r6264_p2353_12_output_xAOD.root.root
-      - swiatlo_12_output_xAOD/hist-user.mswiatlo.361023.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ3W.e3668_s2576_s2132_r6633_r6264_p2353_12_output_xAOD.root.root
-      - swiatlo_12_output_xAOD/hist-user.mswiatlo.361024.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ4W.e3668_s2576_s2132_r6633_r6264_p2353_12_output_xAOD.root.root
-      - swiatlo_12_output_xAOD/hist-user.mswiatlo.361025.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ5W.e3668_s2576_s2132_r6633_r6264_p2353_12_output_xAOD.root.root
-      - swiatlo_12_output_xAOD/hist-user.mswiatlo.361026.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ6W.e3569_s2608_s2183_r6633_r6264_p2353_12_output_xAOD.root.root
-      # - swiatlo_12_output_xAOD/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ*W.*.root
+      - swiatlo_12_output_xAOD/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ*W.*.root
 
-  W to lepton+neutrino:
+  - name: W to lepton+neutrino
     files:
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361100.PowhegPythia8EvtGen_AZNLOCTEQ6L1_Wplusenu.e3601_s2576_s2132_r6633_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361101.PowhegPythia8EvtGen_AZNLOCTEQ6L1_Wplusmunu.e3601_s2576_s2132_r6633_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361102.PowhegPythia8EvtGen_AZNLOCTEQ6L1_Wplustaunu.e3601_s2576_s2132_r6633_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361105.PowhegPythia8EvtGen_AZNLOCTEQ6L1_Wminustaunu.e3601_s2576_s2132_r6633_r6264_p2353_14_output_xAOD.root.root
-      # - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.PowhegPythia8EvtGen_AZNLOCTEQ6L1_W*nu.*.root
+      - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.PowhegPythia8EvtGen_AZNLOCTEQ6L1_W*nu.*.root
 
-  Z to nu+nu:
+  - name: Z to nu+nu
     files:
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361444.Sherpa_CT10_Znunu_Pt0_70_CVetoBVeto.e3651_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361445.Sherpa_CT10_Znunu_Pt0_70_CFilterBVeto.e3651_s2586_s2174_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361452.Sherpa_CT10_Znunu_Pt140_280_BFilter.e3651_s2586_s2174_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361453.Sherpa_CT10_Znunu_Pt280_500_CVetoBVeto.e3741_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361454.Sherpa_CT10_Znunu_Pt280_500_CFilterBVeto.e3741_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361455.Sherpa_CT10_Znunu_Pt280_500_BFilter.e3741_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361456.Sherpa_CT10_Znunu_Pt500_700_CVetoBVeto.e3741_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361457.Sherpa_CT10_Znunu_Pt500_700_CFilterBVeto.e3741_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361458.Sherpa_CT10_Znunu_Pt500_700_BFilter.e3741_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361459.Sherpa_CT10_Znunu_Pt700_1000_CVetoBVeto.e3741_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361461.Sherpa_CT10_Znunu_Pt700_1000_BFilter.e3741_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.361462.Sherpa_CT10_Znunu_Pt1000_2000_CVetoBVeto.e3741_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      # - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.Sherpa_CT10_Znunu_Pt*_*.*.root
+      - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.Sherpa_CT10_Znunu_Pt*_*.*.root
 
-  ttbar:
+  - name: ttbar
     files:
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.410000.PowhegPythiaEvtGen_P2012_ttbar_hdamp172p5_nonallhad.e3698_s2608_s2183_r6633_r6264_p2353_14_output_xAOD.root.root
-      # - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*_ttbar_hdamp172p5_nonallhad.*.root
+      - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*_ttbar_hdamp172p5_nonallhad.*.root
 
-  single top:
+  - name: single top
     files:
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.410011.PowhegPythiaEvtGen_P2012_singletop_tchan_lept_top.e3824_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.410012.PowhegPythiaEvtGen_P2012_singletop_tchan_lept_antitop.e3824_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      # - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*_singletop_tchan_lept_*.*.root
+      - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*_singletop_tchan_lept_*.*.root
 
-  inclusive top:
+  - name: inclusive top
     files:
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.410013.PowhegPythiaEvtGen_P2012_Wt_inclusive_top.e3753_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.410014.PowhegPythiaEvtGen_P2012_Wt_inclusive_antitop.e3753_s2608_s2183_r6630_r6264_p2353_14_output_xAOD.root.root
-      # - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*2_Wt_inclusive_*.*.root
+      - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*2_Wt_inclusive_*.*.root
 
 styles:
   all/MET/met: {}
