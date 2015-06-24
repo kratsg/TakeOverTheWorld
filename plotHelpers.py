@@ -110,7 +110,7 @@ class HChain(HistsCollection):
     return set.intersection(*map(lambda x: x.keys(), self))
 
   def stack(self, colors=cubehelix.classic_16.colors):
-    if not self.isinstance((_Hist, _Hist2D)):
+    if not self.isHists():
       raise TypeError( "%s does not contain only 1D and 2D histograms. You can only stack 1D and 2D histograms." % self.__class__.__name__)
     newHistStack = HistStack()
     map(lambda x: setattr(x[0], 'color', x[1]), zip(self, colors))
