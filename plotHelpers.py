@@ -77,11 +77,16 @@ class HGroup(HistsCollection):
     self._group_name = group_name
     self._relpath = attr
 
+  @property
   def isHists(self):
     return self.isinstance((_Hist, _Hist2D))
 
+  @property
+  def group(self):
+    return self._group_name
+
   def keys(self):
-    if self.isHists(): return set()
+    if self.isHists: return set()
     return set.intersection(*map(lambda x: set(map(lambda y: y.GetName(), x.keys())), self))
 
   def __getattr__(self, attr):
@@ -94,8 +99,15 @@ class HGroup(HistsCollection):
       self._subviews[attr] = newHColl
       return newHColl
 
+  @property
+  def flatten(self):
+    newHist = sum(self)
+    newHist.title = self.group
+    newHist.name = '{0:s}:{1:s}'.format(self.group, self.path)
+    return newHist
+
   def __str__(self):
-    return "%s(%s, %d %s;%s)" % (self.__class__.__name__, self._group_name, len(self), "hists" if self.isHists() else "files", self.path)
+    return "%s(%s, %d %s;%s)" % (self.__class__.__name__, self._group_name, len(self), "hists" if self.isHists else "files", self.path)
   def __repr__(self):
     return self.__str__()
 
@@ -104,8 +116,9 @@ class HChain(HistsCollection):
     super(self.__class__, self).__init__()
     self._relpath = top
 
+  @property
   def isHists(self):
-    return all(obj.isHists() for obj in self)
+    return all(obj.isHists for obj in self)
 
   def walk(self):
     keys = self.keys()
@@ -123,10 +136,10 @@ class HChain(HistsCollection):
     return set.intersection(*map(lambda x: x.keys(), self))
 
   def stack(self, colors=cubehelix.classic_16.colors):
-    if not self.isHists():
+    if not self.isHists:
       raise TypeError( "%s does not contain only 1D and 2D histograms. You can only stack 1D and 2D histograms." % self.__class__.__name__)
-    newHistStack = HistStack()
-    mergedHists = map(sum, self)
+    newHistStack = HistStack(name=self.path)
+    mergedHists = map(lambda hgroup: hgroup.flatten, self)
     for hist, color in zip(mergedHists, colors):
       setattr(hist, 'color', color)
       setattr(hist, 'fillstyle', 'solid')
