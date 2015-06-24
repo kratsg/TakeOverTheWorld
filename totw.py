@@ -145,7 +145,7 @@ if __name__ == "__main__":
       logger.info("Hello world")
 
       data = yaml.load(file(args.config_file))
-      hall = ph.HChain()
+      hall = ph.HChain("all")
       for group, fnames in data.iteritems():
         hc = ph.HGroup(group)
         for fname in fnames:
@@ -153,7 +153,6 @@ if __name__ == "__main__":
             for iterf in glob.glob(f):
               hc.append(root_open(iterf))
         hall.append(hc)
-        hall.all
 
       #hc.all
       #hc.all.jets

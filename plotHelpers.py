@@ -69,8 +69,7 @@ class HistsCollection(list, _DirectoryBase):
 
   def insert(self, index, item):
     self._validate(item)
-    return super(HistsCollection, self).insert(index, item)
-
+    return super(HistsCollection, self).insert(index, self._get_view(item))
 
 class HGroup(HistsCollection):
   def __init__(self, group_name, attr=None):
@@ -78,13 +77,15 @@ class HGroup(HistsCollection):
     self._group_name = group_name
     self._attr = attr
 
+  def isHists(self):
+    return self.isinstance((_Hist, _Hist2D))
+
   def keys(self):
-    if self.isinstance(_Hist): return set()
+    if self.isHists(): return set()
     return set.intersection(*map(lambda x: set(map(lambda y: y.GetName(), x.keys())), self))
 
   def __str__(self):
-    return "%s(%s, %d files;%s)" % (self.__class__.__name__, self._group_name, len(self), self._get_parent_attr())
-
+    return "%s(%s, %d %s;%s)" % (self.__class__.__name__, self._group_name, len(self), "hists" if self.isHists() else "files", self._get_parent_attr())
   def __repr__(self):
     return self.__str__()
 
@@ -92,6 +93,18 @@ class HChain(HistsCollection):
   def __init__(self, attr=None):
     super(self.__class__, self).__init__()
     self._attr = attr
+
+  def isHists(self):
+    return all(obj.isHists() for obj in self)
+
+  def walk(self):
+    keys = self.keys()
+    if not keys:
+      yield self
+    else:
+      for key in keys:
+        for sub in getattr(getattr(self, key), 'walk')():
+          yield sub
 
   def __getitem__(self, index):
     return super(self.__class__, self).__getitem__(index)
