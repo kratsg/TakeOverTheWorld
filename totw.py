@@ -146,12 +146,11 @@ if __name__ == "__main__":
 
       data = yaml.load(file(args.config_file))
       hall = ph.HChain("all")
-      for group, fnames in data.iteritems():
+      for group in data['groups']:
         hc = ph.HGroup(group)
-        for fname in fnames:
-          for f in fname.keys():
-            for iterf in glob.glob(f):
-              hc.append(root_open(iterf))
+        for f in data['groups'][group]:
+          for fname in glob.glob(f):
+            hc.append(root_open(fname))
         hall.append(hc)
 
       #hc.all

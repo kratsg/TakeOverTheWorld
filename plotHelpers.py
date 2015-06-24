@@ -11,32 +11,41 @@ from palettable import cubehelix
 class HistsCollection(list, _DirectoryBase):
   def __init__(self):
     super(HistsCollection, self).__init__()
-    self._attr = None
+    # the parent of the object, used to track hierarchy
     self._parent = None
+    # rel path of object
+    self._relpath = None
+    # abs path of object, requires parent
+    self._abspath = None
+    # stores the children the parent generates dynamically from __getattr__
+    self._subviews = {}
 
   def isinstance(self, objtype):
     return not any(not isinstance(x, objtype) for x in self)
 
-  def _get_parent_attr(self):
-    if self._parent is None:
-      if self._attr is None:
-        return '/'
+  @property
+  def path(self):
+    if self._abspath is None:
+      if self._parent is None:
+        if self._relpath is None:
+          self._abspath = '/'
+        else:
+          self._abspath = self._relpath
       else:
-        return self._attr
-    else:
-      parent_attr = self._parent._get_parent_attr()
-      if parent_attr == '/':
-        parent_attr = ''
-      if self._attr is None:
-        return '%s' % ( parent_attr )
-      else:
-        return '%s/%s' % ( parent_attr, self._attr )
+        parent_relpath = self._parent.path
+        if parent_relpath == '/':
+          parent_relpath = ''
+        if self._relpath is None:
+          self._abspath = '%s' % ( parent_relpath )
+        else:
+          self._abspath = '%s/%s' % ( parent_relpath, self._relpath )
+    return self._abspath
 
   def _get_view(self, obj):
-    if self._attr is None:
+    if self._relpath is None:
       return obj
     else:
-      return getattr(obj, self._attr)
+      return getattr(obj, self._relpath)
 
   def _validate(self, obj):
     if not isinstance(obj, Object):
@@ -44,8 +53,8 @@ class HistsCollection(list, _DirectoryBase):
     keys = obj.keys()
     if not isinstance(keys, set):
       keys = map(lambda x: x.GetName(), keys)
-    if self._attr is not None and self._attr not in keys:
-      raise ValueError("%s instance does not have %s" % (self.__class__.__name__, self._attr))
+    if self._relpath is not None and self._relpath not in keys:
+      raise ValueError("%s instance does not have %s" % (self.__class__.__name__, self._relpath))
 
   def add(self, root_file):
     return self.append(root_file)
@@ -66,7 +75,7 @@ class HGroup(HistsCollection):
   def __init__(self, group_name, attr=None):
     super(self.__class__, self).__init__()
     self._group_name = group_name
-    self._attr = attr
+    self._relpath = attr
 
   def isHists(self):
     return self.isinstance((_Hist, _Hist2D))
@@ -76,20 +85,24 @@ class HGroup(HistsCollection):
     return set.intersection(*map(lambda x: set(map(lambda y: y.GetName(), x.keys())), self))
 
   def __getattr__(self, attr):
-    newHColl = self.__class__(self._group_name, attr)
-    newHColl.extend(self)
-    newHColl._parent = self
-    return newHColl
+    if attr in self._subviews:
+      return self._subviews.get(attr)
+    else:
+      newHColl = self.__class__(self._group_name, attr)
+      newHColl.extend(self)
+      newHColl._parent = self
+      self._subviews[attr] = newHColl
+      return newHColl
 
   def __str__(self):
-    return "%s(%s, %d %s;%s)" % (self.__class__.__name__, self._group_name, len(self), "hists" if self.isHists() else "files", self._get_parent_attr())
+    return "%s(%s, %d %s;%s)" % (self.__class__.__name__, self._group_name, len(self), "hists" if self.isHists() else "files", self.path)
   def __repr__(self):
     return self.__str__()
 
 class HChain(HistsCollection):
-  def __init__(self, attr=None):
+  def __init__(self, top=None):
     super(self.__class__, self).__init__()
-    self._attr = attr
+    self._relpath = top
 
   def isHists(self):
     return all(obj.isHists() for obj in self)
@@ -113,22 +126,29 @@ class HChain(HistsCollection):
     if not self.isHists():
       raise TypeError( "%s does not contain only 1D and 2D histograms. You can only stack 1D and 2D histograms." % self.__class__.__name__)
     newHistStack = HistStack()
-    map(lambda x: setattr(x[0], 'color', x[1]), zip(self, colors))
-    map(newHistStack.Add, self)
+    mergedHists = map(sum, self)
+    for hist, color in zip(mergedHists, colors):
+      setattr(hist, 'color', color)
+      setattr(hist, 'fillstyle', 'solid')
+    map(newHistStack.Add, mergedHists)
     return newHistStack
 
   def __getattr__(self, attr):
-    newHColl = self.__class__(attr)
-    newHColl.extend(self)
-    newHColl._parent = self
-    return newHColl
+    if attr in self._subviews:
+      return self._subviews.get(attr)
+    else:
+      newHColl = self.__class__(attr)
+      newHColl.extend(self)
+      newHColl._parent = self
+      self._subviews[attr] = newHColl
+      return newHColl
 
   def __str__(self):
     if len(self) > 6:
       innerContent = ', ..., '.join([', '.join(map(str, self[:2])), ', '.join(map(str, self[-2:]))])
     else:
       innerContent = ', '.join(map(str, self))
-    return "%s('%s')[%s]" % (self.__class__.__name__, self._get_parent_attr(), innerContent)
+    return "%s('%s')[%s]" % (self.__class__.__name__, self.path, innerContent)
 
   def __repr__(self):
     return self.__str__()
