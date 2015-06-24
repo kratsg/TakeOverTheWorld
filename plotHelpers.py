@@ -3,10 +3,9 @@ import os
 import array
 from rootpy.base import Object
 from rootpy.io import File, Directory, root_open
-from rootpy.plotting.hist import _HistBase, HistStack, _Hist, _Hist2D
+from rootpy.plotting.hist import _HistBase, _Hist, _Hist2D
 from rootpy.io.file import _DirectoryBase
 from rootpy import QROOT
-from palettable import colorbrewer
 
 class HistsCollection(list, _DirectoryBase):
   def __init__(self):
@@ -134,17 +133,6 @@ class HChain(HistsCollection):
 
   def keys(self):
     return set.intersection(*map(lambda x: x.keys(), self))
-
-  def stack(self, colors=colorbrewer.qualitative.Paired_10.colors):
-    if not self.isHists:
-      raise TypeError( "%s does not contain only 1D and 2D histograms. You can only stack 1D and 2D histograms." % self.__class__.__name__)
-    newHistStack = HistStack(name=self.path)
-    mergedHists = map(lambda hgroup: hgroup.flatten, self)
-    for hist, color in zip(mergedHists, colors):
-      setattr(hist, 'color', color)
-      setattr(hist, 'fillstyle', 'solid')
-    map(newHistStack.Add, mergedHists)
-    return newHistStack
 
   def __getattr__(self, attr):
     if attr in self._subviews:

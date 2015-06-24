@@ -52,7 +52,8 @@ import rootpy as rpy
 import matplotlib.pyplot as pl
 from rootpy.io import root_open
 from rootpy.plotting.style import set_style
-from rootpy.plotting import Canvas, Legend
+from rootpy.plotting import Canvas, Legend, HistStack
+from palettable import colorbrewer
 
 import plotHelpers as ph
 
@@ -155,7 +156,7 @@ if __name__ == "__main__":
       hall = ph.HChain("all")
       for group in configs['groups']:
         hc = ph.HGroup(group)
-        for f in configs['groups'][group]:
+        for f in configs['groups'][group]['files']:
           for fname in glob.glob(f):
             hc.append(root_open(fname))
         hall.append(hc)
@@ -171,15 +172,32 @@ if __name__ == "__main__":
 
         # create a legend (an entry for each group)
         legend = Legend(len(h), leftmargin = 0.3, topmargin = 0.025, rightmargin = 0.01, textsize = 15, entrysep=0.02, entryheight=0.03)
-        # grab the hstack
-        hstack = h.stack()
+
+        colors = colorbrewer.qualitative.Paired_10.colors
+
+        hists = map(lambda hgroup: hgroup.flatten, h)
+        soloHists = []
+        stackHists = []
+        for hist, color in zip(hists, colors):
+          setattr(hist, 'color', color)
+          setattr(hist, 'fillstyle', 'solid')
+        for hist in hists:
+          if configs['groups'][hist.title].get('stack', False) == True:
+            stackHists.append(hist)
+          else:
+            soloHists.append(hist)
 
         # add each hist to the legend
-        for hist in hstack:
-          legend.AddEntry(hist)
+        for hist in hists:
+          legend.AddEntry(hist, style='F')
+
+        hstack = HistStack(name=h.path)
+        map(hstack.Add, stackHists)
 
         # draw it so we have access to the xaxis and yaxis
         hstack.Draw(config.get('drawoptions', 'hist'))
+        for hist in soloHists:
+          hist.Draw("same {0:s}".format(config.get('drawoptions', 'hist')))
 
         # set up axes
         hstack.xaxis.SetTitle(config.get('xlabel', ''))
