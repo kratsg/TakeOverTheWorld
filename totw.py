@@ -160,7 +160,7 @@ if __name__ == "__main__":
             hc.append(root_open(fname))
         hall.append(hc)
 
-      import pdb; pdb.set_trace()
+      #import pdb; pdb.set_trace()
 
       set_style('ATLAS')
       for h in hall.walk():
@@ -182,7 +182,7 @@ if __name__ == "__main__":
         hstack.xaxis.SetTitle(config.get('xlabel', ''))
         hstack.xaxis.SetRangeUser(config.get('xmin', hstack.xaxis.GetXmin()), config.get('xmax', hstack.xaxis.GetXmax()))
         hstack.yaxis.SetTitle(config.get('ylabel', 'counts'))
-        hstack.yaxis.SetRangeUser(config.get('ymin', hstack.yaxis.GetYmin()), config.get('ymax', hstack.yaxis.GetYmax()))
+        hstack.yaxis.SetRangeUser(config.get('ymin', hstack.yaxis.GetXmin()), config.get('ymax', hstack.yaxis.GetXmax()))
 
         # attach the ATLAS label
         label = ROOT.TText(0.3, 0.85, 'ATLAS')
