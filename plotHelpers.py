@@ -1,7 +1,7 @@
 from __future__ import print_function
 import os
 import array
-from rootpy.core import Object
+from rootpy.base import Object
 from rootpy.io import File, Directory, root_open
 from rootpy.plotting.hist import _HistBase, HistStack, _Hist, _Hist2D
 from rootpy.io.file import _DirectoryBase
