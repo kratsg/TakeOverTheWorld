@@ -195,15 +195,16 @@ if __name__ == "__main__":
         map(hstack.Add, stackHists)
 
         # draw it so we have access to the xaxis and yaxis
-        hstack.Draw(config.get('drawoptions', 'hist'))
-        for hist in soloHists:
-          hist.Draw("same {0:s}".format(config.get('drawoptions', 'hist')))
+        if hstack:
+          hstack.Draw(config.get('drawoptions', 'hist'))
+          # set up axes
+          hstack.xaxis.SetTitle(config.get('xlabel', ''))
+          #hstack.xaxis.SetRangeUser(config.get('xmin', hstack.xaxis.GetXmin()), config.get('xmax', hstack.xaxis.GetXmax()))
+          hstack.yaxis.SetTitle(config.get('ylabel', 'counts'))
+          #hstack.yaxis.SetRangeUser(config.get('ymin', hstack.yaxis.GetXmin()), config.get('ymax', hstack.yaxis.GetXmax()))
 
-        # set up axes
-        hstack.xaxis.SetTitle(config.get('xlabel', ''))
-        #hstack.xaxis.SetRangeUser(config.get('xmin', hstack.xaxis.GetXmin()), config.get('xmax', hstack.xaxis.GetXmax()))
-        hstack.yaxis.SetTitle(config.get('ylabel', 'counts'))
-        #hstack.yaxis.SetRangeUser(config.get('ymin', hstack.yaxis.GetXmin()), config.get('ymax', hstack.yaxis.GetXmax()))
+        for hist in soloHists:
+          hist.Draw("{0:s}{1:s}".format("same " if hstack else "", config.get('drawoptions', 'hist')))
 
         # attach the ATLAS label
         label = ROOT.TText(0.3, 0.85, 'ATLAS')
