@@ -6,7 +6,7 @@ from rootpy.io import File, Directory, root_open
 from rootpy.plotting.hist import _HistBase, HistStack, _Hist, _Hist2D
 from rootpy.io.file import _DirectoryBase
 from rootpy import QROOT
-from palettable import cubehelix
+from palettable import colorbrewer
 
 class HistsCollection(list, _DirectoryBase):
   def __init__(self):
@@ -135,7 +135,7 @@ class HChain(HistsCollection):
   def keys(self):
     return set.intersection(*map(lambda x: x.keys(), self))
 
-  def stack(self, colors=cubehelix.classic_16.colors):
+  def stack(self, colors=colorbrewer.qualitative.Paired_10.colors):
     if not self.isHists:
       raise TypeError( "%s does not contain only 1D and 2D histograms. You can only stack 1D and 2D histograms." % self.__class__.__name__)
     newHistStack = HistStack(name=self.path)

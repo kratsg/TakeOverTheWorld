@@ -170,9 +170,7 @@ if __name__ == "__main__":
         canvas = Canvas(config.get('canvas width', 700), config.get('canvas height', 500))
 
         # create a legend (an entry for each group)
-        legend = Legend(len(h), leftmargin = 0.3, topmargin = 0.025, rightmargin = 0.01, textsize = 20)
-        legend.Draw()
-
+        legend = Legend(len(h), leftmargin = 0.3, topmargin = 0.025, rightmargin = 0.01, textsize = 15, entrysep=0.02, entryheight=0.03)
         # grab the hstack
         hstack = h.stack()
 
@@ -202,6 +200,9 @@ if __name__ == "__main__":
         label2.SetTextSize(25)
         label2.SetNDC()
         label2.Draw()
+
+        # draw and update all
+        legend.Draw()
         canvas.Modified()
         canvas.Update()
 
