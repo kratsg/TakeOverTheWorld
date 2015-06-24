@@ -47,15 +47,6 @@ class HistsCollection(list, _DirectoryBase):
     if self._attr is not None and self._attr not in keys:
       raise ValueError("%s instance does not have %s" % (self.__class__.__name__, self._attr))
 
-  def __getattr__(self, attr):
-    if self.__class__ == HGroup:
-      newHColl = self.__class__(self._group_name, attr)
-    else:
-      newHColl = self.__class__(attr)
-    newHColl.extend(self)
-    newHColl._parent = self
-    return newHColl
-
   def add(self, root_file):
     return self.append(root_file)
 
@@ -83,6 +74,12 @@ class HGroup(HistsCollection):
   def keys(self):
     if self.isHists(): return set()
     return set.intersection(*map(lambda x: set(map(lambda y: y.GetName(), x.keys())), self))
+
+  def __getattr__(self, attr):
+    newHColl = self.__class__(self._group_name, attr)
+    newHColl.extend(self)
+    newHColl._parent = self
+    return newHColl
 
   def __str__(self):
     return "%s(%s, %d %s;%s)" % (self.__class__.__name__, self._group_name, len(self), "hists" if self.isHists() else "files", self._get_parent_attr())
@@ -114,11 +111,17 @@ class HChain(HistsCollection):
 
   def stack(self, colors=cubehelix.classic_16.colors):
     if not self.isinstance((_Hist, _Hist2D)):
-      raise TypeError( "HChain does not contain only 1D and 2D histograms. You can only stack 1D and 2D histograms.")
+      raise TypeError( "%s does not contain only 1D and 2D histograms. You can only stack 1D and 2D histograms." % self.__class__.__name__)
     newHistStack = HistStack()
     map(lambda x: setattr(x[0], 'color', x[1]), zip(self, colors))
     map(newHistStack.Add, self)
     return newHistStack
+
+  def __getattr__(self, attr):
+    newHColl = self.__class__(attr)
+    newHColl.extend(self)
+    newHColl._parent = self
+    return newHColl
 
   def __str__(self):
     if len(self) > 6:
