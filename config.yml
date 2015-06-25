@@ -78,11 +78,6 @@ groups:
   - name: single top
     files:
       - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*_singletop_tchan_lept_*.*.root
-    styles:
-      legendstyle: F
-
-  - name: inclusive top
-    files:
       - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*2_Wt_inclusive_*.*.root
     styles:
       legendstyle: F
