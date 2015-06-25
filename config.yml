@@ -1,17 +1,16 @@
 ---
 atlas: &atlas
-  x: 0.1
-  y: 0.85
+  x: 0.175
+  y: 0.88
   font: 73
   size: 25
   label: ATLAS
 
 internal: &internal
-  x: 0.225
-  y: 0.85
+  x: 0.35
   font: 43
-  size: 25
   label: Internal
+  <<: *atlas
 
 atlasinternal: &atlasinternal
   - *atlas
@@ -111,6 +110,14 @@ plots:
     canvas:
       width: 500
       height: 500
+    legend:
+      leftmargin: 0.3
+      topmargin: 0.025
+      rightmargin: 0.01
+      textsize: 15
+      entrysep: 0.02
+      entryheight: 0.03
+
   paths:
     all/MET/met: {}
     all/MET/phi: {}

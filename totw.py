@@ -55,6 +55,7 @@ from rootpy.plotting.style import set_style
 from rootpy.plotting import Canvas, Legend, HistStack, Hist
 from palettable import colorbrewer
 from itertools import cycle, chain
+import copy
 
 import plotHelpers as ph
 
@@ -175,6 +176,13 @@ if __name__ == "__main__":
 
       configs = yaml.load(file(args.config_file))
       groups = dict([(group['name'], group) for group in configs['groups']])
+      # get the plots group configuration
+      plots = configs.get('plots')
+      # global configurations for plots
+      plots_config = plots.get('config', {})
+      # all paths to plot
+      plots_paths = plots.get('paths')
+
 
       hall = ph.HChain("all")
       for group in configs['groups']:
@@ -185,20 +193,20 @@ if __name__ == "__main__":
         hall.append(hc)
 
       set_style('ATLAS')
-      for h in hall.walk():
+      for h in (h for h in hall.walk() if h.path in plots_paths):
         # get the configurations for the given path
-        plots = configs.get('plots')
-        plots_paths = plots.get('paths')
-        plots_path = plots_paths.get(h.path, None)
-        if plots_path is None:
-          logger.log(25, "Skipping {0:s}, not defined in {1:s}".format(h.path, args.config_file))
-          continue
+        # this is the current path
+        plots_path = plots_paths.get(h.path)
 
         # create new canvas
-        canvas = Canvas(plots_path.get('canvas', {}).get('width', plots.get('config', {}).get('canvas', {}).get('width', 500)), plots_path.get('canvas', {}).get('width', plots.get('config', {}).get('canvas', {}).get('height', 500)))
+        canvasConfigs = copy.copy(plots_config.get('canvas', {}))
+        canvasConfigs.update(plots_path.get('canvas', {}))
+        canvas = Canvas(canvasConfigs.get('width', 500), canvasConfigs.get('height', 500))
 
         # create a legend (an entry for each group)
-        legend = Legend(len(h), leftmargin = 0.3, topmargin = 0.025, rightmargin = 0.01, textsize = 15, entrysep=0.02, entryheight=0.03)
+        legendConfigs = copy.copy(plots_config.get('legend', {}))
+        legendConfigs.update(plots_path.get('legend', {}))
+        legend = Legend(len(h), **legendConfigs)
 
         # set a list of colors to loop through if not set
         default_colors = cycle(colorbrewer.qualitative.Paired_10.colors)
