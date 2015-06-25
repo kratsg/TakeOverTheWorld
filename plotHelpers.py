@@ -84,6 +84,10 @@ class HGroup(HistsCollection):
   def group(self):
     return self._group_name
 
+  @property
+  def get_files(self):
+    return map(lambda x: x.get_file(), self)
+
   def keys(self):
     if self.isHists: return set()
     return set.intersection(*map(lambda x: set(map(lambda y: y.GetName(), x.keys())), self))
