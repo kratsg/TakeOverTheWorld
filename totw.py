@@ -118,10 +118,10 @@ def get_axis(hist, xy='x'):
   return hist.xaxis if xy=='x' else hist.yaxis
 
 def get_min(hist, xy='x'):
-  return get_axis(hist, xy).GetBinLowEdge(1)
+  return get_axis(hist, xy).range_user[0]
 
 def get_max(hist, xy='x'):
-  return get_axis(hist, xy).GetBinUpEdge(get_axis(hist, xy).GetNbins())
+  return get_axis(hist, xy).range_user[1]
 
 def set_minmax(hist, config):
   for xy in ['x', 'y']:
@@ -203,6 +203,9 @@ if __name__ == "__main__":
         canvasConfigs.update(plots_path.get('canvas', {}))
         canvas = Canvas(canvasConfigs.get('width', 500), canvasConfigs.get('height', 500))
 
+        if canvasConfigs.get('logy', False) == True:
+          canvas.set_logy()
+
         # create a legend (an entry for each group)
         legendConfigs = copy.copy(plots_config.get('legend', {}))
         legendConfigs.update(plots_path.get('legend', {}))
@@ -256,6 +259,8 @@ if __name__ == "__main__":
         for hist in soloHists:
           set_minmax(hist, plots_path)
           set_label(hist, plots_path)
+          if canvasConfigs.get('logy', False) == True:
+            hist.set_minimum(1e-5)
           hist.Draw(next(drawOptions))
 
         # draw the text we need

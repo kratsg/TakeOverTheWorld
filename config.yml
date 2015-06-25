@@ -110,6 +110,7 @@ plots:
     canvas:
       width: 500
       height: 500
+      logy: true
     legend:
       leftmargin: 0.3
       topmargin: 0.025
