@@ -1,4 +1,7 @@
 ---
+# overall luminosity for scaling
+lumi: &lumi 0.1
+
 # we can have text properties which specify what text to draw (think atlas, prelim, internal)
 # NOTE indentation matters
 #   # this one pulls in all of the reference that's pre-defined
@@ -72,6 +75,7 @@ groups:
     styles:
       legendstyle: F
     stack it: true
+    scale: *lumi
 
 
   - name: W to lepton+neutrino
@@ -80,6 +84,7 @@ groups:
     styles:
       legendstyle: F
     stack it: true
+    scale: *lumi
 
   - name: Z to nu+nu
     files:
@@ -87,6 +92,7 @@ groups:
     styles:
       legendstyle: F
     stack it: true
+    scale: *lumi
 
   - name: ttbar
     files:
@@ -94,6 +100,7 @@ groups:
     styles:
       legendstyle: F
     stack it: true
+    scale: *lumi
 
   - name: single top
     files:
@@ -102,6 +109,7 @@ groups:
     styles:
       legendstyle: F
     stack it: true
+    scale: *lumi
 
 # plots:
 #   config:  # here we set global configurations that are applied uniformly such as...

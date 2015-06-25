@@ -217,10 +217,14 @@ if __name__ == "__main__":
         soloHists = []
         stackHists = []
 
-        # loop over all histograms, set their styles, split them up
+        # loop over all histograms, set their styles, split them up, scale if need
         for hist in hists:
           group = groups.get(hist.title)
           hist_styles = group.get('styles', {})
+
+          # scale the histogram
+          lumi_scale = group.get('scale', 1.0)
+          hist.scale(lumi_scale)
 
           # auto loop through colors
           hist_styles['color'] = hist_styles.get('color', next(default_colors))
