@@ -49,7 +49,7 @@ groups:
     files:
       - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*2_Wt_inclusive_*.*.root
 
-styles:
+plots:
   all/MET/met: {}
   all/MET/phi: {}
   all/MET/sumEt: {}
