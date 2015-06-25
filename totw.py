@@ -120,7 +120,7 @@ def get_min(hist, xy='x'):
   return get_axis(hist, xy).GetBinLowEdge(1)
 
 def get_max(hist, xy='x'):
-  return get_axis(hist, xy).GetBinUpEdge(hist.GetNbinsX())
+  return get_axis(hist, xy).GetBinUpEdge(get_axis(hist, xy).GetNbins())
 
 def set_minmax(hist, config):
   for xy in ['x', 'y']:
@@ -129,8 +129,12 @@ def set_minmax(hist, config):
     get_axis(hist, xy).SetRangeUser(min_val, max_val)
 
 def set_label(hist, config):
-    get_axis(hist, 'x').SetTitle(config.get('xlabel', get_axis(hist, 'x').GetTitle()))
-    get_axis(hist, 'y').SetTitle(config.get('ylabel', get_axis(hist, 'y').GetTitle()))
+    if isinstance(hist, HistStack):
+      subhist = hist[0]
+    else:
+      subhist = hist
+    get_axis(hist, 'x').title = config.get('xlabel', get_axis(subhist, 'x').title)
+    get_axis(hist, 'y').title = config.get('ylabel', get_axis(subhist, 'y').title)
 
 if __name__ == "__main__":
   class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter):
@@ -213,6 +217,8 @@ if __name__ == "__main__":
           hist.decorate(**hist_styles)
 
           if group.get('stack it', False):
+            # overwrite with solid when stacking
+            hist.fillstyle = 'solid'
             stackHists.append(hist)
           else:
             soloHists.append(hist)
@@ -221,6 +227,8 @@ if __name__ == "__main__":
           legend.AddEntry(hist)#, style=group.get('legendstyle', 'F'))
 
         hstack = HistStack(name=h.path)
+        # for some reason, this causes noticable slowdowns
+        hstack.drawstyle = 'hist'
         map(hstack.Add, stackHists)
 
         # this is where we would set various parameters of the min, max and so on?
@@ -264,6 +272,8 @@ if __name__ == "__main__":
           canvas.SaveAs("{0:s}.{1:s}".format(file_name, file_ext))
         sys.stdout.flush()
         print("Saved {0:s} successfully.".format(file_name))
+
+        canvas.Close()
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")
