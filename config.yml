@@ -1,219 +1,276 @@
 ---
+atlas: &atlas
+  x: 0.2
+  y: 0.85
+  font: 73
+  size: 25
+  label: ATLAS
+
+internal: &internal
+  x: 0.325
+  y: 0.85
+  font: 43
+  size: 25
+  label: Internal
+
+atlasinternal: &atlasinternal
+  - *atlas
+  - *internal
+
 # top level defines the label / grouping
 # second level is a list of files under that group, one can also specify a wildcard to match files so they all get grouped
 # third level specifies extra information for a given file such as plots to ignore
 
-# groups can have styles
-# - norm
-# - drawstyle
-# - legendstyle
-# - integermode
-# - visible
-# - inlegend
-# - markercolor
-# - markerstyle
-# - markersize
-# - fillcolor
-# - fillstyle
-# - linecolor
-# - linestyle
-# - linewidth
-# * linecolor, fillcolor, markercolor can be set with 'color'
+# groups:
+#   - name: <group name>
+#     files:
+#       - <a file path or a file pattern to match a set of files>
+#     styles:
+#       <name of style>: <value for style>
+#   - name: <group name>
+#     files: [file1, file2, ...]
+#     styles: {style1: val1, style2: val2, ...}
+
+# groups can have styles which are set on all hists associated with that group
+#   - drawstyle (passed into Draw(...), think 'same' or 'hist')
+#   - legendstyle (passed into Legend(...), think 'F')
+#   - markercolor (also set with 'color')
+#   - markerstyle
+#   - markersize
+#   - fillcolor (also set with 'color')
+#   - fillstyle
+#   - linecolor (also set with 'color')
+#   - linestyle
+#   - linewidth
+#   - color (sets markercolor, fillcolor, linecolor)
 
 groups:
   - name: data
     files:
       - swiatlo_12_output_xAOD/hist-user.mswiatlo.*.physics_Main.*.root
+    styles:
+      legendstyle: F
 
   - name: dijets
     files:
       - swiatlo_12_output_xAOD/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ*W.*.root
+    styles:
+      legendstyle: F
 
   - name: W to lepton+neutrino
     files:
       - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.PowhegPythia8EvtGen_AZNLOCTEQ6L1_W*nu.*.root
+    styles:
+      legendstyle: F
 
   - name: Z to nu+nu
     files:
       - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.Sherpa_CT10_Znunu_Pt*_*.*.root
+    styles:
+      legendstyle: F
 
   - name: ttbar
     files:
       - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*_ttbar_hdamp172p5_nonallhad.*.root
+    styles:
+      legendstyle: F
 
   - name: single top
     files:
       - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*_singletop_tchan_lept_*.*.root
+    styles:
+      legendstyle: F
 
   - name: inclusive top
     files:
       - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*2_Wt_inclusive_*.*.root
+    styles:
+      legendstyle: F
+
+# plots can have text properties which specify what text to draw (think atlas, prelim, internal)
+# NOTE indentation matters
+#   # this one pulls in all of the reference that's pre-defined
+#   text:
+#     - *atlas
+#   # this one merges the &internal with the current hash so everything but the label is the same
+#   text:
+#     - label: preliminary
+#       <<: *internal
+#   text:
+#     - x: <position>
+#       y: <position>
+#       font: <number> (for SetTextFont(...))
+#       size: <number> (for SetTextSize(...))
+#       label: <string> (what to actually say)
 
 plots:
-  all/MET/met: {}
-  all/MET/phi: {}
-  all/MET/sumEt: {}
-  all/MET/mpx: {}
-  all/MET/mpy: {}
-  all/jetsLargeR/TopTagTight: {}
-  all/jetsLargeR/sumJetM: {}
-  all/jetsLargeR/energy: {}
-  all/jetsLargeR/Meff: {}
-  all/jetsLargeR/HT: {}
-  all/jetsLargeR/TopTagLoose_HT: {}
-  all/jetsLargeR/METSig: {}
-  all/jetsLargeR/TopTagTight_HT: {}
-  all/jetsLargeR/TopTagLoose_METSig: {}
-  all/jetsLargeR/rapidity: {}
-  all/jetsLargeR/SmoothTopTagLoose_METSig: {}
-  all/jetsLargeR/pt: {}
-  all/jetsLargeR/TopTagLoose_Meff: {}
-  all/jetsLargeR/SmoothTopTagLoose_Meff: {}
-  all/jetsLargeR/SmoothTopTagTight_Meff: {}
-  all/jetsLargeR/SmoothTopTagLoose: {}
-  all/jetsLargeR/TopTagLoose: {}
-  all/jetsLargeR/TopTagTight_Meff: {}
-  all/jetsLargeR/phi: {}
-  all/jetsLargeR/TopTagTight_METSig: {}
-  all/jetsLargeR/SmoothTopTagTight: {}
-  all/jetsLargeR/SmoothTopTagTight_METSig: {}
-  all/jetsLargeR/MOverPt: {}
-  all/jetsLargeR/multiplicity_particles: {}
-  all/jetsLargeR/j1j3/ptRatio: {}
-  all/jetsLargeR/j1j2/dEta: {}
-  all/jetsLargeR/j1j2/dPhi: {}
-  all/jetsLargeR/j1j2/asymmetry: {}
-  all/jetsLargeR/SmoothTopTagTight_HT: {}
-  all/jetsLargeR/SmoothTopTagLoose_HT: {}
-  all/jetsLargeR/eta: {}
-  all/jetsLargeR/mass: {}
-  all/jetsLargeR/dPhiMin: {}
-  all/jetLargeR2/TopTagTight: {}
-  all/jetLargeR2/energy: {}
-  all/jetLargeR2/TopTagLoose_HT: {}
-  all/jetLargeR2/TopTagTight_HT: {}
-  all/jetLargeR2/TopTagLoose_METSig: {}
-  all/jetLargeR2/rapidity: {}
-  all/jetLargeR2/SmoothTopTagLoose_METSig: {}
-  all/jetLargeR2/TopTagTight_Meff: {}
-  all/jetLargeR2/SmoothTopTagTight_HT: {}
-  all/jetLargeR2/TopTagLoose_Meff: {}
-  all/jetLargeR2/SmoothTopTagLoose_Meff: {}
-  all/jetLargeR2/SmoothTopTagTight_Meff: {}
-  all/jetLargeR2/SmoothTopTagLoose: {}
-  all/jetLargeR2/TopTagLoose: {}
-  all/jetLargeR2/SmoothTopTagTight: {}
-  all/jetLargeR2/phi: {}
-  all/jetLargeR2/TopTagTight_METSig: {}
-  all/jetLargeR2/SmoothTopTagTight_METSig: {}
-  all/jetLargeR2/pt: {}
-  all/jetLargeR2/SmoothTopTagLoose_HT: {}
-  all/jetLargeR2/eta: {}
-  all/jetLargeR2/mass: {}
-  all/jetLargeR3/TopTagTight: {}
-  all/jetLargeR3/energy: {}
-  all/jetLargeR3/TopTagLoose_HT: {}
-  all/jetLargeR3/TopTagTight_HT: {}
-  all/jetLargeR3/TopTagLoose_METSig: {}
-  all/jetLargeR3/rapidity: {}
-  all/jetLargeR3/SmoothTopTagLoose_METSig: {}
-  all/jetLargeR3/TopTagTight_Meff: {}
-  all/jetLargeR3/SmoothTopTagTight_HT: {}
-  all/jetLargeR3/TopTagLoose_Meff: {}
-  all/jetLargeR3/SmoothTopTagLoose_Meff: {}
-  all/jetLargeR3/SmoothTopTagTight_Meff: {}
-  all/jetLargeR3/SmoothTopTagLoose: {}
-  all/jetLargeR3/TopTagLoose: {}
-  all/jetLargeR3/SmoothTopTagTight: {}
-  all/jetLargeR3/phi: {}
-  all/jetLargeR3/TopTagTight_METSig: {}
-  all/jetLargeR3/SmoothTopTagTight_METSig: {}
-  all/jetLargeR3/pt: {}
-  all/jetLargeR3/SmoothTopTagLoose_HT: {}
-  all/jetLargeR3/eta: {}
-  all/jetLargeR3/mass: {}
-  all/jetLargeR1/TopTagTight: {}
-  all/jetLargeR1/energy: {}
-  all/jetLargeR1/TopTagLoose_HT: {}
-  all/jetLargeR1/TopTagTight_HT: {}
-  all/jetLargeR1/TopTagLoose_METSig: {}
-  all/jetLargeR1/rapidity: {}
-  all/jetLargeR1/SmoothTopTagLoose_METSig: {}
-  all/jetLargeR1/TopTagTight_Meff: {}
-  all/jetLargeR1/SmoothTopTagTight_HT: {}
-  all/jetLargeR1/TopTagLoose_Meff: {}
-  all/jetLargeR1/SmoothTopTagLoose_Meff: {}
-  all/jetLargeR1/SmoothTopTagTight_Meff: {}
-  all/jetLargeR1/SmoothTopTagLoose: {}
-  all/jetLargeR1/TopTagLoose: {}
-  all/jetLargeR1/SmoothTopTagTight: {}
-  all/jetLargeR1/phi: {}
-  all/jetLargeR1/TopTagTight_METSig: {}
-  all/jetLargeR1/SmoothTopTagTight_METSig: {}
-  all/jetLargeR1/pt: {}
-  all/jetLargeR1/SmoothTopTagLoose_HT: {}
-  all/jetLargeR1/eta: {}
-  all/jetLargeR1/mass: {}
-  all/jetLargeR4/TopTagTight: {}
-  all/jetLargeR4/energy: {}
-  all/jetLargeR4/TopTagLoose_HT: {}
-  all/jetLargeR4/TopTagTight_HT: {}
-  all/jetLargeR4/TopTagLoose_METSig: {}
-  all/jetLargeR4/rapidity: {}
-  all/jetLargeR4/SmoothTopTagLoose_METSig: {}
-  all/jetLargeR4/TopTagTight_Meff: {}
-  all/jetLargeR4/SmoothTopTagTight_HT: {}
-  all/jetLargeR4/TopTagLoose_Meff: {}
-  all/jetLargeR4/SmoothTopTagLoose_Meff: {}
-  all/jetLargeR4/SmoothTopTagTight_Meff: {}
-  all/jetLargeR4/SmoothTopTagLoose: {}
-  all/jetLargeR4/TopTagLoose: {}
-  all/jetLargeR4/SmoothTopTagTight: {}
-  all/jetLargeR4/phi: {}
-  all/jetLargeR4/TopTagTight_METSig: {}
-  all/jetLargeR4/SmoothTopTagTight_METSig: {}
-  all/jetLargeR4/pt: {}
-  all/jetLargeR4/SmoothTopTagLoose_HT: {}
-  all/jetLargeR4/eta: {}
-  all/jetLargeR4/mass: {}
-  all/jet3/phi: {}
-  all/jet3/pt: {}
-  all/jet3/energy: {}
-  all/jet3/eta: {}
-  all/jet3/mass: {}
-  all/jet3/rapidity: {}
-  all/jet2/phi: {}
-  all/jet2/pt: {}
-  all/jet2/energy: {}
-  all/jet2/eta: {}
-  all/jet2/mass: {}
-  all/jet2/rapidity: {}
-  all/jet1/phi: {}
-  all/jet1/pt: {}
-  all/jet1/energy: {}
-  all/jet1/eta: {}
-  all/jet1/mass: {}
-  all/jet1/rapidity: {}
-  all/jets/j1j3/ptRatio: {}
-  all/jets/j1j2/dEta: {}
-  all/jets/j1j2/dPhi: {}
-  all/jets/j1j2/asymmetry: {}
-  all/jets/METSig: {}
-  all/jets/pt: {}
-  all/jets/sumJetM: {}
-  all/jets/energy: {}
-  all/jets/Meff: {}
-  all/jets/HT: {}
-  all/jets/phi: {}
-  all/jets/eta: {}
-  all/jets/mass: {}
-  all/jets/MOverPt: {}
-  all/jets/dPhiMin: {}
-  all/jets/rapidity: {}
-  all/jets/multiplicity_particles: {}
-  all/jet4/phi: {}
-  all/jet4/pt: {}
-  all/jet4/energy: {}
-  all/jet4/eta: {}
-  all/jet4/mass: {}
-  all/jet4/rapidity: {}
+  config:
+    texts: *atlasinternal
+  paths:
+    all/MET/met: {}
+    all/MET/phi: {}
+    all/MET/sumEt: {}
+    all/MET/mpx: {}
+    all/MET/mpy: {}
+    all/jetsLargeR/TopTagTight: {}
+    all/jetsLargeR/sumJetM: {}
+    all/jetsLargeR/energy: {}
+    all/jetsLargeR/Meff: {}
+    all/jetsLargeR/HT: {}
+    all/jetsLargeR/TopTagLoose_HT: {}
+    all/jetsLargeR/METSig: {}
+    all/jetsLargeR/TopTagTight_HT: {}
+    all/jetsLargeR/TopTagLoose_METSig: {}
+    all/jetsLargeR/rapidity: {}
+    all/jetsLargeR/SmoothTopTagLoose_METSig: {}
+    all/jetsLargeR/pt: {}
+    all/jetsLargeR/TopTagLoose_Meff: {}
+    all/jetsLargeR/SmoothTopTagLoose_Meff: {}
+    all/jetsLargeR/SmoothTopTagTight_Meff: {}
+    all/jetsLargeR/SmoothTopTagLoose: {}
+    all/jetsLargeR/TopTagLoose: {}
+    all/jetsLargeR/TopTagTight_Meff: {}
+    all/jetsLargeR/phi: {}
+    all/jetsLargeR/TopTagTight_METSig: {}
+    all/jetsLargeR/SmoothTopTagTight: {}
+    all/jetsLargeR/SmoothTopTagTight_METSig: {}
+    all/jetsLargeR/MOverPt: {}
+    all/jetsLargeR/multiplicity_particles: {}
+    all/jetsLargeR/j1j3/ptRatio: {}
+    all/jetsLargeR/j1j2/dEta: {}
+    all/jetsLargeR/j1j2/dPhi: {}
+    all/jetsLargeR/j1j2/asymmetry: {}
+    all/jetsLargeR/SmoothTopTagTight_HT: {}
+    all/jetsLargeR/SmoothTopTagLoose_HT: {}
+    all/jetsLargeR/eta: {}
+    all/jetsLargeR/mass: {}
+    all/jetsLargeR/dPhiMin: {}
+    all/jetLargeR2/TopTagTight: {}
+    all/jetLargeR2/energy: {}
+    all/jetLargeR2/TopTagLoose_HT: {}
+    all/jetLargeR2/TopTagTight_HT: {}
+    all/jetLargeR2/TopTagLoose_METSig: {}
+    all/jetLargeR2/rapidity: {}
+    all/jetLargeR2/SmoothTopTagLoose_METSig: {}
+    all/jetLargeR2/TopTagTight_Meff: {}
+    all/jetLargeR2/SmoothTopTagTight_HT: {}
+    all/jetLargeR2/TopTagLoose_Meff: {}
+    all/jetLargeR2/SmoothTopTagLoose_Meff: {}
+    all/jetLargeR2/SmoothTopTagTight_Meff: {}
+    all/jetLargeR2/SmoothTopTagLoose: {}
+    all/jetLargeR2/TopTagLoose: {}
+    all/jetLargeR2/SmoothTopTagTight: {}
+    all/jetLargeR2/phi: {}
+    all/jetLargeR2/TopTagTight_METSig: {}
+    all/jetLargeR2/SmoothTopTagTight_METSig: {}
+    all/jetLargeR2/pt: {}
+    all/jetLargeR2/SmoothTopTagLoose_HT: {}
+    all/jetLargeR2/eta: {}
+    all/jetLargeR2/mass: {}
+    all/jetLargeR3/TopTagTight: {}
+    all/jetLargeR3/energy: {}
+    all/jetLargeR3/TopTagLoose_HT: {}
+    all/jetLargeR3/TopTagTight_HT: {}
+    all/jetLargeR3/TopTagLoose_METSig: {}
+    all/jetLargeR3/rapidity: {}
+    all/jetLargeR3/SmoothTopTagLoose_METSig: {}
+    all/jetLargeR3/TopTagTight_Meff: {}
+    all/jetLargeR3/SmoothTopTagTight_HT: {}
+    all/jetLargeR3/TopTagLoose_Meff: {}
+    all/jetLargeR3/SmoothTopTagLoose_Meff: {}
+    all/jetLargeR3/SmoothTopTagTight_Meff: {}
+    all/jetLargeR3/SmoothTopTagLoose: {}
+    all/jetLargeR3/TopTagLoose: {}
+    all/jetLargeR3/SmoothTopTagTight: {}
+    all/jetLargeR3/phi: {}
+    all/jetLargeR3/TopTagTight_METSig: {}
+    all/jetLargeR3/SmoothTopTagTight_METSig: {}
+    all/jetLargeR3/pt: {}
+    all/jetLargeR3/SmoothTopTagLoose_HT: {}
+    all/jetLargeR3/eta: {}
+    all/jetLargeR3/mass: {}
+    all/jetLargeR1/TopTagTight: {}
+    all/jetLargeR1/energy: {}
+    all/jetLargeR1/TopTagLoose_HT: {}
+    all/jetLargeR1/TopTagTight_HT: {}
+    all/jetLargeR1/TopTagLoose_METSig: {}
+    all/jetLargeR1/rapidity: {}
+    all/jetLargeR1/SmoothTopTagLoose_METSig: {}
+    all/jetLargeR1/TopTagTight_Meff: {}
+    all/jetLargeR1/SmoothTopTagTight_HT: {}
+    all/jetLargeR1/TopTagLoose_Meff: {}
+    all/jetLargeR1/SmoothTopTagLoose_Meff: {}
+    all/jetLargeR1/SmoothTopTagTight_Meff: {}
+    all/jetLargeR1/SmoothTopTagLoose: {}
+    all/jetLargeR1/TopTagLoose: {}
+    all/jetLargeR1/SmoothTopTagTight: {}
+    all/jetLargeR1/phi: {}
+    all/jetLargeR1/TopTagTight_METSig: {}
+    all/jetLargeR1/SmoothTopTagTight_METSig: {}
+    all/jetLargeR1/pt: {}
+    all/jetLargeR1/SmoothTopTagLoose_HT: {}
+    all/jetLargeR1/eta: {}
+    all/jetLargeR1/mass: {}
+    all/jetLargeR4/TopTagTight: {}
+    all/jetLargeR4/energy: {}
+    all/jetLargeR4/TopTagLoose_HT: {}
+    all/jetLargeR4/TopTagTight_HT: {}
+    all/jetLargeR4/TopTagLoose_METSig: {}
+    all/jetLargeR4/rapidity: {}
+    all/jetLargeR4/SmoothTopTagLoose_METSig: {}
+    all/jetLargeR4/TopTagTight_Meff: {}
+    all/jetLargeR4/SmoothTopTagTight_HT: {}
+    all/jetLargeR4/TopTagLoose_Meff: {}
+    all/jetLargeR4/SmoothTopTagLoose_Meff: {}
+    all/jetLargeR4/SmoothTopTagTight_Meff: {}
+    all/jetLargeR4/SmoothTopTagLoose: {}
+    all/jetLargeR4/TopTagLoose: {}
+    all/jetLargeR4/SmoothTopTagTight: {}
+    all/jetLargeR4/phi: {}
+    all/jetLargeR4/TopTagTight_METSig: {}
+    all/jetLargeR4/SmoothTopTagTight_METSig: {}
+    all/jetLargeR4/pt: {}
+    all/jetLargeR4/SmoothTopTagLoose_HT: {}
+    all/jetLargeR4/eta: {}
+    all/jetLargeR4/mass: {}
+    all/jet3/phi: {}
+    all/jet3/pt: {}
+    all/jet3/energy: {}
+    all/jet3/eta: {}
+    all/jet3/mass: {}
+    all/jet3/rapidity: {}
+    all/jet2/phi: {}
+    all/jet2/pt: {}
+    all/jet2/energy: {}
+    all/jet2/eta: {}
+    all/jet2/mass: {}
+    all/jet2/rapidity: {}
+    all/jet1/phi: {}
+    all/jet1/pt: {}
+    all/jet1/energy: {}
+    all/jet1/eta: {}
+    all/jet1/mass: {}
+    all/jet1/rapidity: {}
+    all/jets/j1j3/ptRatio: {}
+    all/jets/j1j2/dEta: {}
+    all/jets/j1j2/dPhi: {}
+    all/jets/j1j2/asymmetry: {}
+    all/jets/METSig: {}
+    all/jets/pt: {}
+    all/jets/sumJetM: {}
+    all/jets/energy: {}
+    all/jets/Meff: {}
+    all/jets/HT: {}
+    all/jets/phi: {}
+    all/jets/eta: {}
+    all/jets/mass: {}
+    all/jets/MOverPt: {}
+    all/jets/dPhiMin: {}
+    all/jets/rapidity: {}
+    all/jets/multiplicity_particles: {}
+    all/jet4/phi: {}
+    all/jet4/pt: {}
+    all/jet4/energy: {}
+    all/jet4/eta: {}
+    all/jet4/mass: {}
+    all/jet4/rapidity: {}
