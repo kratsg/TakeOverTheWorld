@@ -1,4 +1,19 @@
 ---
+# we can have text properties which specify what text to draw (think atlas, prelim, internal)
+# NOTE indentation matters
+#   # this one pulls in all of the reference that's pre-defined
+#   texts:
+#     - *atlas
+#   # this one merges the &internal with the current hash so everything but the label is the same
+#   texts:
+#     - label: preliminary
+#       <<: *internal
+#   texts:
+#     - x: <position>
+#       y: <position>
+#       font: <number> (for SetTextFont(...))
+#       size: <number> (for SetTextSize(...))
+#       label: <string> (what to actually say)
 atlas: &atlas
   x: 0.175
   y: 0.88
@@ -19,7 +34,6 @@ atlasinternal: &atlasinternal
 # top level defines the label / grouping
 # second level is a list of files under that group, one can also specify a wildcard to match files so they all get grouped
 # third level specifies extra information for a given file such as plots to ignore
-
 # groups:
 #   - name: <group name>
 #     files:
@@ -30,7 +44,8 @@ atlasinternal: &atlasinternal
 #     files: [file1, file2, ...]
 #     styles: {style1: val1, style2: val2, ...}
 
-# groups can have styles which are set on all hists associated with that group
+# styles are set on all hists associated with that group
+# styles:
 #   - drawstyle (passed into Draw(...), think 'same' or 'hist')
 #   - legendstyle (passed into Legend(...), think 'F')
 #   - markercolor (also set with 'color')
@@ -88,21 +103,11 @@ groups:
       legendstyle: F
     stack it: true
 
-# plots can have text properties which specify what text to draw (think atlas, prelim, internal)
-# NOTE indentation matters
-#   # this one pulls in all of the reference that's pre-defined
-#   text:
-#     - *atlas
-#   # this one merges the &internal with the current hash so everything but the label is the same
-#   text:
-#     - label: preliminary
-#       <<: *internal
-#   text:
-#     - x: <position>
-#       y: <position>
-#       font: <number> (for SetTextFont(...))
-#       size: <number> (for SetTextSize(...))
-#       label: <string> (what to actually say)
+# plots:
+#   config:  # here we set global configurations that are applied uniformly such as...
+#     canvas:
+#     legend:
+#     texts:
 
 plots:
   config:
