@@ -1,13 +1,13 @@
 ---
 atlas: &atlas
-  x: 0.2
+  x: 0.1
   y: 0.85
   font: 73
   size: 25
   label: ATLAS
 
 internal: &internal
-  x: 0.325
+  x: 0.225
   y: 0.85
   font: 43
   size: 25
@@ -108,6 +108,9 @@ groups:
 plots:
   config:
     texts: *atlasinternal
+    canvas:
+      width: 500
+      height: 500
   paths:
     all/MET/met: {}
     all/MET/phi: {}

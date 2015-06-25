@@ -195,7 +195,7 @@ if __name__ == "__main__":
           continue
 
         # create new canvas
-        canvas = Canvas(plots_path.get('canvas width', 700), plots.get('config').get('canvas height', 500))
+        canvas = Canvas(plots_path.get('canvas', {}).get('width', plots.get('config', {}).get('canvas', {}).get('width', 500)), plots_path.get('canvas', {}).get('width', plots.get('config', {}).get('canvas', {}).get('height', 500)))
 
         # create a legend (an entry for each group)
         legend = Legend(len(h), leftmargin = 0.3, topmargin = 0.025, rightmargin = 0.01, textsize = 15, entrysep=0.02, entryheight=0.03)
