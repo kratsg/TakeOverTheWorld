@@ -52,7 +52,7 @@ import rootpy as rpy
 import matplotlib.pyplot as pl
 from rootpy.io import root_open
 from rootpy.plotting.style import set_style
-from rootpy.plotting import Canvas, Legend, HistStack
+from rootpy.plotting import Canvas, Legend, HistStack, Hist
 from palettable import colorbrewer
 from itertools import cycle, chain
 
@@ -113,6 +113,25 @@ def ensure_dir(f):
     if not os.path.exists(d):
         os.makedirs(d)
 
+def get_axis(hist, xy='x'):
+  return hist.xaxis if xy=='x' else hist.yaxis
+
+def get_min(hist, xy='x'):
+  return get_axis(hist, xy).GetBinLowEdge(1)
+
+def get_max(hist, xy='x'):
+  return get_axis(hist, xy).GetBinUpEdge(hist.GetNbinsX())
+
+def set_minmax(hist, config):
+  for xy in ['x', 'y']:
+    min_val = config.get('min', get_min(hist, xy))
+    max_val = config.get('max', get_max(hist, xy))
+    get_axis(hist, xy).SetRangeUser(min_val, max_val)
+
+def set_label(hist, config):
+    get_axis(hist, 'x').SetTitle(config.get('xlabel', get_axis(hist, 'x').GetTitle()))
+    get_axis(hist, 'y').SetTitle(config.get('ylabel', get_axis(hist, 'y').GetTitle()))
+
 if __name__ == "__main__":
   class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter):
     pass
@@ -150,9 +169,6 @@ if __name__ == "__main__":
       # if flag is shown, set batch_mode to true, else false
       ROOT.gROOT.SetBatch(args.batch_mode)
 
-      # do stuff here
-      logger.info("Hello world")
-
       configs = yaml.load(file(args.config_file))
       groups = dict([(group['name'], group) for group in configs['groups']])
 
@@ -164,14 +180,18 @@ if __name__ == "__main__":
             hc.append(root_open(fname))
         hall.append(hc)
 
-      #import pdb; pdb.set_trace()
-
       set_style('ATLAS')
       for h in hall.walk():
         # get the configurations for the given path
-        config = configs.get('plots').get(h.path, {})
+        plots = configs.get('plots')
+        plots_paths = plots.get('paths')
+        plots_path = plots_paths.get(h.path, None)
+        if plots_path is None:
+          logger.log(25, "Skipping {0:s}, not defined in {1:s}".format(h.path, args.config_file))
+          continue
+
         # create new canvas
-        canvas = Canvas(config.get('canvas width', 700), config.get('canvas height', 500))
+        canvas = Canvas(plots_path.get('canvas width', 700), plots.get('config').get('canvas height', 500))
 
         # create a legend (an entry for each group)
         legend = Legend(len(h), leftmargin = 0.3, topmargin = 0.025, rightmargin = 0.01, textsize = 15, entrysep=0.02, entryheight=0.03)
@@ -197,53 +217,39 @@ if __name__ == "__main__":
           else:
             soloHists.append(hist)
 
-        # add each hist to the legend
-        for hist in chain(stackHists, soloHists):
-          legend.AddEntry(hist, style=groups.get(hist.title).get('legendstyle', 'F'))
+          # add each hist to the legend
+          legend.AddEntry(hist)#, style=group.get('legendstyle', 'F'))
 
         hstack = HistStack(name=h.path)
         map(hstack.Add, stackHists)
 
         # this is where we would set various parameters of the min, max and so on?
         # need to set things like min, max, change to log, etc for hstack and soloHists
-        def get_min(hist, xy='x'):
-          axis = hist.xaxis if xy=='x' else hist.yaxis
-          return axis.GetBinLowEdge(1)
-        def get_max(hist, xy='x'):
-          axis = hist.xaxis if xy=='x' else hist.yaxis
-          return axis.GetBinUpEdge(hist.GetNBinsX())
 
-        def set_minmax(hist, config, xy='x'):
-          axis = hist.xaxis if xy=='x' else hist.yaxis
-          min_val = config.get('min', get_min(hist, xy))
-          max_val = config.get('max', get_max(hist, xy))
-          axis.SetRangeUser(min_val, max_val)
+        # cycle through all draw options and make sure we don't overwrite
+        drawOptions = ["same"]*len(soloHists)
+        drawOptions = cycle([''] + drawOptions)
 
         # draw it so we have access to the xaxis and yaxis
         if hstack:
-          hstack.Draw(config.get('drawoptions', 'hist'))
+          hstack.Draw(next(drawOptions))
           # set up axes
-          hstack.xaxis.SetTitle(config.get('xlabel', ''))
-          hstack.xaxis.SetRangeUser(config.get('xmin', hstack.xaxis.GetXmin()), config.get('xmax', hstack.xaxis.GetXmax()))
-          hstack.yaxis.SetTitle(config.get('ylabel', 'counts'))
-          hstack.yaxis.SetRangeUser(config.get('ymin', hstack.yaxis.GetXmin()), config.get('ymax', hstack.yaxis.GetXmax()))
+          set_minmax(hstack, plots_path)
+          set_label(hstack, plots_path)
 
         for hist in soloHists:
-          hist.Draw("{0:s}{1:s}".format("same " if hstack else "", config.get('drawoptions', 'hist')))
+          set_minmax(hist, plots_path)
+          set_label(hist, plots_path)
+          hist.Draw(next(drawOptions))
 
-        # attach the ATLAS label
-        label = ROOT.TText(0.3, 0.85, 'ATLAS')
-        label.SetTextFont(73)
-        label.SetTextSize(25)
-        label.SetNDC()
-        label.Draw()
-
-        # attach the internal label
-        label2 = ROOT.TText(0.425, 0.85, 'Internal')
-        label2.SetTextFont(43)
-        label2.SetTextSize(25)
-        label2.SetNDC()
-        label2.Draw()
+        # draw the text we need
+        for text in plots.get('config', {}).get('texts', []):
+          # attach the label
+          label = ROOT.TText(text['x'], text['y'], text['label'])
+          label.SetTextFont(text['font'])
+          label.SetTextSize(text['size'])
+          label.SetNDC()
+          label.Draw()
 
         # draw and update all
         legend.Draw()
@@ -252,12 +258,12 @@ if __name__ == "__main__":
 
         # make file_name and directories if needed
         file_name = "plots/{0:s}".format(h.path)
+        print("Saving {0:s}... \r".format(file_name), end='\r')
         ensure_dir(file_name)
         for file_ext in ["root", "pdf"]:
           canvas.SaveAs("{0:s}.{1:s}".format(file_name, file_ext))
-
-      #hc.all
-      #hc.all.jets
+        sys.stdout.flush()
+        print("Saved {0:s} successfully.".format(file_name))
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")
