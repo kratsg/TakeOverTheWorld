@@ -54,6 +54,7 @@ from rootpy.io import root_open
 from rootpy.plotting.style import set_style
 from rootpy.plotting import Canvas, Legend, HistStack
 from palettable import colorbrewer
+from itertools import cycle, chain
 
 import plotHelpers as ph
 
@@ -153,10 +154,12 @@ if __name__ == "__main__":
       logger.info("Hello world")
 
       configs = yaml.load(file(args.config_file))
+      groups = dict([(group['name'], group) for group in configs['groups']])
+
       hall = ph.HChain("all")
       for group in configs['groups']:
-        hc = ph.HGroup(group)
-        for f in configs['groups'][group]['files']:
+        hc = ph.HGroup(group['name'])
+        for f in group['files']:
           for fname in glob.glob(f):
             hc.append(root_open(fname))
         hall.append(hc)
@@ -166,42 +169,64 @@ if __name__ == "__main__":
       set_style('ATLAS')
       for h in hall.walk():
         # get the configurations for the given path
-        config = configs['styles'].get(h.path, {})
+        config = configs.get('plots').get(h.path, {})
         # create new canvas
         canvas = Canvas(config.get('canvas width', 700), config.get('canvas height', 500))
 
         # create a legend (an entry for each group)
         legend = Legend(len(h), leftmargin = 0.3, topmargin = 0.025, rightmargin = 0.01, textsize = 15, entrysep=0.02, entryheight=0.03)
 
-        colors = colorbrewer.qualitative.Paired_10.colors
-
+        # set a list of colors to loop through if not set
+        default_colors = cycle(colorbrewer.qualitative.Paired_10.colors)
         hists = map(lambda hgroup: hgroup.flatten, h)
         soloHists = []
         stackHists = []
-        for hist, color in zip(hists, colors):
-          setattr(hist, 'color', color)
-          setattr(hist, 'fillstyle', 'solid')
+
+        # loop over all histograms, set their styles, split them up
         for hist in hists:
-          if configs['groups'][hist.title].get('stack', False) == True:
+          group = groups.get(hist.title)
+          hist_styles = group.get('styles', {})
+
+          # auto loop through colors
+          hist_styles['color'] = hist_styles.get('color', next(default_colors))
+          # decorate it
+          hist.decorate(**hist_styles)
+
+          if group.get('stack it', False):
             stackHists.append(hist)
           else:
             soloHists.append(hist)
 
         # add each hist to the legend
-        for hist in hists:
-          legend.AddEntry(hist, style='F')
+        for hist in chain(stackHists, soloHists):
+          legend.AddEntry(hist, style=groups.get(hist.title).get('legendstyle', 'F'))
 
         hstack = HistStack(name=h.path)
         map(hstack.Add, stackHists)
+
+        # this is where we would set various parameters of the min, max and so on?
+        # need to set things like min, max, change to log, etc for hstack and soloHists
+        def get_min(hist, xy='x'):
+          axis = hist.xaxis if xy=='x' else hist.yaxis
+          return axis.GetBinLowEdge(1)
+        def get_max(hist, xy='x'):
+          axis = hist.xaxis if xy=='x' else hist.yaxis
+          return axis.GetBinUpEdge(hist.GetNBinsX())
+
+        def set_minmax(hist, config, xy='x'):
+          axis = hist.xaxis if xy=='x' else hist.yaxis
+          min_val = config.get('min', get_min(hist, xy))
+          max_val = config.get('max', get_max(hist, xy))
+          axis.SetRangeUser(min_val, max_val)
 
         # draw it so we have access to the xaxis and yaxis
         if hstack:
           hstack.Draw(config.get('drawoptions', 'hist'))
           # set up axes
           hstack.xaxis.SetTitle(config.get('xlabel', ''))
-          #hstack.xaxis.SetRangeUser(config.get('xmin', hstack.xaxis.GetXmin()), config.get('xmax', hstack.xaxis.GetXmax()))
+          hstack.xaxis.SetRangeUser(config.get('xmin', hstack.xaxis.GetXmin()), config.get('xmax', hstack.xaxis.GetXmax()))
           hstack.yaxis.SetTitle(config.get('ylabel', 'counts'))
-          #hstack.yaxis.SetRangeUser(config.get('ymin', hstack.yaxis.GetXmin()), config.get('ymax', hstack.yaxis.GetXmax()))
+          hstack.yaxis.SetRangeUser(config.get('ymin', hstack.yaxis.GetXmin()), config.get('ymax', hstack.yaxis.GetXmax()))
 
         for hist in soloHists:
           hist.Draw("{0:s}{1:s}".format("same " if hstack else "", config.get('drawoptions', 'hist')))
