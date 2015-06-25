@@ -49,7 +49,7 @@ groups:
     files:
       - swiatlo_12_output_xAOD/hist-user.mswiatlo.*.physics_Main.*.root
     styles:
-      legendstyle: F
+      legendstyle: p
 
   - name: dijets
     files:
