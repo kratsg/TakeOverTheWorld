@@ -53,9 +53,11 @@ import matplotlib.pyplot as pl
 from rootpy.io import root_open
 from rootpy.plotting.style import set_style
 from rootpy.plotting import Canvas, Legend, HistStack, Hist
+from rootpy.plotting.hist import _Hist
 from palettable import colorbrewer
 from itertools import cycle, chain
 import copy
+import re
 
 import plotHelpers as ph
 
@@ -137,6 +139,15 @@ def set_label(hist, config):
     get_axis(hist, 'x').title = config.get('xlabel', get_axis(subhist, 'x').title)
     get_axis(hist, 'y').title = config.get('ylabel', get_axis(subhist, 'y').title)
 
+did_regex = re.compile('(\d{6,8})')
+def get_did(hist):
+  if not isinstance(hist, _Hist):
+    raise TypeError("Must pass in a rootpy Hist object")
+  m = did_regex.search(hist.get_directory().get_file().name)
+  if m is None:
+    raise ValueError("%s is not a valid filename")
+  return m.groups()[0]
+
 if __name__ == "__main__":
   class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter):
     pass
@@ -153,6 +164,7 @@ if __name__ == "__main__":
   parser.add_argument('-b', '--batch', dest='batch_mode', action='store_true', help='Enable batch mode for ROOT.')
 
   parser.add_argument('--config', required=True, type=str, dest='config_file', metavar='<file.yml>', help='YAML file specifying input files and asssociated names')
+  parser.add_argument('--weights', required=True, type=str, dest='weights_file', metavar='<file.yml>', help='YAML file specifying the weights by dataset id')
 
   # parse the arguments, throw errors if missing any
   args = parser.parse_args()
@@ -178,11 +190,12 @@ if __name__ == "__main__":
       groups = dict([(group['name'], group) for group in configs['groups']])
       # get the plots group configuration
       plots = configs.get('plots')
+      # get the weights configurations for scaling
+      weights = yaml.load(file(args.weights_file))
       # global configurations for plots
       plots_config = plots.get('config', {})
       # all paths to plot
       plots_paths = plots.get('paths')
-
 
       hall = ph.HChain("all")
       for group in configs['groups']:
@@ -211,6 +224,26 @@ if __name__ == "__main__":
         legendConfigs.update(plots_path.get('legend', {}))
         legend = Legend(len(h), **legendConfigs)
 
+        # scale the histograms before doing anything else
+        for hgroup in h:
+          if groups.get(hgroup.group).get('do not scale me', False):
+            logger.info("Skipping %s for scaling" % hgroup.group)
+            continue
+          for hist in hgroup:
+            # scale the histograms, look up weights by did
+            did = get_did(hist)
+            weight = weights.get(did)
+            if weight is None:
+              raise KeyError("Could not find the weights for did=%s" % did)
+            scaleFactor = 1.0
+            scaleFactor /= weight.get('num events')
+            scaleFactor *= weight.get('cross section')
+            scaleFactor *= weight.get('filter efficiency')
+            scaleFactor *= weight.get('k-factor')
+            scaleFactor *= weights.get('global_luminosity')
+            hist.scale(scaleFactor)
+            logger.info("Scale factor for %s: %0.6f" % (did, scaleFactor))
+
         # set a list of colors to loop through if not set
         default_colors = cycle(colorbrewer.qualitative.Paired_10.colors)
         hists = map(lambda hgroup: hgroup.flatten, h)
@@ -221,10 +254,6 @@ if __name__ == "__main__":
         for hist in hists:
           group = groups.get(hist.title)
           hist_styles = group.get('styles', {})
-
-          # scale the histogram
-          lumi_scale = group.get('scale', 1.0)
-          hist.scale(lumi_scale)
 
           # auto loop through colors
           hist_styles['color'] = hist_styles.get('color', next(default_colors))

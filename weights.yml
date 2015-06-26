@@ -1,0 +1,72 @@
+---
+# units???
+global_luminosity: 0.5
+
+# default: # here we specify the global defaults, usually used for varying luminosity
+#   cross section: 1.0
+#   filter efficiency: 1.0
+#   k-factor: 1.0
+#   num events: 1.0
+#   luminosity: 0.5
+# <dataset id>: # specify a dataset id
+#   cross section: 27.8
+#   <<: *default_weights # this will fill in defaults for all but cross section
+
+default: &default_weights
+  cross section: 1.0
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 1.0
+
+"361022":
+  <<: *default_weights
+"361023":
+  <<: *default_weights
+"361024":
+  <<: *default_weights
+"361025":
+  <<: *default_weights
+"361026":
+  <<: *default_weights
+"361100":
+  <<: *default_weights
+"361101":
+  <<: *default_weights
+"361102":
+  <<: *default_weights
+"361105":
+  <<: *default_weights
+"361444":
+  <<: *default_weights
+"361445":
+  <<: *default_weights
+"361452":
+  <<: *default_weights
+"361453":
+  <<: *default_weights
+"361454":
+  <<: *default_weights
+"361455":
+  <<: *default_weights
+"361456":
+  <<: *default_weights
+"361457":
+  <<: *default_weights
+"361458":
+  <<: *default_weights
+"361459":
+  <<: *default_weights
+"361461":
+  <<: *default_weights
+"361462":
+  <<: *default_weights
+"410000":
+  <<: *default_weights
+"410011":
+  <<: *default_weights
+"410012":
+  <<: *default_weights
+"410013":
+  <<: *default_weights
+"410014":
+  <<: *default_weights
