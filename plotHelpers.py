@@ -24,20 +24,14 @@ class HistsCollection(list, _DirectoryBase):
 
   @property
   def path(self):
-    if self._abspath is None:
-      if self._parent is None:
-        if self._relpath is None:
-          self._abspath = '/'
-        else:
-          self._abspath = self._relpath
-      else:
-        parent_relpath = self._parent.path
-        if parent_relpath == '/':
-          parent_relpath = ''
-        if self._relpath is None:
-          self._abspath = '%s' % ( parent_relpath )
-        else:
-          self._abspath = '%s/%s' % ( parent_relpath, self._relpath )
+    # make sure relpath is valid
+    self._relpath = '' if self._relpath is None else self._relpath
+    # top of the path
+    if self._parent is None:
+      self._abspath = self._relpath
+    elif self._abspath is None:
+      # not top of the path
+      self._abspath = os.path.join(self._parent.path, self._relpath)
     return self._abspath
 
   def _get_view(self, obj):
