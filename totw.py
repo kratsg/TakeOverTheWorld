@@ -127,9 +127,16 @@ def get_max(hist, xy='x'):
 
 def set_minmax(hist, config):
   for xy in ['x']: #  ['x', 'y']:
-    min_val = config.get('%smin' % xy, get_min(hist, xy))
-    max_val = config.get('%smax' % xy, get_max(hist, xy))
-    get_axis(hist, xy).SetRangeUser(min_val, max_val)
+    min_val = config.get('%smin' % xy, None)
+    max_val = config.get('%smax' % xy, None)
+    # for x-axis, automatically set min-max if not configured
+    if xy == 'x':
+      if min_val is None:
+        min_val = get_min(hist, xy)
+      if max_val is None:
+        max_val = get_max(hist, xy)
+    if min_val is not None and max_val is not None:
+      get_axis(hist, xy).SetRangeUser(min_val, max_val)
 
 def set_label(hist, config):
     if isinstance(hist, HistStack):
