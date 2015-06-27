@@ -62,6 +62,7 @@ groups:
   - name: data
     files:
       - swiatlo_12_output_xAOD/hist-user.mswiatlo.*.physics_Main.*.root
+      - swiatlo_17_18_19_output_xAOD/hist-user.mswiatlo.*.physics_Main.*.root
     styles:
       legendstyle: p
       color: black
@@ -90,7 +91,7 @@ groups:
 
   - name: ttbar
     files:
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*_ttbar_hdamp172p5_nonallhad.*.root
+      - swiatlo_17_18_19_output_xAOD/hist-user.mswiatlo.*.*_ttbar_hdamp172p5_nonallhad.*.root
     styles:
       legendstyle: F
     stack it: true
