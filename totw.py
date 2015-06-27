@@ -126,7 +126,7 @@ def get_max(hist, xy='x'):
   return get_axis(hist, xy).range_user[1]
 
 def set_minmax(hist, config):
-  for xy in ['x', 'y']:
+  for xy in ['x']: #  ['x', 'y']:
     min_val = config.get('min', get_min(hist, xy))
     max_val = config.get('max', get_max(hist, xy))
     get_axis(hist, xy).SetRangeUser(min_val, max_val)
