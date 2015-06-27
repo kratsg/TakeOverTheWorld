@@ -62,7 +62,7 @@ groups:
   - name: data
     files:
       - swiatlo_12_output_xAOD/hist-user.mswiatlo.*.physics_Main.*.root
-      - swiatlo_17_18_19_output_xAOD/hist-user.mswiatlo.*.physics_Main.*.root
+      - swiatlo_17_18_19_output_xAOD/hist-user.*.*.physics_Main.*.root
     styles:
       legendstyle: p
       color: black
