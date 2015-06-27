@@ -120,7 +120,7 @@ default: &default_weights
   cross section: 65.902
   filter efficiency: 0.613840
   k-factor: 0.90105
-  num events: 499200 
+  num events: 499200
 "361451":
   cross section: 65.796
   filter efficiency: 0.239057
@@ -164,7 +164,7 @@ default: &default_weights
   num events: 10000
 "361459":
   cross section: 0.053341
-  filter efficiency: 
+  filter efficiency: 1.
   k-factor: 0.90105
   num events: 7000
 "361460":
@@ -192,7 +192,7 @@ default: &default_weights
   filter efficiency: 0.197191
   k-factor: 0.90105
   num events: 100
-#ttbar semileptonic 
+#ttbar semileptonic
 "410000":
   cross section: 831.76
   k-factor: 1.
