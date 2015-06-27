@@ -120,15 +120,27 @@ def get_axis(hist, xy='x'):
   return hist.xaxis if xy=='x' else hist.yaxis
 
 def get_min(hist, xy='x'):
-  return get_axis(hist, xy).range_user[0]
+  if xy == 'x':
+    return get_axis(hist, xy).range_user[0]
+  elif xy == 'y':
+    return hist.min()
+  else:
+    return 0
 
 def get_max(hist, xy='x'):
-  return get_axis(hist, xy).range_user[1]
+  if xy == 'x':
+    return get_axis(hist, xy).range_user[1]
+  elif xy == 'y':
+    return hist.max()
+  else:
+    return 1
 
 def set_minmax(hist, config):
-  for xy in ['x']: #  ['x', 'y']:
+  for xy in ['x', 'y']:
     min_val = config.get('min', get_min(hist, xy))
     max_val = config.get('max', get_max(hist, xy))
+    if min_val >= max_val:
+      max_val = min_val + 1
     get_axis(hist, xy).SetRangeUser(min_val, max_val)
 
 def set_label(hist, config):
@@ -282,19 +294,42 @@ if __name__ == "__main__":
         drawOptions = ["same"]*len(soloHists)
         drawOptions = cycle([''] + drawOptions)
 
+        # hold min and max for axis ranges
+        min_vals = {'x': [], 'y': []}
+        max_vals = {'x': [], 'y': []}
+
         # draw it so we have access to the xaxis and yaxis
         if hstack:
           hstack.Draw(next(drawOptions))
           # set up axes
-          set_minmax(hstack, plots_path)
+          for xy in ['x', 'y']:
+            min_vals[xy].append(get_min(hstack, xy))
+            max_vals[xy].append(get_max(hstack, xy))
+          #set_minmax(hstack, plots_path)
           set_label(hstack, plots_path)
 
         for hist in soloHists:
-          set_minmax(hist, plots_path)
-          set_label(hist, plots_path)
+          hist.Draw(next(drawOptions))
           if canvasConfigs.get('logy', False) == True:
             hist.set_minimum(1e-5)
-          hist.Draw(next(drawOptions))
+          for xy in ['x', 'y']:
+            min_vals[xy].append(get_min(hist, xy))
+            max_vals[xy].append(get_max(hist, xy))
+          set_label(hist, plots_path)
+          #set_minmax(hist, plots_path)
+
+        for xy in ['x', 'y']:
+          min_val = min(min_vals[xy])
+          max_val = max(max_vals[xy])
+          if canvasConfigs.get('logy', False) == True:
+            min_val = max([min_val, 1e-5])
+          print(min_val, max_val)
+          for hist in chain(hstack, soloHists):
+            if xy == 'x':
+              get_axis(hist, xy).SetRangeUser(min_val, max_val)
+            else:
+              hist.set_maximum(max_val)
+              hist.set_minimum(min_val)
 
         # draw the text we need
         for text in plots.get('config', {}).get('texts', []):
@@ -308,6 +343,7 @@ if __name__ == "__main__":
         # draw and update all
         legend.Draw()
         canvas.Modified()
+        canvas.RedrawAxis()
         canvas.Update()
 
         # make file_name and directories if needed
