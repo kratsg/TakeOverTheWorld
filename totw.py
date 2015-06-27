@@ -200,8 +200,11 @@ if __name__ == "__main__":
       hall = ph.HChain("all")
       for group in configs['groups']:
         hc = ph.HGroup(group['name'])
+        logger.log(25, "Group: {0:s}".format(group['name']))
         for f in group['files']:
+          logger.log(25, "\tPattern: {0:s}".format(f))
           for fname in glob.glob(f):
+            logger.log(25, "\t\tAdding {0:s}".format(fname))
             hc.append(root_open(fname))
         hall.append(hc)
 
