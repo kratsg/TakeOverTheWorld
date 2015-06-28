@@ -164,7 +164,7 @@ default: &default_weights
   num events: 10000
 "361459":
   cross section: 0.053341
-  filter efficiency: 1.
+  filter efficiency: 0.557693
   k-factor: 0.90105
   num events: 7000
 "361460":
