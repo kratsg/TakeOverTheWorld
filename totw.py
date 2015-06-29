@@ -137,6 +137,12 @@ def set_label(hist, config):
       subhist = hist
     get_axis(hist, 'x').title = config.get('xlabel', get_axis(subhist, 'x').title)
     get_axis(hist, 'y').title = config.get('ylabel', get_axis(subhist, 'y').title)
+    xtitleoffset = config.get('xtitleoffset', None)
+    ytitleoffset = config.get('ytitleoffset', None)
+    if xtitleoffset:
+      get_axis(hist, 'x').SetTitleOffset(xtitleoffset)
+    if ytitleoffset:
+      get_axis(hist, 'y').SetTitleOffset(ytitleoffset)
 
 did_regex = re.compile('(\d{6,8})')
 def get_did(hist):
