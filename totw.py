@@ -308,7 +308,9 @@ if __name__ == "__main__":
           get_axis(hist, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
 
         # draw the text we need
-        for text in plots.get('config', {}).get('texts', []):
+        textConfigs = plots.get('config', {}).get('texts', [])
+        textLocals = plots_path.get('texts', [])
+        for text in chain(textConfigs, textLocals):
           # attach the label
           label = ROOT.TLatex(text['x'], text['y'], text['label'])
           label.SetTextFont(text['font'])
