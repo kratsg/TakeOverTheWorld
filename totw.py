@@ -124,7 +124,7 @@ def set_minmax(hist, config):
     min_val = config.get('%smin' % xy, None)
     max_val = config.get('%smax' % xy, None)
     if min_val is not None and max_val is not None:
-      if isinstance(hist, HistStack):
+      if isinstance(hist, HistStack) and xy == 'y':
         hist.SetMaximum(max_val)
         hist.SetMinimum(min_val)
       else:
@@ -310,7 +310,7 @@ if __name__ == "__main__":
         # draw the text we need
         for text in plots.get('config', {}).get('texts', []):
           # attach the label
-          label = ROOT.TText(text['x'], text['y'], text['label'])
+          label = ROOT.TLatex(text['x'], text['y'], text['label'])
           label.SetTextFont(text['font'])
           label.SetTextSize(text['size'])
           label.SetNDC()
