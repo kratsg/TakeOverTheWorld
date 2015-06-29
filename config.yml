@@ -70,36 +70,36 @@ groups:
 
   - name: dijets
     files:
-      - swiatlo_12_output_xAOD/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ*W.*.root
+      - 0L_19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ*W.*.root
     styles:
       legendstyle: F
     stack it: true
 
   - name: W to lepton+neutrino
     files:
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.PowhegPythia8EvtGen_AZNLOCTEQ6L1_W*nu.*.root
+      - 0L_19/hist-user.mswiatlo.*.PowhegPythia8EvtGen_AZNLOCTEQ6L1_W*nu.*.root
     styles:
       legendstyle: F
     stack it: true
 
   - name: Z to nu+nu
     files:
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.Sherpa_CT10_Znunu_Pt*_*.*.root
+      - 0L_19/hist-user.mswiatlo.*.Sherpa_CT10_Znunu_Pt*_*.*.root
     styles:
       legendstyle: F
     stack it: true
 
   - name: ttbar
     files:
-      - swiatlo_17_18_19_output_xAOD/hist-user.mswiatlo.*.*_ttbar_hdamp172p5_nonallhad.*.root
+      - 0L_19/hist-user.mswiatlo.*.*_ttbar_hdamp172p5_nonallhad.*.root
     styles:
       legendstyle: F
     stack it: true
 
   - name: single top
     files:
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*_singletop_tchan_lept_*.*.root
-      - swiatlo_14_output_xAOD/hist-user.mswiatlo.*.*2_Wt_inclusive_*.*.root
+      - 0L_19/hist-user.mswiatlo.*.*_singletop_tchan_lept_*.*.root
+      - 0L_19/hist-user.mswiatlo.*.*2_Wt_inclusive_*.*.root
     styles:
       legendstyle: F
     stack it: true
