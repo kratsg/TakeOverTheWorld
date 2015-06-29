@@ -119,24 +119,16 @@ def ensure_dir(f):
 def get_axis(hist, xy='x'):
   return hist.xaxis if xy=='x' else hist.yaxis
 
-def get_min(hist, xy='x'):
-  return get_axis(hist, xy).range_user[0]
-
-def get_max(hist, xy='x'):
-  return get_axis(hist, xy).range_user[1]
-
 def set_minmax(hist, config):
-  for xy in ['x']: #  ['x', 'y']:
+  for xy in ['x', 'y']:
     min_val = config.get('%smin' % xy, None)
     max_val = config.get('%smax' % xy, None)
-    # for x-axis, automatically set min-max if not configured
-    if xy == 'x':
-      if min_val is None:
-        min_val = get_min(hist, xy)
-      if max_val is None:
-        max_val = get_max(hist, xy)
     if min_val is not None and max_val is not None:
-      get_axis(hist, xy).SetRangeUser(min_val, max_val)
+      if isinstance(hist, HistStack):
+        hist.SetMaximum(max_val)
+        hist.SetMinimum(min_val)
+      else:
+        get_axis(hist, xy).SetRangeUser(min_val, max_val)
 
 def set_label(hist, config):
     if isinstance(hist, HistStack):
@@ -226,6 +218,10 @@ if __name__ == "__main__":
         canvasConfigs.update(plots_path.get('canvas', {}))
         canvas = Canvas(canvasConfigs.get('width', 500), canvasConfigs.get('height', 500))
 
+        canvas.SetRightMargin(canvasConfigs.get('rightmargin', 0.1))
+        canvas.SetBottomMargin(canvasConfigs.get('bottommargin', 0.2))
+        canvas.SetLeftMargin(canvasConfigs.get('leftmargin', 0.2))
+
         if canvasConfigs.get('logy', False) == True:
           canvas.set_logy()
 
@@ -270,6 +266,9 @@ if __name__ == "__main__":
           # decorate it
           hist.decorate(**hist_styles)
 
+          # set axis
+          get_axis(hist, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 1))
+
           if group.get('stack it', False):
             # overwrite with solid when stacking
             hist.fillstyle = 'solid'
@@ -298,13 +297,15 @@ if __name__ == "__main__":
           # set up axes
           set_minmax(hstack, plots_path)
           set_label(hstack, plots_path)
+          get_axis(hstack, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
 
         for hist in soloHists:
+          hist.Draw(next(drawOptions))
           set_minmax(hist, plots_path)
           set_label(hist, plots_path)
           if canvasConfigs.get('logy', False) == True:
             hist.set_minimum(1e-5)
-          hist.Draw(next(drawOptions))
+          get_axis(hist, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
 
         # draw the text we need
         for text in plots.get('config', {}).get('texts', []):
