@@ -61,7 +61,7 @@ atlasinternal: &atlasinternal
 groups:
   - name: data
     files:
-      - swiatlo_17_18_19_output_xAOD/hist-user.*.*.physics_Main.*.root
+      - 0L_data/hist-user.*.*.physics_Main.*.root
     styles:
       legendstyle: p
       color: black
