@@ -275,6 +275,11 @@ if __name__ == "__main__":
           # set axis
           get_axis(hist, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 1))
 
+          # add each hist to the legend
+          legend.AddEntry(hist)#, style=group.get('legendstyle', 'F'))
+
+          # exclusion, so we don't need to plot it
+          if hist.title in plots_path.get('exclude', []): continue
           if group.get('stack it', False):
             # overwrite with solid when stacking
             hist.fillstyle = 'solid'
@@ -282,8 +287,6 @@ if __name__ == "__main__":
           else:
             soloHists.append(hist)
 
-          # add each hist to the legend
-          legend.AddEntry(hist)#, style=group.get('legendstyle', 'F'))
 
         hstack = HistStack(name=h.path)
         # for some reason, this causes noticable slowdowns

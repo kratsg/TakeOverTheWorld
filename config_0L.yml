@@ -72,6 +72,7 @@ groups:
       - 0L_19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ*W.*.root
     styles:
       legendstyle: F
+      fillstyle: solid
     stack it: true
 
   - name: W+jets
@@ -79,6 +80,7 @@ groups:
       - 0L_19/hist-user.mswiatlo.*.PowhegPythia8EvtGen_AZNLOCTEQ6L1_W*nu.*.root
     styles:
       legendstyle: F
+      fillstyle: solid
     stack it: true
 
   - name: Z+jets
@@ -86,6 +88,7 @@ groups:
       - 0L_19/hist-user.mswiatlo.*.Sherpa_CT10_Znunu_Pt*_*.*.root
     styles:
       legendstyle: F
+      fillstyle: solid
     stack it: true
 
   - name: "t#bar{t}"
@@ -93,6 +96,7 @@ groups:
       - 0L_19/hist-user.mswiatlo.*.*_ttbar_hdamp172p5_nonallhad.*.root
     styles:
       legendstyle: F
+      fillstyle: solid
     stack it: true
 
   - name: single top
@@ -101,6 +105,7 @@ groups:
       - 0L_19/hist-user.mswiatlo.*.*2_Wt_inclusive_*.*.root
     styles:
       legendstyle: F
+      fillstyle: solid
     stack it: true
 
 # plots:
@@ -125,9 +130,11 @@ plots:
         y: 0.8
         label: "0 L, #geq 2 jets, E_{T}^{miss} > 50 GeV"
         <<: *topline
-      - y: 0.76
+      - x: 0.6
+        y: 0.905
+        size: 8
         label: "Normalized to data"
-        <<: *topline
+        <<: *internal
     canvas:
       width: 500
       height: 500
@@ -159,21 +166,29 @@ plots:
       xmin: 0
       xmax: 1
       ymin: 0
-      ymax: 3500
+      ymax: 1000
       ylabel: Jets
       xlabel: "Top Tag, Tight"
       ytitleoffset: 1.7
-    all/jetsLargeR/sumJetM: {}
-    all/jetsLargeR/energy: {}
-    all/jetsLargeR/Meff: {}
-    all/jetsLargeR/HT: {}
+      exclude: [W+jets]
+    all/jetsLargeR/sumJetM:
+      exclude: [W+jets]
+    all/jetsLargeR/energy:
+      exclude: [W+jets]
+    all/jetsLargeR/Meff:
+      exclude: [W+jets]
+    all/jetsLargeR/HT:
+      exclude: [W+jets]
 #    all/jetsLargeR/TopTagLoose_HT: {}
-    all/jetsLargeR/METSig: {}
+    all/jetsLargeR/METSig:
+      exclude: [W+jets]
 #    all/jetsLargeR/TopTagTight_HT: {}
 #    all/jetsLargeR/TopTagLoose_METSig: {}
-    all/jetsLargeR/rapidity: {}
+    all/jetsLargeR/rapidity:
+      exclude: [W+jets]
 #    all/jetsLargeR/SmoothTopTagLoose_METSig: {}
-    all/jetsLargeR/pt: {}
+    all/jetsLargeR/pt:
+      exclude: [W+jets]
 #    all/jetsLargeR/TopTagLoose_Meff: {}
 #    all/jetsLargeR/SmoothTopTagLoose_Meff: {}
 #    all/jetsLargeR/SmoothTopTagTight_Meff: {}
@@ -182,31 +197,44 @@ plots:
       <<: *topTagConfigs
       canvas: *topTagConfigs_canvas
       texts: *topTagConfigs_texts
+      exclude: [W+jets]
     all/jetsLargeR/TopTagLoose:
       xlabel: "Top Tag, Loose"
       <<: *topTagConfigs
       canvas: *topTagConfigs_canvas
       texts: *topTagConfigs_texts
+      exclude: [W+jets]
 #    all/jetsLargeR/TopTagTight_Meff: {}
-    all/jetsLargeR/phi: {}
+    all/jetsLargeR/phi:
+      exclude: [W+jets]
 #    all/jetsLargeR/TopTagTight_METSig: {}
     all/jetsLargeR/SmoothTopTagTight:
       xlabel: "Smooth Top Tag, Tight"
       <<: *topTagConfigs
       canvas: *topTagConfigs_canvas
       texts: *topTagConfigs_texts
+      exclude: [W+jets]
 #    all/jetsLargeR/SmoothTopTagTight_METSig: {}
-    all/jetsLargeR/MOverPt: {}
-    all/jetsLargeR/multiplicity_particles: {}
-    all/jetsLargeR/j1j3/ptRatio: {}
-    all/jetsLargeR/j1j2/dEta: {}
-    all/jetsLargeR/j1j2/dPhi: {}
-    all/jetsLargeR/j1j2/asymmetry: {}
+    all/jetsLargeR/MOverPt:
+      exclude: [W+jets]
+    all/jetsLargeR/multiplicity_particles:
+      exclude: [W+jets]
+    all/jetsLargeR/j1j3/ptRatio:
+      exclude: [W+jets]
+    all/jetsLargeR/j1j2/dEta:
+      exclude: [W+jets]
+    all/jetsLargeR/j1j2/dPhi:
+      exclude: [W+jets]
+    all/jetsLargeR/j1j2/asymmetry:
+      exclude: [W+jets]
 #    all/jetsLargeR/SmoothTopTagTight_HT: {}
 #    all/jetsLargeR/SmoothTopTagLoose_HT: {}
-    all/jetsLargeR/eta: {}
-    all/jetsLargeR/mass: {}
-    all/jetsLargeR/dPhiMin: {}
+    all/jetsLargeR/eta:
+      exclude: [W+jets]
+    all/jetsLargeR/mass:
+      exclude: [W+jets]
+    all/jetsLargeR/dPhiMin:
+      exclude: [W+jets]
     all/jetLargeR2/TopTagTight:
       xlabel: "Top Tag, Tight"
       <<: *topTagConfigs
