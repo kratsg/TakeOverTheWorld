@@ -130,10 +130,10 @@ plots:
         y: 0.8
         label: "0 L, #geq 2 jets, E_{T}^{miss} > 50 GeV"
         <<: *topline
-      - x: 0.6
+      - x: 0.625
         y: 0.905
         size: 8
-        label: "Normalized to data"
+        label: "Normalized to #rightarrow"
         <<: *internal
     canvas:
       width: 500
