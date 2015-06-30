@@ -128,7 +128,7 @@ plots:
         label: "L_{int} #approx 7 pb^{-1}, #sqrt{s} = 13 TeV"
       -
         y: 0.8
-        label: "0 L, #geq 2 jets, E_{T}^{miss} > 50 GeV"
+        label: "0 L, #geq 4 jets, E_{T}^{miss} > 50 GeV"
         <<: *topline
       - x: 0.625
         y: 0.905
