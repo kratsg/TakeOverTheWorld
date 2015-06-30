@@ -292,6 +292,18 @@ if __name__ == "__main__":
 
         # this is where we would set various parameters of the min, max and so on?
         # need to set things like min, max, change to log, etc for hstack and soloHists
+        normalizeTo = plots_path.get('normalize', plots_config.get('normalize', None))
+        if normalizeTo is not None:
+          dataScale = 0.
+          if normalizeTo not in [hist.title for hist in soloHists]: raise ValueError("Could not find %s as a solo hist for normalizing to." % normalizeTo)
+          for hist in soloHists:
+            if hist.title == normalizeTo: dataScale = hist.integral()
+          mcScale = 0.
+          for hist in hstack:
+            mcScale += hist.integral()
+          normalizeFactor = dataScale/mcScale
+          for hist in hstack:
+            hist.scale(dataScale/mcScale)
 
         # cycle through all draw options and make sure we don't overwrite
         drawOptions = ["same"]*len(soloHists)

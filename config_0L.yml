@@ -111,6 +111,7 @@ groups:
 
 plots:
   config:
+    normalize: data # normalize using data
     texts:
       - *atlas
       - *internal
@@ -123,6 +124,9 @@ plots:
       -
         y: 0.8
         label: "0 L, #geq 2 jets, E_{T}^{miss} > 50 GeV"
+        <<: *topline
+      - y: 0.76
+        label: "Normalized to data"
         <<: *topline
     canvas:
       width: 500
@@ -357,13 +361,13 @@ plots:
     all/jets/energy: {}
     all/jets/Meff:
       ymin: 1
-      ymax: 10000
+      ymax: 50000
       ylabel: Events
     all/jets/HT:
       xlabel: H_{T} [GeV]
       ylabel: Events
       ymin: 1
-      ymax: 5000
+      ymax: 50000
     all/jets/phi: {}
     all/jets/eta: {}
     all/jets/mass: {}
@@ -372,7 +376,7 @@ plots:
     all/jets/rapidity: {}
     all/jets/multiplicity_particles:
       ymin: 1
-      ymax: 40000
+      ymax: 500000
       xlabel: jet multiplicity
       ylabel: Events
     all/jet4/phi: {}
