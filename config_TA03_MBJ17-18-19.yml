@@ -380,34 +380,51 @@ plots:
     all/jet1/eta: {}
     all/jet1/mass: {}
     all/jet1/rapidity: {}
-    all/jets/j1j3/ptRatio: {}
-    all/jets/j1j2/dEta: {}
-    all/jets/j1j2/dPhi: {}
-    all/jets/j1j2/asymmetry: {}
-    all/jets/METSig: {}
-    all/jets/pt: {}
-    all/jets/sumJetM: {}
-    all/jets/energy: {}
+    all/jets/j1j3/ptRatio:
+      exclude: [W+jets]
+    all/jets/j1j2/dEta:
+      exclude: [W+jets]
+    all/jets/j1j2/dPhi:
+      exclude: [W+jets]
+    all/jets/j1j2/asymmetry:
+      exclude: [W+jets]
+    all/jets/METSig:
+      exclude: [W+jets]
+    all/jets/pt:
+      exclude: [W+jets]
+    all/jets/sumJetM:
+      exclude: [W+jets]
+    all/jets/energy:
+      exclude: [W+jets]
     all/jets/Meff:
       ymin: 1
       ymax: 50000
       ylabel: Events
+      exclude: [W+jets]
     all/jets/HT:
       xlabel: H_{T} [GeV]
       ylabel: Events
       ymin: 1
       ymax: 50000
-    all/jets/phi: {}
-    all/jets/eta: {}
-    all/jets/mass: {}
-    all/jets/MOverPt: {}
-    all/jets/dPhiMin: {}
-    all/jets/rapidity: {}
+      exclude: [W+jets]
+    all/jets/phi:
+      exclude: [W+jets]
+    all/jets/eta:
+      exclude: [W+jets]
+    all/jets/mass:
+      exclude: [W+jets]
+    all/jets/MOverPt:
+      exclude: [W+jets]
+    all/jets/dPhiMin:
+      exclude: [W+jets]
+    all/jets/rapidity:
+      exclude: [W+jets]
     all/jets/multiplicity_particles:
       ymin: 1
       ymax: 500000
       xlabel: jet multiplicity
       ylabel: Events
+      exclude: [W+jets]
     all/jet4/phi: {}
     all/jet4/pt: {}
     all/jet4/energy: {}
