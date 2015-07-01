@@ -125,7 +125,7 @@ plots:
         y: 0.84
         font: 43
         size: 15
-        label: "L_{int} #approx 7 pb^{-1}, #sqrt{s} = 13 TeV"
+        label: "#sqrt{s} = 13 TeV, L_{int} #approx 7 pb^{-1}"
       -
         y: 0.8
         label: "0 L, #geq 4 jets, E_{T}^{miss} > 50 GeV"
