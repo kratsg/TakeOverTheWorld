@@ -180,14 +180,14 @@ plots:
       xmin: 0
       xmax: 1
       ylabel: Jets
-      xlabel: "#tau_{21}"
+      xlabel: "#tau_{21}^{large-R}"
       rebin: 2
     all/jetsLargeR/tau32:
       exclude: [W+jets]
       xmin: 0
       xmax: 1
       ylabel: Jets
-      xlabel: "#tau_{32}"
+      xlabel: "#tau_{32}^{large-R}"
       rebin: 2
     all/jetsLargeR/sumJetM:
       exclude: [W+jets]
