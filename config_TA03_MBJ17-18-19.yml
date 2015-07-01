@@ -121,15 +121,18 @@ plots:
       - *atlas
       - *internal
       - &topline
-        x: 0.35
+        x: 0.275
         y: 0.84
         font: 43
-        size: 15
+        size: 12
         label: "#sqrt{s} = 13 TeV, L_{int} #approx 7 pb^{-1}"
       -
-        x: 0.2
         y: 0.8
-        label: "0L, #geq 4 jets, #geq 1 fat jet p_{T} #geq 300 GeV,  E_{T}^{miss} > 50 GeV"
+        label: "0L, #geq 4 jets, E_{T}^{miss} > 50 GeV"
+        <<: *topline
+      -
+        y: 0.76
+        label: "#geq 1 large-R jet p_{T}^{large-R jet} #geq 300 GeV"
         <<: *topline
       - x: 0.625
         y: 0.905
@@ -161,7 +164,7 @@ plots:
         ndivisions: 2
       texts: &topTagConfigs_texts
         -
-          y: 0.76
+          y: 0.72
           label: "p_{T}^{large-R} > 300 GeV"
           <<: *topline
       xmin: 0
@@ -324,10 +327,33 @@ plots:
     all/jetLargeR1/phi: {}
 #    all/jetLargeR1/TopTagTight_METSig: {}
 #    all/jetLargeR1/SmoothTopTagTight_METSig: {}
-    all/jetLargeR1/pt: {}
+    all/jetLargeR1/pt:
+      exclude: [W+jets]
+      xlabel: leading p_{T}^{large-R} [GeV]
+      ylabel: Events
+      ymin: 1
+      ymax: 2500
+      xmin: 0
+      xmax: 1500
 #    all/jetLargeR1/SmoothTopTagLoose_HT: {}
-    all/jetLargeR1/eta: {}
-    all/jetLargeR1/mass: {}
+    all/jetLargeR1/eta:
+      exclude: [W+jets]
+      xlabel: "leading #eta^{large-R}"
+      ylabel: Events
+      ymin: 1
+      ymax: 250
+      xmin: -2
+      xmax: 2
+      rebin: 2
+    all/jetLargeR1/mass:
+      exclude: [W+jets]
+      xlabel: "leading m^{large-R} [GeV]"
+      ylabel: Events
+      ymin: 1
+      ymax: 500
+      xmin: 0
+      xmax: 400
+      rebin: 2
     all/jetLargeR4/TopTagTight:
       canvas:
         logy: false
