@@ -162,7 +162,7 @@ plots:
       texts: &topTagConfigs_texts
         -
           y: 0.76
-          label: "p_{T}^{large} > 300 GeV"
+          label: "p_{T}^{large-R} > 300 GeV"
           <<: *topline
       xmin: 0
       xmax: 1
