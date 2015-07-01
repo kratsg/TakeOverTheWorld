@@ -61,7 +61,7 @@ atlasinternal: &atlasinternal
 groups:
   - name: data
     files:
-      - 0L_data/hist-user.*.*.physics_Main.*.root
+      - TA01_MBJ17-18-19/hist-user.*.*.physics_Main.*.root
     styles:
       legendstyle: p
       color: black
@@ -69,7 +69,7 @@ groups:
 
   - name: dijets
     files:
-      - 0L_19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ*W.*.root
+      - TA01_MBJ19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ*W.*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -77,7 +77,7 @@ groups:
 
   - name: W+jets
     files:
-      - 0L_19/hist-user.mswiatlo.*.PowhegPythia8EvtGen_AZNLOCTEQ6L1_W*nu.*.root
+      - TA01_MBJ19/hist-user.mswiatlo.*.PowhegPythia8EvtGen_AZNLOCTEQ6L1_W*nu.*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -85,7 +85,7 @@ groups:
 
   - name: Z+jets
     files:
-      - 0L_19/hist-user.mswiatlo.*.Sherpa_CT10_Znunu_Pt*_*.*.root
+      - TA01_MBJ19/hist-user.mswiatlo.*.Sherpa_CT10_Znunu_Pt*_*.*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -93,7 +93,7 @@ groups:
 
   - name: "t#bar{t}"
     files:
-      - 0L_19/hist-user.mswiatlo.*.*_ttbar_hdamp172p5_nonallhad.*.root
+      - TA01_MBJ19/hist-user.mswiatlo.*.*_ttbar_hdamp172p5_nonallhad.*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -101,8 +101,8 @@ groups:
 
   - name: single top
     files:
-      - 0L_19/hist-user.mswiatlo.*.*_singletop_tchan_lept_*.*.root
-      - 0L_19/hist-user.mswiatlo.*.*2_Wt_inclusive_*.*.root
+      - TA01_MBJ19/hist-user.mswiatlo.*.*_singletop_tchan_lept_*.*.root
+      - TA01_MBJ19/hist-user.mswiatlo.*.*2_Wt_inclusive_*.*.root
     styles:
       legendstyle: F
       fillstyle: solid
