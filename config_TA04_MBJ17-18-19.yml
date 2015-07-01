@@ -175,6 +175,20 @@ plots:
       xlabel: "Top Tag, Tight"
       ytitleoffset: 1.7
       exclude: [W+jets]
+    all/jetsLargeR/tau21:
+      exclude: [W+jets]
+      xmin: 0
+      xmax: 1
+      ylabel: Jets
+      xlabel: "#tau_{21}"
+      rebin: 2
+    all/jetsLargeR/tau32:
+      exclude: [W+jets]
+      xmin: 0
+      xmax: 1
+      ylabel: Jets
+      xlabel: "#tau_{32}"
+      rebin: 2
     all/jetsLargeR/sumJetM:
       exclude: [W+jets]
     all/jetsLargeR/energy:
