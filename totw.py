@@ -278,6 +278,11 @@ if __name__ == "__main__":
           # add each hist to the legend
           legend.AddEntry(hist)#, style=group.get('legendstyle', 'F'))
 
+          # rebin?
+          rebin = plots_path.get('rebin', None)
+          if rebin is not None:
+            hist.rebin(rebin)
+
           # exclusion, so we don't need to plot it
           if hist.title in plots_path.get('exclude', []): continue
           if group.get('stack it', False):
