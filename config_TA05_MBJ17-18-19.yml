@@ -355,10 +355,12 @@ plots:
       xlabel: "leading #eta^{large-R}"
       ylabel: Events
       ymin: 1
-      ymax: 50000
+      ymax: 850
       xmin: -2
       xmax: 2
-      rebin: 2
+#      rebin: 2
+      canvas:
+        logy: false
     all/jetLargeR1/mass:
       exclude: [W+jets]
       xlabel: "leading m^{large-R} [GeV]"
