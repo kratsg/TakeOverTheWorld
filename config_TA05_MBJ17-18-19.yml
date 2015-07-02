@@ -128,11 +128,11 @@ plots:
         label: "#sqrt{s} = 13 TeV, L_{int} #approx 7 pb^{-1}"
       -
         y: 0.8
-        label: "0L, #geq 4 jets, E_{T}^{miss} > 50 GeV"
+        label: "0L, #geq 2 jets, E_{T}^{miss} > 50 GeV"
         <<: *topline
       -
         y: 0.76
-        label: "#geq 1 large-R jet p_{T}^{large-R jet} #geq 300 GeV"
+        label: "#geq 1 large-R jet p_{T}^{large-R jet} #geq 200 GeV"
         <<: *topline
       - x: 0.625
         y: 0.905
@@ -165,12 +165,12 @@ plots:
       texts: &topTagConfigs_texts
         -
           y: 0.72
-          label: "p_{T}^{large-R} > 300 GeV"
+          label: "p_{T}^{large-R} > 200 GeV"
           <<: *topline
       xmin: 0
       xmax: 1
       ymin: 0
-      ymax: 1000
+      ymax: 25000
       ylabel: Jets
       xlabel: "Top Tag, Tight"
       ytitleoffset: 1.7
@@ -346,7 +346,7 @@ plots:
       xlabel: leading p_{T}^{large-R} [GeV]
       ylabel: Events
       ymin: 1
-      ymax: 2500
+      ymax: 50000
       xmin: 0
       xmax: 1500
 #    all/jetLargeR1/SmoothTopTagLoose_HT: {}
@@ -355,7 +355,7 @@ plots:
       xlabel: "leading #eta^{large-R}"
       ylabel: Events
       ymin: 1
-      ymax: 250
+      ymax: 50000
       xmin: -2
       xmax: 2
       rebin: 2
@@ -364,7 +364,7 @@ plots:
       xlabel: "leading m^{large-R} [GeV]"
       ylabel: Events
       ymin: 1
-      ymax: 500
+      ymax: 50000
       xmin: 0
       xmax: 400
       rebin: 2
@@ -413,7 +413,7 @@ plots:
     all/jet1/phi: {}
     all/jet1/pt:
       ymin: 1
-      ymax: 5000
+      ymax: 50000
       xlabel: Leading jet p_{T} [GeV]
       ylabel: Events
     all/jet1/energy: {}
