@@ -67,12 +67,61 @@ groups:
       color: black
     do not scale me: true
 
-  - name: dijets
+#  - name: dijets
+#    files:
+#      - TA05_MBJ17-18-19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ*W.*.root
+#    styles:
+#      legendstyle: F
+#      fillstyle: solid
+#    stack it: true
+
+#  - name: JZ0W
+#    files:
+#      - TA05_MBJ17-18-19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ0W.*.root
+#    styles:
+#      legendstyle: F
+#    stack it: true
+#
+#  - name: JZ1W
+#    files:
+#      - TA05_MBJ17-18-19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ1W.*.root
+#    styles:
+#      legendstyle: F
+#    stack it: true
+#
+#  - name: JZ2W
+#    files:
+#      - TA05_MBJ17-18-19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ2W.*.root
+#    styles:
+#      legendstyle: F
+#    stack it: true
+
+  - name: JZ3W
     files:
-      - TA05_MBJ17-18-19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ*W.*.root
+      - TA05_MBJ17-18-19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ3W.*.root
     styles:
       legendstyle: F
-      fillstyle: solid
+    stack it: true
+
+  - name: JZ4W
+    files:
+      - TA05_MBJ17-18-19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ4W.*.root
+    styles:
+      legendstyle: F
+    stack it: true
+
+  - name: JZ5W
+    files:
+      - TA05_MBJ17-18-19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ5W.*.root
+    styles:
+      legendstyle: F
+    stack it: true
+
+  - name: JZ6W
+    files:
+      - TA05_MBJ17-18-19/hist-user.mswiatlo.*.Pythia8EvtGen_A14NNPDF23LO_jetjet_JZ6W.*.root
+    styles:
+      legendstyle: F
     stack it: true
 
   - name: W+jets
