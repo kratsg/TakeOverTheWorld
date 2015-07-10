@@ -363,33 +363,33 @@ if __name__ == "__main__":
             ratio.draw()
             #set_minmax(ratio, plots_path)
             #get_axis(ratio, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
-            ratio.set_y_title("Data / MC")
-            get_axis(ratio, 'y').set_label_size(0.025)
-            get_axis(ratio, 'y').set_decimals(True)
-            get_axis(ratio, 'y').set_range_user(0, 10)
-            get_axis(ratio, 'y').SetNdivisions(5)
 
-            oldX = get_axis(hist, 'x')
-            newX = get_axis(ratio, 'x')
+            ratio.yaxis.title = "Data / MC"
+            ratio.yaxis.set_label_size(0.025)
+            ratio.yaxis.set_decimals(True)
+            ratio.yaxis.set_range_user(0, 10)
+            ratio.yaxis.SetNdivisions(5)
 
             # copy over formatting
-            newX.set_label_size(oldX.get_label_size())
-            newX.set_label_color(oldX.get_label_color())
-            newX.set_title_size(oldX.get_title_size())
-            newX.set_title_color(oldX.get_title_color())
+            ratio.xaxis.set_label_size(hstack.xaxis.get_label_size()/canvas.width)
+            ratio.xaxis.set_label_color(hstack.xaxis.get_label_color())
+            ratio.xaxis.set_title_size(hstack.xaxis.get_title_size()/canvas.width)
+            ratio.xaxis.set_title_color(hstack.xaxis.get_title_color())
+
+            ratio.xaxis.set_title_offset(hstack.xaxis.get_title_offset())
+            ratio.yaxis.set_title_offset(hstack.yaxis.get_title_offset())
 
             # clear the xaxis on the histograms
-            oldX.set_label_size(0)
-            oldX.set_label_color(0)
-            oldX.set_title_size(0)
-            oldX.set_title_color(0)
+            hist.xaxis.set_label_size(0)
+            hist.xaxis.set_label_color(0)
+            hist.xaxis.set_title_size(0)
+            hist.xaxis.set_title_color(0)
 
           # clear the xaxis on the stack
-          oldX = get_axis(hstack, 'x')
-          oldX.set_label_size(0)
-          oldX.set_label_color(0)
-          oldX.set_title_size(0)
-          oldX.set_title_color(0)
+          hstack.xaxis.set_label_size(0)
+          hstack.xaxis.set_label_color(0)
+          hstack.xaxis.set_title_size(0)
+          hstack.xaxis.set_title_color(0)
 
         # draw and update all
         legend.Draw()
