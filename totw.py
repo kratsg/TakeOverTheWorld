@@ -51,8 +51,8 @@ import root_numpy as rnp
 import rootpy as rpy
 import matplotlib.pyplot as pl
 from rootpy.io import root_open
-from rootpy.plotting.style import set_style
-from rootpy.plotting import Canvas, Legend, HistStack, Hist
+from rootpy.plotting.style import set_style, get_style
+from rootpy.plotting import Canvas, Legend, HistStack, Hist, Pad
 from rootpy.plotting.hist import _Hist
 from palettable import colorbrewer
 from itertools import cycle, chain
@@ -344,6 +344,53 @@ if __name__ == "__main__":
           label.SetNDC()
           label.Draw()
 
+        # draw the ratio
+        if plots_path.get('ratio', False):
+          canvas.get_pad(0).set_bottom_margin(0.3)
+          p = Pad(0,0,1,1)  # create new pad, fullsize to have equal font-sizes in both plots
+          #p.set_top_margin(1-canvas.get_bottom_margin())  # top-boundary (should be 1-thePad->GetBottomMargin())
+          p.set_top_margin(1-canvas.get_pad(0).get_bottom_margin())  # top-boundary (should be 1-thePad->GetBottomMargin())
+          p.set_right_margin(canvas.get_right_margin())
+          p.set_left_margin(canvas.get_left_margin())
+          p.set_fill_style(0)  # needs to be transparent
+          p.set_gridy(True)
+          p.Draw()
+          p.cd()
+
+          # do ratio for each histogram in solo hist
+          for hist in soloHists:
+            ratio = Hist.divide(hist, sum(hstack))
+            ratio.draw()
+            #set_minmax(ratio, plots_path)
+            #get_axis(ratio, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
+            ratio.set_y_title("Data / MC")
+            get_axis(ratio, 'y').set_label_size(0.025)
+            get_axis(ratio, 'y').set_decimals(True)
+            get_axis(ratio, 'y').set_range_user(0, 10)
+            get_axis(ratio, 'y').SetNdivisions(5)
+
+            oldX = get_axis(hist, 'x')
+            newX = get_axis(ratio, 'x')
+
+            # copy over formatting
+            newX.set_label_size(oldX.get_label_size())
+            newX.set_label_color(oldX.get_label_color())
+            newX.set_title_size(oldX.get_title_size())
+            newX.set_title_color(oldX.get_title_color())
+
+            # clear the xaxis on the histograms
+            oldX.set_label_size(0)
+            oldX.set_label_color(0)
+            oldX.set_title_size(0)
+            oldX.set_title_color(0)
+
+          # clear the xaxis on the stack
+          oldX = get_axis(hstack, 'x')
+          oldX.set_label_size(0)
+          oldX.set_label_color(0)
+          oldX.set_title_size(0)
+          oldX.set_title_color(0)
+
         # draw and update all
         legend.Draw()
         canvas.Modified()
@@ -359,6 +406,8 @@ if __name__ == "__main__":
         print("Saved {0:s} successfully.".format(file_name))
 
         canvas.Close()
+
+        break
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")
