@@ -62,6 +62,8 @@ python totw.py -h
 
 ### Using
 
+If you find that you get a `Too many open files` error, try setting your limit of files open for reading higher: `ulimit -n #####`.
+
 ### Profiling Code
 
 This is one of those pieces of python code we always want to run as fast as possible. TakeOverTheWorld should not take long. To figure out those dead-ends, I use [snakeviz](https://jiffyclub.github.io/snakeviz/). The `requirements.txt` file contains this dependency. To run it, I first profile the code by running it:
