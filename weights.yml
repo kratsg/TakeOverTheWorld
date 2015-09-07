@@ -480,13 +480,13 @@ default: &default_weights
   errors: []
   filter efficiency: 0.009219475090503693
   k-factor: 1.0
-  num events: 3.778378101647945
+  num events: 4000000
 '410000':
   cross section: 831.760009765625
   errors: []
   filter efficiency: 0.5429999828338623
   k-factor: 1.0
-  num events: 70080689.0
+  num events: 19958779.0
 '410003':
   cross section: 831.760009765625
   errors: []
