@@ -252,7 +252,7 @@ if __name__ == "__main__":
             scaleFactor *= weight.get('cross section')
             scaleFactor *= weight.get('filter efficiency')
             scaleFactor *= weight.get('k-factor')
-            scaleFactor *= weights.get('global_luminosity')
+            scaleFactor *= weights.get('global_luminosity')*1000
             hist.scale(scaleFactor)
             logger.info("Scale factor for %s: %0.6f" % (did, scaleFactor))
 
@@ -406,6 +406,7 @@ if __name__ == "__main__":
         print("Saved {0:s} successfully.".format(file_name))
 
         canvas.Close()
+        del canvas
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")
