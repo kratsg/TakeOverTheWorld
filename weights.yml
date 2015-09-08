@@ -2,6 +2,7 @@
 # units:
 # ifb for luminosity
 # pb for cross-section
+global_luminosity: 1
 
 # default: # here we specify the global defaults, usually used for varying luminosity
 #   cross section: 1.0
@@ -480,7 +481,7 @@ default: &default_weights
   errors: []
   filter efficiency: 0.009219475090503693
   k-factor: 1.0
-  num events: 4000000
+  num events: 5.205934904456512
 '410000':
   cross section: 831.760009765625
   errors: []
