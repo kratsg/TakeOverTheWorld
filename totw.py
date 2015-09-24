@@ -214,10 +214,10 @@ if __name__ == "__main__":
         hall.append(hc)
 
       set_style('ATLAS')
-      for h in (h for h in hall.walk() if h.path in plots_paths):
+      for h in hall.walk():#(h for h in hall.walk() if h.path in plots_paths):
         # get the configurations for the given path
         # this is the current path
-        plots_path = plots_paths.get(h.path)
+        plots_path = plots_paths.get(h.path, {})
 
         # create new canvas
         canvasConfigs = copy.copy(plots_config.get('canvas', {}))
