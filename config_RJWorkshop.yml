@@ -62,7 +62,7 @@ groups:
 
   - name: "t#bar{t}"
     files:
-      - /Users/kratsg/Dropbox/HarvardJigsawWorkshop/code/RJWorkshopNtuple/RJ_GG_onestep/RJ_ttbar*.root
+      - /Users/kratsg/Dropbox/ChicagoRJWorkshop/RJ_GG_onestep/RJ_ttbar*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -71,7 +71,7 @@ groups:
 
   - name: &normalize "m_{#tilde{g}} = 1000, m_{#tilde{#chi}} = 1"
     files:
-      - /Users/kratsg/Dropbox/HarvardJigsawWorkshop/code/RJWorkshopNtuple/RJ_GG_onestep/1000_5000_1.root
+      - /Users/kratsg/Dropbox/ChicagoRJWorkshop/RJ_GG_onestep/1000_5000_1.root
     styles:
       legendstyle: p
     stack it: false
@@ -79,7 +79,7 @@ groups:
 
   - name: "m_{#tilde{g}} = 2000, m_{#tilde{#chi}} = 1400"
     files:
-      - /Users/kratsg/Dropbox/HarvardJigsawWorkshop/code/RJWorkshopNtuple/RJ_GG_onestep/2000_5000_1400.root
+      - /Users/kratsg/Dropbox/ChicagoRJWorkshop/RJ_GG_onestep/2000_5000_1400.root
     styles:
       legendstyle: p
     stack it: false
@@ -87,7 +87,7 @@ groups:
 
   - name: "m_{#tilde{g}} = 1400, m_{#tilde{#chi}} = 1045"
     files:
-      - /Users/kratsg/Dropbox/HarvardJigsawWorkshop/code/RJWorkshopNtuple/RJ_GG_onestep/1400_5000_1045.root
+      - /Users/kratsg/Dropbox/ChicagoRJWorkshop/RJ_GG_onestep/1400_5000_1045.root
     styles:
       legendstyle: p
     stack it: false
@@ -121,11 +121,133 @@ plots:
       logy: true
       ndivisions: 505
     legend:
-      leftmargin: 0.525
+      leftmargin: 0.400
       topmargin: 0.025
       rightmargin: 0.075
       textsize: 14
       entrysep: 0.01
       entryheight: 0.02
 
-  paths: {}
+  paths:
+    all/cosP:
+      xlabel: "cos(#theta_{P})"
+    all/cosPP:
+      xlabel: "cos(#theta_{P,P})"
+    all/cosV1a:
+      xlabel: "cos(#theta_{V_{1a}})"
+    all/cosV1b:
+      xlabel: "cos(#theta_{V_{1b}})"
+    all/cosV2a:
+      xlabel: "cos(#theta_{V_{2a}})"
+    all/cosV2b:
+      xlabel: "cos(#theta_{V_{2b}})"
+    all/deltaQCD:
+      xlabel: "#Delta_{QCD}"
+    all/dphi:
+      xlabel: "#Delta#phi"
+    all/dphiCV2a:
+      xlabel: "#Delta#phi_{C,V_{2a}}"
+    all/dphiCV2b:
+      xlabel: "#Delta#phi_{C,V_{2b}}"
+    all/dphiPCa:
+      xlabel: "#Delta#phi_{P,C_{a}}"
+    all/dphiPCb:
+      xlabel: "#Delta#phi_{P,C_{b}}"
+    all/dphiPPV:
+      xlabel: "#Delta#phi_{P,P_{V}}"
+    all/dphiPV1a:
+      xlabel: "#Delta#phi_{P,V_{1a}}"
+    all/dphiPV1b:
+      xlabel: "#Delta#phi_{P,V_{1b}}"
+    all/dphiR:
+      xlabel: "#Delta#phi_{R}"
+    all/dphiVP:
+      xlabel: "#Delta#phi_{V,P}"
+    all/gaminvPP:
+      xlabel: "1/#gamma_{P,P}"
+    all/H2Ca:
+      xlabel: "H^{2}_{C_{a}}"
+    all/H2Cb:
+      xlabel: "H^{2}_{C_{b}}"
+    all/H2Pa:
+      xlabel: "H^{2}_{P_{a}}"
+    all/H2Pb:
+      xlabel: "H^{2}_{P_{b}}"
+    all/H2PP:
+      xlabel: "H^{2}_{P,P}"
+    all/H3Ca:
+      xlabel: "H^{3}_{C_{a}}"
+    all/H3Cb:
+      xlabel: "H^{3}_{C_{b}}"
+    all/H3Pa:
+      xlabel: "H^{3}_{P_{a}}"
+    all/H3Pb:
+      xlabel: "H^{3}_{P_{b}}"
+    all/H3PP:
+      xlabel: "H^{3}_{P,P}"
+    all/H4Pa:
+      xlabel: "H^{4}_{P_{a}}"
+    all/H4Pb:
+      xlabel: "H^{4}_{P_{b}}"
+    all/H4PP:
+      xlabel: "H^{4}_{P,P}"
+    all/H5Pa:
+      xlabel: "H^{5}_{P_{a}}"
+    all/H5Pb:
+      xlabel: "H^{5}_{P_{b}}"
+    all/H6PP:
+      xlabel: "H^{6}_{P,P}"
+    all/MDR:
+      xlabel: "m^{#Delta}_{R}"
+    all/Meff:
+      xlabel: "m_{eff}"
+    all/MET:
+      xlabel: "MET"
+    all/MP:
+      xlabel: "M_{P}"
+    all/Nbjet:
+      xlabel: "n. b-jets"
+    all/NJ1a:
+      xlabel: "N_{J_{1a}}"
+    all/NJ1b:
+      xlabel: "N_{J_{1b}}"
+    all/NJ2a:
+      xlabel: "N_{J_{2a}}"
+    all/NJ2b:
+      xlabel: "N_{J_{2b}}"
+    all/NJa:
+      xlabel: "N_{J_{a}}"
+    all/NJb:
+      xlabel: "N_{J_{b}}"
+    all/NJet:
+      xlabel: "n. jets"
+    all/Ntop:
+      xlabel: "n. tops"
+    all/PP_VisShape:
+      xlabel: "P,P vis. shape"
+    all/pT_jet1:
+      xlabel: "p_{T} jet_{1}"
+    all/pT_jet1a:
+      xlabel: "p_{T} jet_{1a}"
+    all/pT_jet1b:
+      xlabel: "p_{T} jet_{1b}"
+    all/pT_jet2:
+      xlabel: "p_{T} jet_{2}"
+    all/pT_jet2a:
+      xlabel: "p_{T} jet_{2a}"
+    all/pT_jet2b:
+      xlabel: "p_{T} jet_{2b}"
+    all/pT_jet3:
+      xlabel: "p_{T} jet_{3}"
+    all/pT_jet4:
+      xlabel: "p_{T} jet_{4}"
+    all/pT_jet5:
+      xlabel: "p_{T} jet_{5}"
+    all/pT_jet6:
+      xlabel: "p_{T} jet_{6}"
+    all/RPT:
+      xlabel: "R_{p_{T}}"
+    all/RPZ:
+      xlabel: "R_{p_{Z}}/(R_{p_{Z}} + H^{6}_{P,P})"
+    all/Rsib:
+      xlabel: "R_{sib}"
