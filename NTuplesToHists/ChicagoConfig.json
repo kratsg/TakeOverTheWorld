@@ -1,0 +1,438 @@
+{
+    "cuts": [{"cut": "1", "name": "default"},
+             {"cut": "Nbjet >= 3", "name": "geq3b"},
+             {"cut": "Nbjet >= 4", "name": "geq4b"},
+             {"cut": "Nbjet >= 5", "name": "geq5b"},
+             {"cut": "Ntop >= 2", "name": "geq2t"},
+             {"cut": "Ntop >= 3", "name": "geq3t"}
+            ],
+    "draw": [
+        {
+            "draw": "Rsib",
+            "max": 1,
+            "min": 0,
+            "name": "Rsib",
+            "nbins": 100
+        },
+        {
+            "draw": "deltaQCD",
+            "max": 1,
+            "min": -1,
+            "name": "deltaQCD",
+            "nbins": 100
+        },
+        {
+            "draw": "RPT",
+            "max": 1,
+            "min": 0,
+            "name": "RPT",
+            "nbins": 100
+        },
+        {
+            "draw": "RPZ/(RPZ+H6PP)",
+            "max": 1,
+            "min": 0,
+            "name": "RPZ",
+            "nbins": 100
+        },
+        {
+            "draw": "MDR",
+            "max": 10000,
+            "min": 0,
+            "name": "MDR",
+            "nbins": 100
+        },
+        {
+            "draw": "MP",
+            "max": 5000,
+            "min": 0,
+            "name": "MP",
+            "nbins": 100
+        },
+        {
+            "draw": "PP_VisShape",
+            "max": 1,
+            "min": 0,
+            "name": "PP_VisShape",
+            "nbins": 100
+        },
+        {
+            "draw": "gaminvPP",
+            "max": 1,
+            "min": 0,
+            "name": "gaminvPP",
+            "nbins": 100
+        },
+        {
+            "draw": "cosPP",
+            "max": 1,
+            "min": -1,
+            "name": "cosPP",
+            "nbins": 100
+        },
+        {
+            "draw": "dphiVP",
+            "max": 3.1415926,
+            "min": 0,
+            "name": "dphiVP",
+            "nbins": 100
+        },
+        {
+            "draw": "dphiPPV",
+            "max": 3.1415926,
+            "min": 0,
+            "name": "dphiPPV",
+            "nbins": 100
+        },
+        {
+            "draw": "cosP",
+            "max": 1,
+            "min": -1,
+            "name": "cosP",
+            "nbins": 100
+        },
+        {
+            "draw": "H2PP",
+            "max": 8000,
+            "min": 0,
+            "name": "H2PP",
+            "nbins": 100
+        },
+        {
+            "draw": "H3PP",
+            "max": 10000,
+            "min": 0,
+            "name": "H3PP",
+            "nbins": 100
+        },
+        {
+            "draw": "H4PP",
+            "max": 12000,
+            "min": 0,
+            "name": "H4PP",
+            "nbins": 100
+        },
+        {
+            "draw": "H6PP",
+            "max": 14000,
+            "min": 0,
+            "name": "H6PP",
+            "nbins": 100
+        },
+        {
+            "draw": "H2Pa",
+            "max": 6000,
+            "min": 0,
+            "name": "H2Pa",
+            "nbins": 100
+        },
+        {
+            "draw": "H2Pb",
+            "max": 6000,
+            "min": 0,
+            "name": "H2Pb",
+            "nbins": 100
+        },
+        {
+            "draw": "H3Pa",
+            "max": 6000,
+            "min": 0,
+            "name": "H3Pa",
+            "nbins": 100
+        },
+        {
+            "draw": "H3Pb",
+            "max": 6000,
+            "min": 0,
+            "name": "H3Pb",
+            "nbins": 100
+        },
+        {
+            "draw": "H4Pa",
+            "max": 6000,
+            "min": 0,
+            "name": "H4Pa",
+            "nbins": 100
+        },
+        {
+            "draw": "H4Pb",
+            "max": 6000,
+            "min": 0,
+            "name": "H4Pb",
+            "nbins": 100
+        },
+        {
+            "draw": "H5Pa",
+            "max": 6000,
+            "min": 0,
+            "name": "H5Pa",
+            "nbins": 100
+        },
+        {
+            "draw": "H5Pb",
+            "max": 6000,
+            "min": 0,
+            "name": "H5Pb",
+            "nbins": 100
+        },
+        {
+            "draw": "H2Ca",
+            "max": 6000,
+            "min": 0,
+            "name": "H2Ca",
+            "nbins": 100
+        },
+        {
+            "draw": "H2Cb",
+            "max": 6000,
+            "min": 0,
+            "name": "H2Cb",
+            "nbins": 100
+        },
+        {
+            "draw": "H3Ca",
+            "max": 6000,
+            "min": 0,
+            "name": "H3Ca",
+            "nbins": 100
+        },
+        {
+            "draw": "H3Cb",
+            "max": 6000,
+            "min": 0,
+            "name": "H3Cb",
+            "nbins": 100
+        },
+        {
+            "draw": "dphiPCa",
+            "max": 6.28318,
+            "min": 0,
+            "name": "dphiPCa",
+            "nbins": 100
+        },
+        {
+            "draw": "dphiPCb",
+            "max": 6.28318,
+            "min": 0,
+            "name": "dphiPCb",
+            "nbins": 100
+        },
+        {
+            "draw": "dphiPV1a",
+            "max": 6.28318,
+            "min": 0,
+            "name": "dphiPV1a",
+            "nbins": 100
+        },
+        {
+            "draw": "dphiPV1b",
+            "max": 6.28318,
+            "min": 0,
+            "name": "dphiPV1b",
+            "nbins": 100
+        },
+        {
+            "draw": "cosV1a",
+            "max": 1,
+            "min": -1,
+            "name": "cosV1a",
+            "nbins": 100
+        },
+        {
+            "draw": "cosV1b",
+            "max": 1,
+            "min": -1,
+            "name": "cosV1b",
+            "nbins": 100
+        },
+        {
+            "draw": "dphiCV2a",
+            "max": 6.28318,
+            "min": 0,
+            "name": "dphiCV2a",
+            "nbins": 100
+        },
+        {
+            "draw": "dphiCV2b",
+            "max": 6.28318,
+            "min": 0,
+            "name": "dphiCV2b",
+            "nbins": 100
+        },
+        {
+            "draw": "cosV2a",
+            "max": 1,
+            "min": -1,
+            "name": "cosV2a",
+            "nbins": 100
+        },
+        {
+            "draw": "cosV2b",
+            "max": 1,
+            "min": -1,
+            "name": "cosV2b",
+            "nbins": 100
+        },
+        {
+            "draw": "MET",
+            "max": 10000,
+            "min": 0,
+            "name": "MET",
+            "nbins": 100
+        },
+        {
+            "draw": "Meff",
+            "max": 14000,
+            "min": 0,
+            "name": "Meff",
+            "nbins": 100
+        },
+        {
+            "draw": "dphi",
+            "max": 3.1415926,
+            "min": 0,
+            "name": "dphi",
+            "nbins": 100
+        },
+        {
+            "draw": "dphiR",
+            "max": 3.1415926,
+            "min": 0,
+            "name": "dphiR",
+            "nbins": 100
+        },
+        {
+            "draw": "NJet",
+            "max": 39.5,
+            "min": -0.5,
+            "name": "NJet",
+            "nbins": 40
+        },
+        {
+            "draw": "NJa",
+            "max": 19.5,
+            "min": -0.5,
+            "name": "NJa",
+            "nbins": 20
+        },
+        {
+            "draw": "NJb",
+            "max": 19.5,
+            "min": -0.5,
+            "name": "NJb",
+            "nbins": 20
+        },
+        {
+            "draw": "NJ1a",
+            "max": 19.5,
+            "min": -0.5,
+            "name": "NJ1a",
+            "nbins": 20
+        },
+        {
+            "draw": "NJ1b",
+            "max": 19.5,
+            "min": -0.5,
+            "name": "NJ1b",
+            "nbins": 20
+        },
+        {
+            "draw": "NJ2a",
+            "max": 19.5,
+            "min": -0.5,
+            "name": "NJ2a",
+            "nbins": 20
+        },
+        {
+            "draw": "NJ2b",
+            "max": 19.5,
+            "min": -0.5,
+            "name": "NJ2b",
+            "nbins": 20
+        },
+        {
+            "draw": "Nbjet",
+            "max": 19.5,
+            "min": -0.5,
+            "name": "Nbjet",
+            "nbins": 20
+        },
+        {
+            "draw": "Ntop",
+            "max": 19.5,
+            "min": -0.5,
+            "name": "Ntop",
+            "nbins": 20
+        },
+        {
+            "draw": "pT_jet1",
+            "max": 5000,
+            "min": 0,
+            "name": "pT_jet1",
+            "nbins": 100
+        },
+        {
+            "draw": "pT_jet2",
+            "max": 5000,
+            "min": 0,
+            "name": "pT_jet2",
+            "nbins": 100
+        },
+        {
+            "draw": "pT_jet3",
+            "max": 10000,
+            "min": 0,
+            "name": "pT_jet3",
+            "nbins": 100
+        },
+        {
+            "draw": "pT_jet4",
+            "max": 5000,
+            "min": 0,
+            "name": "pT_jet4",
+            "nbins": 100
+        },
+        {
+            "draw": "pT_jet5",
+            "max": 5000,
+            "min": 0,
+            "name": "pT_jet5",
+            "nbins": 100
+        },
+        {
+            "draw": "pT_jet6",
+            "max": 5000,
+            "min": 0,
+            "name": "pT_jet6",
+            "nbins": 100
+        },
+        {
+            "draw": "pT_jet1a",
+            "max": 5000,
+            "min": 0,
+            "name": "pT_jet1a",
+            "nbins": 100
+        },
+        {
+            "draw": "pT_jet2a",
+            "max": 5000,
+            "min": 0,
+            "name": "pT_jet2a",
+            "nbins": 100
+        },
+        {
+            "draw": "pT_jet1b",
+            "max": 5000,
+            "min": 0,
+            "name": "pT_jet1b",
+            "nbins": 100
+        },
+        {
+            "draw": "pT_jet2b",
+            "max": 5000,
+            "min": 0,
+            "name": "pT_jet2b",
+            "nbins": 100
+        }
+    ]
+}

@@ -214,10 +214,22 @@ if __name__ == "__main__":
         hall.append(hc)
 
       set_style('ATLAS')
-      for h in (h for h in hall.walk() if h.path in plots_paths):
+      for h in hall.walk():#(h for h in hall.walk() if h.path in plots_paths):
         # get the configurations for the given path
         # this is the current path
-        plots_path = plots_paths.get(h.path)
+
+        # continue going up in the path until we find a non-empty dict
+        plots_path = None
+        topLevelPath = h.path
+        while True:
+          # non-empty dict, so break
+          if plots_paths.get(topLevelPath, {}):
+            break
+          topLevelPath = os.path.dirname(topLevelPath)
+          # top level path empty so break
+          if not topLevelPath:
+            break
+        plots_path = plots_paths.get(topLevelPath, {})
 
         # create new canvas
         canvasConfigs = copy.copy(plots_config.get('canvas', {}))
