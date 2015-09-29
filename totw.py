@@ -171,6 +171,8 @@ if __name__ == "__main__":
   parser.add_argument('--config', required=True, type=str, dest='config_file', metavar='<file.yml>', help='YAML file specifying input files and asssociated names')
   parser.add_argument('--weights', required=True, type=str, dest='weights_file', metavar='<file.yml>', help='YAML file specifying the weights by dataset id')
 
+  parser.add_argument('-i', '--input', dest='topLevel', type=str, help='Top level directory containing plots.', default='all')
+
   # parse the arguments, throw errors if missing any
   args = parser.parse_args()
 
@@ -202,7 +204,7 @@ if __name__ == "__main__":
       # all paths to plot
       plots_paths = plots.get('paths')
 
-      hall = ph.HChain("all")
+      hall = ph.HChain(args.topLevel)
       for group in configs['groups']:
         hc = ph.HGroup(group['name'])
         logger.log(25, "Group: {0:s}".format(group['name']))
@@ -291,7 +293,7 @@ if __name__ == "__main__":
           legend.AddEntry(hist)#, style=group.get('legendstyle', 'F'))
 
           # rebin?
-          rebin = plots_path.get('rebin', None)
+          rebin = plots_path.get('rebin', plots_config.get('rebin', None))
           if rebin is not None:
             hist.rebin(rebin)
 
