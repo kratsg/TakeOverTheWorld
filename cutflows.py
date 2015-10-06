@@ -78,7 +78,6 @@ class CutFlow(Hist, object):
   def __lt__(self, other):
     return self.n > other.n
 
-
 def printCutflow(name,cuts):
   # convert to list, sort by nentries
   mylist = [ ]
@@ -269,7 +268,6 @@ if __name__ == "__main__":
       noRaw     = args.noraw
       noErrors  = args.noerrors
 
-
       files = [ ]
       accepts = [ ]
       excludes = [ ]
@@ -294,6 +292,7 @@ if __name__ == "__main__":
       if len(files) == 0:
         raise ValueError("No files were specified")
 
+      cuts = {}
       for filename in files:
         f = root_open(f)
         for cutflow in f.cutflow:
@@ -304,11 +303,14 @@ if __name__ == "__main__":
           if sum(bool(p.match(cutflow.name)) for p in excludes) != 0:
             continue
 
-          readCutflow(cutflow, {})
+          cutflow = CutFlow(cutflow)
+          try:
+            cuts[cutflow.name] += CutFlow(cutflow)
+          except:
+            cuts[cutflow.name] = CutFlow(cutflow)
 
         f.close()
-
-      printCutflow(ana,cuts)
+      printCutflow("Foo",cuts)
 
       print("Accept regexps (OR'ed):")
       for regexp in accepts:
