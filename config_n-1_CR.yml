@@ -59,55 +59,55 @@ atlasinternal: &atlasinternal
 #   - color (sets markercolor, fillcolor, linecolor)
 
 groups:
+  - name: data
+    files:
+      - TA01_MBJ13V5/data_1L/fetch/data-optimizationTree/*.root
+    styles:
+      legendstyle: p
+      color: black
+    do not scale me: true
 
   - name: "t#bar{t}"
     files:
-      - /Users/kratsg/Dropbox/TheAccountant_dataFiles/TA07_MBJ10V5/ttbar*_1L/fetch/data-optimizationTree/user.*410000*r6765_r6282*.root
-      - /Users/kratsg/Dropbox/TheAccountant_dataFiles/TA07_MBJ10V5/ttbar*_1L/fetch/data-optimizationTree/user.*407012*r6765_r6282*p2411*.root
+      - TA01_MBJ13V5/ttbarInc_1L/fetch/data-optimizationTree/*410000*.root
+      - TA01_MBJ13V5/ttbarExc_1L/fetch/data-optimizationTree/*407012*.root
     styles:
       legendstyle: F
       fillstyle: solid
     stack it: true
 
-  # 370108
-  - name: "m_{#tilde{g}} = 1000, m_{#tilde{#chi}} = 645"
+  - name: dijets
     files:
-      - /Users/kratsg/Dropbox/TheAccountant_dataFiles/TA07_MBJ10V5/Gtt_1L/fetch/data-optimizationTree/user.*370108*.root
+      - TA01_MBJ13V5/dijets_1L/fetch/data-optimizationTree/*.root
     styles:
-      legendstyle: p
-    stack it: false
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
 
-  # 370129
-  - name: "m_{#tilde{g}} = 1400, m_{#tilde{#chi}} = 1"
+  - name: W+jets
     files:
-      - /Users/kratsg/Dropbox/TheAccountant_dataFiles/TA07_MBJ10V5/Gtt_1L/fetch/data-optimizationTree/user.*370129*.root
+      - TA01_MBJ13V5/Wsherpa_1L/fetch/data-optimizationTree/*.root
     styles:
-      legendstyle: p
-    stack it: false
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
 
-  # 370132
-  - name: "m_{#tilde{g}} = 1400, m_{#tilde{#chi}} = 400"
+  - name: Z+jets
     files:
-      - /Users/kratsg/Dropbox/TheAccountant_dataFiles/TA07_MBJ10V5/Gtt_1L/fetch/data-optimizationTree/user.*370132*.root
+      - TA01_MBJ13V5/Zsherpa_1L/fetch/data-optimizationTree/*.root
     styles:
-      legendstyle: p
-    stack it: false
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
 
-  # 370161
-  - name: "m_{#tilde{g}} = 1800, m_{#tilde{#chi}} = 200"
+  - name: single top
     files:
-      - /Users/kratsg/Dropbox/TheAccountant_dataFiles/TA07_MBJ10V5/Gtt_1L/fetch/data-optimizationTree/user.*370161*.root
+      - TA01_MBJ13V5/singletop_1L/fetch/data-optimizationTree/*.root
+      - TA01_MBJ13V5/topEW_1L/fetch/data-optimizationTree/*.root
     styles:
-      legendstyle: p
-    stack it: false
-
-  # 370185
-  - name: "m_{#tilde{g}} = 2000, m_{#tilde{#chi}} = 1400"
-    files:
-      - /Users/kratsg/Dropbox/TheAccountant_dataFiles/TA07_MBJ10V5/Gtt_1L/fetch/data-optimizationTree/user.*370185*.root
-    styles:
-      legendstyle: p
-    stack it: false
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
 
 # plots:
 #   config:  # here we set global configurations that are applied uniformly such as...
@@ -125,7 +125,7 @@ plots:
         y: 0.84
         font: 43
         size: 18
-        label: "#sqrt{s} = 13 TeV, L_{int} #approx 4 fb^{-1}"
+        label: "#sqrt{s} = 13 TeV, L_{int} #approx 2 fb^{-1}"
     canvas:
       width: 650
       height: 500
