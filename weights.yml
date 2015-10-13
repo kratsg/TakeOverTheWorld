@@ -2,7 +2,7 @@
 # units:
 # ifb for luminosity
 # pb for cross-section
-global_luminosity: 2
+global_luminosity: 0.543
 
 # default: # here we specify the global defaults, usually used for varying luminosity
 #   cross section: 1.0
