@@ -125,7 +125,7 @@ plots:
         y: 0.84
         font: 43
         size: 18
-        label: "#sqrt{s} = 13 TeV, L_{int} #approx 2 fb^{-1}"
+        label: "#sqrt{s} = 13 TeV, L_{int} #approx 0.543 fb^{-1}"
     canvas:
       width: 650
       height: 500
@@ -151,6 +151,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "m_{T}^{b}"
+      ratio: true
     n-1/CR-1/m_effective:
       rebin: 4
       canvas:
@@ -164,6 +165,7 @@ plots:
       ymax: 30
       ylabel: events
       xlabel: "m_{eff}"
+      ratio: true
     n-1/CR-1/met:
       rebin: 4
       canvas:
@@ -177,6 +179,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "#slash{E}_{T}"
+      ratio: true
     n-1/CR-1/multiplicity_jet:
       rebin: 1
       texts:
@@ -188,6 +191,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "# of jets"
+      ratio: true
     n-1/CR-1/multiplicity_jet_b:
       rebin: 1
       texts:
@@ -201,6 +205,7 @@ plots:
       xlabel: "# of #it{b}-jets"
       xmin: 0
       xmax: 10
+      ratio: true
     n-1/CR-1/n_tops:
       rebin: 1
       texts:
@@ -212,6 +217,7 @@ plots:
       ymax: 30
       ylabel: events
       xlabel: "# of tops (veryloose)"
+      ratio: true
     n-1/CR-1/m_transverse:
       rebin: 1
       texts:
@@ -223,6 +229,7 @@ plots:
       ymax: 50
       ylabel: events
       xlabel: "m_{T}"
+      ratio: true
     n-1/CR-2/mTb:
       rebin: 4
       texts:
@@ -234,6 +241,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "m_{T}^{b}"
+      ratio: true
     n-1/CR-2/m_effective:
       rebin: 4
       canvas:
@@ -247,6 +255,7 @@ plots:
       ymax: 30
       ylabel: events
       xlabel: "m_{eff}"
+      ratio: true
     n-1/CR-2/met:
       rebin: 4
       canvas:
@@ -260,6 +269,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "#slash{E}_{T}"
+      ratio: true
     n-1/CR-2/multiplicity_jet:
       rebin: 1
       texts:
@@ -271,6 +281,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "# of jets"
+      ratio: true
     n-1/CR-2/multiplicity_jet_b:
       rebin: 1
       texts:
@@ -284,6 +295,7 @@ plots:
       xlabel: "# of #it{b}-jets"
       xmin: 0
       xmax: 10
+      ratio: true
     n-1/CR-2/n_tops:
       rebin: 1
       texts:
@@ -295,6 +307,7 @@ plots:
       ymax: 30
       ylabel: events
       xlabel: "# of tops (veryloose)"
+      ratio: true
     n-1/CR-2/m_transverse:
       rebin: 1
       texts:
@@ -306,6 +319,7 @@ plots:
       ymax: 50
       ylabel: events
       xlabel: "m_{T}"
+      ratio: true
     n-1/CR-3/mTb:
       rebin: 4
       texts:
@@ -317,6 +331,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "m_{T}^{b}"
+      ratio: true
     n-1/CR-3/m_effective:
       rebin: 4
       canvas:
@@ -330,6 +345,7 @@ plots:
       ymax: 30
       ylabel: events
       xlabel: "m_{eff}"
+      ratio: true
     n-1/CR-3/met:
       rebin: 4
       canvas:
@@ -343,6 +359,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "#slash{E}_{T}"
+      ratio: true
     n-1/CR-3/multiplicity_jet:
       rebin: 1
       texts:
@@ -354,6 +371,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "# of jets"
+      ratio: true
     n-1/CR-3/multiplicity_jet_b:
       rebin: 1
       texts:
@@ -367,6 +385,7 @@ plots:
       xlabel: "# of #it{b}-jets"
       xmin: 0
       xmax: 10
+      ratio: true
     n-1/CR-3/n_tops:
       rebin: 1
       texts:
@@ -378,6 +397,7 @@ plots:
       ymax: 30
       ylabel: events
       xlabel: "# of tops (veryloose)"
+      ratio: true
     n-1/CR-3/m_transverse:
       rebin: 1
       texts:
@@ -389,6 +409,7 @@ plots:
       ymax: 50
       ylabel: events
       xlabel: "m_{T}"
+      ratio: true
     n-1/CR-4/mTb:
       rebin: 4
       texts:
@@ -400,6 +421,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "m_{T}^{b}"
+      ratio: true
     n-1/CR-4/m_effective:
       rebin: 4
       canvas:
@@ -413,6 +435,7 @@ plots:
       ymax: 30
       ylabel: events
       xlabel: "m_{eff}"
+      ratio: true
     n-1/CR-4/met:
       rebin: 4
       canvas:
@@ -426,6 +449,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "#slash{E}_{T}"
+      ratio: true
     n-1/CR-4/multiplicity_jet:
       rebin: 1
       texts:
@@ -437,6 +461,7 @@ plots:
       ymax: 300
       ylabel: events
       xlabel: "# of jets"
+      ratio: true
     n-1/CR-4/multiplicity_jet_b:
       rebin: 1
       texts:
@@ -450,6 +475,7 @@ plots:
       xlabel: "# of #it{b}-jets"
       xmin: 0
       xmax: 10
+      ratio: true
     n-1/CR-4/n_tops:
       rebin: 1
       texts:
@@ -461,6 +487,7 @@ plots:
       ymax: 30
       ylabel: events
       xlabel: "# of tops (veryloose)"
+      ratio: true
     n-1/CR-4/m_transverse:
       rebin: 1
       texts:
@@ -472,3 +499,4 @@ plots:
       ymax: 50
       ylabel: events
       xlabel: "m_{T}"
+      ratio: true
