@@ -212,7 +212,11 @@ if __name__ == "__main__":
           logger.log(25, "\tPattern: {0:s}".format(f))
           for fname in glob.glob(f):
             logger.log(25, "\t\tAdding {0:s}".format(fname))
-            hc.append(root_open(fname))
+            rootFile = root_open(fname)
+            hc.append(rootFile)
+        if len(hc) == 0:
+          raise ValueError("{0:s} has no files loaded.".format(group['name']))
+        logger.log(25, "\tAdding {0:s}".format(hc))
         hall.append(hc)
 
       set_style('ATLAS')
