@@ -78,7 +78,7 @@ groups:
 
   - name: dijets
     files:
-      - TA01_MBJ13V5/dijets_1L/fetch/data-optimizationTree/*.root
+      - TA01_MBJ13V5/dijet_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
