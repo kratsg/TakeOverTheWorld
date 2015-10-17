@@ -103,6 +103,13 @@ groups:
   - name: single top
     files:
       - TA01_MBJ13V4/singletop_0L/fetch/data-optimizationTree/*.root
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: top EW
+    files:
       - TA01_MBJ13V4/topEW_0L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
