@@ -61,7 +61,7 @@ atlasinternal: &atlasinternal
 groups:
   - name: data
     files:
-      - TA01_MBJ13V5/data_1L/fetch/data-optimizationTree/*.root
+      - TA01_MBJ13V4/data_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: p
       color: black
@@ -69,8 +69,8 @@ groups:
 
   - name: "t#bar{t}"
     files:
-      - TA01_MBJ13V5/ttbarInc_1L/fetch/data-optimizationTree/*410000*.root
-      - TA01_MBJ13V5/ttbarExc_1L/fetch/data-optimizationTree/*407012*.root
+      - TA01_MBJ13V4/ttbarInc_1L/fetch/data-optimizationTree/*410000*.root
+      - TA01_MBJ13V4/ttbarExc_1L/fetch/data-optimizationTree/*407012*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -78,7 +78,7 @@ groups:
 
   - name: dijets
     files:
-      - TA01_MBJ13V5/dijet_1L/fetch/data-optimizationTree/*.root
+      - TA01_MBJ13V4/dijet_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -86,7 +86,7 @@ groups:
 
   - name: W+jets
     files:
-      - TA01_MBJ13V5/Wsherpa_1L/fetch/data-optimizationTree/*.root
+      - TA01_MBJ13V4/Wsherpa_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -94,7 +94,7 @@ groups:
 
   - name: Z+jets
     files:
-      - TA01_MBJ13V5/Zsherpa_1L/fetch/data-optimizationTree/*.root
+      - TA01_MBJ13V4/Zsherpa_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -102,8 +102,15 @@ groups:
 
   - name: single top
     files:
-      - TA01_MBJ13V5/singletop_1L/fetch/data-optimizationTree/*.root
-      - TA01_MBJ13V5/topEW_1L/fetch/data-optimizationTree/*.root
+      - TA01_MBJ13V4/singletop_1L/fetch/data-optimizationTree/*.root
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: top EW
+    files:
+      - TA01_MBJ13V4/topEW_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
