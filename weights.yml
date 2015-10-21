@@ -74,6 +74,48 @@ default: &default_weights
   filter efficiency: 0.010161999613046646
   k-factor: 1.0
   num events: 1741825.0
+"361081":
+  cross section: 25.9950008392334,
+  errors: [],
+  filter efficiency: 1.0,
+  k-factor: 1.0,
+  num events: 359086.96001780033
+"361082":
+  cross section: 25.974000930786133,
+  errors: [],
+  filter efficiency: 1.0,
+  k-factor: 1.0,
+  num events: 358334.2736404687
+"361083":
+  cross section: 12.543000221252441,
+  errors: [],
+  filter efficiency: 1.0,
+  k-factor: 1.0,
+  num events: 188351.1103552729
+"361084":
+  cross section: 3.7583000659942627,
+  errors: [],
+  filter efficiency: 1.0,
+  k-factor: 1.0,
+  num events: 18724.998305797577
+"361085":
+  cross section: 7.41510009765625,
+  errors: [],
+  filter efficiency: 1.0,
+  k-factor: 1.0,
+  num events: 66636.6145453155
+"361086":
+  cross section: 16.59000015258789,
+  errors: [],
+  filter efficiency: 0.14252999424934387,
+  k-factor: 1.0,
+  num events: 65018.14877583459
+"361087":
+  cross section: 16.492000579833984,
+  errors: [],
+  filter efficiency: 0.28095999360084534,
+  k-factor: 1.0,
+  num events: 97797.29559563473
 '361300':
   cross section: 21283.0
   errors: []
