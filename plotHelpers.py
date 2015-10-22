@@ -112,6 +112,7 @@ class HChain(HistsCollection):
   def __init__(self, top=None):
     super(self.__class__, self).__init__()
     self._relpath = top
+    self._keys = None
 
   @property
   def isHists(self):
@@ -129,8 +130,10 @@ class HChain(HistsCollection):
   def __getitem__(self, index):
     return super(self.__class__, self).__getitem__(index)
 
-  def keys(self):
-    return set.intersection(*map(lambda x: x.keys(), self))
+  def keys(self, regen=False):
+    if self._keys is None or regen:
+      self._keys = set.intersection(*map(lambda x: x.keys(), self))
+    return self._keys
 
   def __getattr__(self, attr):
     if attr in self._subviews:

@@ -220,7 +220,10 @@ if __name__ == "__main__":
         hall.append(hc)
 
       set_style('ATLAS')
-      for h in (h for h in hall.walk() if h.path in plots_paths):#hall.walk()
+      #for h in (h for h in hall.walk() if h.path in plots_paths):#hall.walk()
+      for path in plots_paths.keys():
+        #path = (path.split('/')).remove(args.topLevel)
+        h = reduce(lambda x,y: getattr(x, y, None), (item for item in path.split('/') if item != args.topLevel), hall)
         # get the configurations for the given path
         # this is the current path
 
@@ -435,3 +438,6 @@ if __name__ == "__main__":
       ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")
 
     logger.exception("{0}\nAn exception was caught!".format("-"*20))
+
+  # here we close it all
+  map(lambda hgroup: map(lambda hist: hist.get_file().close(), hgroup), hall)
