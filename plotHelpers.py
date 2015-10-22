@@ -47,7 +47,7 @@ class HistsCollection(list, _DirectoryBase):
     if not isinstance(keys, set):
       keys = map(lambda x: x.GetName(), keys)
     if self._relpath is not None and self._relpath not in keys:
-      raise ValueError("%s instance does not have %s\n\t%s" % (self.__class__.__name__, self._relpath, self))
+      raise ValueError("%s instance does not have %s\n\t%s <- %s" % (self.__class__.__name__, self._relpath, self, self._parent))
 
   def add(self, root_file):
     return self.append(root_file)
