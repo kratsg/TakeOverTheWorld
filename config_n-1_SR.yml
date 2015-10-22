@@ -100,9 +100,19 @@ groups:
       fillstyle: solid
     stack it: true
 
-  - name: single top
+  - name: "1-top: t-channel"
     files:
-      - TA01_MBJ13V4/singletop_0L/fetch/data-optimizationTree/*.root
+      - TA01_MBJ13V4/singletop_0L/fetch/data-optimizationTree/*410011*.root
+      - TA01_MBJ13V4/singletop_0L/fetch/data-optimizationTree/*410012*.root
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "1-top: Wt-inclusive"
+    files:
+      - TA01_MBJ13V4/singletop_0L/fetch/data-optimizationTree/*410013*.root
+      - TA01_MBJ13V4/singletop_0L/fetch/data-optimizationTree/*410014*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -136,7 +146,7 @@ plots:
     canvas:
       width: 650
       height: 500
-      logy: true
+      logy: false
       ndivisions: 505
     legend:
       leftmargin: 0.425
@@ -154,8 +164,8 @@ plots:
           y: 0.8
           label: "SR1"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 0.5
       ylabel: events
       xlabel: "m_{T}^{b}"
     n-1/SR-1/m_effective:
@@ -168,7 +178,7 @@ plots:
           label: "SR1"
           <<: *topline
       ymin: 0.01
-      ymax: 30
+      ymax: 2
       ylabel: events
       xlabel: "m_{eff}"
     n-1/SR-1/met:
@@ -181,7 +191,7 @@ plots:
           label: "SR1"
           <<: *topline
       ymin: 0.01
-      ymax: 300
+      ymax: 2
       ylabel: events
       xlabel: "#slash{E}_{T}"
     n-1/SR-1/multiplicity_jet:
@@ -191,8 +201,8 @@ plots:
           y: 0.8
           label: "SR1"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 0.5
       ylabel: events
       xlabel: "# of jets"
     n-1/SR-1/multiplicity_jet_b:
@@ -202,8 +212,8 @@ plots:
           y: 0.8
           label: "SR1"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 3
       ylabel: events
       xlabel: "# of #it{b}-jets"
       xmin: 0
@@ -215,8 +225,8 @@ plots:
           y: 0.8
           label: "SR1"
           <<: *topline
-      ymin: 0.01
-      ymax: 30
+      ymin: 0
+      ymax: 0.5
       ylabel: events
       xlabel: "# of tops (veryloose)"
     n-1/SR-2/mTb:
@@ -226,8 +236,8 @@ plots:
           y: 0.8
           label: "SR2"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 0.75
       ylabel: events
       xlabel: "m_{T}^{b}"
     n-1/SR-2/m_effective:
@@ -240,7 +250,7 @@ plots:
           label: "SR2"
           <<: *topline
       ymin: 0.01
-      ymax: 30
+      ymax: 2
       ylabel: events
       xlabel: "m_{eff}"
     n-1/SR-2/met:
@@ -253,7 +263,7 @@ plots:
           label: "SR2"
           <<: *topline
       ymin: 0.01
-      ymax: 300
+      ymax: 5
       ylabel: events
       xlabel: "#slash{E}_{T}"
     n-1/SR-2/multiplicity_jet:
@@ -263,8 +273,8 @@ plots:
           y: 0.8
           label: "SR2"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 0.75
       ylabel: events
       xlabel: "# of jets"
     n-1/SR-2/multiplicity_jet_b:
@@ -274,8 +284,8 @@ plots:
           y: 0.8
           label: "SR2"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 1.5
       ylabel: events
       xlabel: "# of #it{b}-jets"
       xmin: 0
@@ -287,8 +297,8 @@ plots:
           y: 0.8
           label: "SR3"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 0.75
       ylabel: events
       xlabel: "m_{T}^{b}"
     n-1/SR-3/m_effective:
@@ -301,7 +311,7 @@ plots:
           label: "SR3"
           <<: *topline
       ymin: 0.01
-      ymax: 30
+      ymax: 2
       ylabel: events
       xlabel: "m_{eff}"
     n-1/SR-3/met:
@@ -314,7 +324,7 @@ plots:
           label: "SR3"
           <<: *topline
       ymin: 0.01
-      ymax: 300
+      ymax: 3
       ylabel: events
       xlabel: "#slash{E}_{T}"
     n-1/SR-3/multiplicity_jet:
@@ -324,8 +334,8 @@ plots:
           y: 0.8
           label: "SR3"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 0.5
       ylabel: events
       xlabel: "# of jets"
     n-1/SR-2/n_tops:
@@ -335,8 +345,8 @@ plots:
           y: 0.8
           label: "SR2"
           <<: *topline
-      ymin: 0.01
-      ymax: 30
+      ymin: 0
+      ymax: 0.5
       ylabel: events
       xlabel: "# of tops (veryloose)"
     n-1/SR-3/multiplicity_jet_b:
@@ -346,8 +356,8 @@ plots:
           y: 0.8
           label: "SR3"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 2
       ylabel: events
       xlabel: "# of #it{b}-jets"
       xmin: 0
@@ -359,8 +369,8 @@ plots:
           y: 0.8
           label: "SR4"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 0.5
       ylabel: events
       xlabel: "m_{T}^{b}"
     n-1/SR-4/m_effective:
@@ -373,7 +383,7 @@ plots:
           label: "SR4"
           <<: *topline
       ymin: 0.01
-      ymax: 30
+      ymax: 1
       ylabel: events
       xlabel: "m_{eff}"
     n-1/SR-4/met:
@@ -386,7 +396,7 @@ plots:
           label: "SR4"
           <<: *topline
       ymin: 0.01
-      ymax: 300
+      ymax: 2
       ylabel: events
       xlabel: "#slash{E}_{T}"
     n-1/SR-4/multiplicity_jet:
@@ -396,8 +406,8 @@ plots:
           y: 0.8
           label: "SR4"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 0.2
       ylabel: events
       xlabel: "# of jets"
     n-1/SR-3/n_tops:
@@ -407,8 +417,8 @@ plots:
           y: 0.8
           label: "SR3"
           <<: *topline
-      ymin: 0.01
-      ymax: 30
+      ymin: 0
+      ymax: 0.5
       ylabel: events
       xlabel: "# of tops (veryloose)"
     n-1/SR-4/multiplicity_jet_b:
@@ -418,8 +428,8 @@ plots:
           y: 0.8
           label: "SR4"
           <<: *topline
-      ymin: 0.01
-      ymax: 300
+      ymin: 0
+      ymax: 0.75
       ylabel: events
       xlabel: "# of #it{b}-jets"
       xmin: 0
@@ -431,7 +441,7 @@ plots:
           y: 0.8
           label: "SR4"
           <<: *topline
-      ymin: 0.01
-      ymax: 30
+      ymin: 0
+      ymax: 1.25
       ylabel: events
       xlabel: "# of tops (veryloose)"
