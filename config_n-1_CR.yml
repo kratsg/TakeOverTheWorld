@@ -213,7 +213,7 @@ plots:
       xmin: 0
       xmax: 10
       ratio: true
-    n-1/CR-1/n_tops:
+    n-1/CR-1/multiplicity_topTag_veryloose:
       rebin: 1
       texts:
         -
@@ -303,7 +303,7 @@ plots:
       xmin: 0
       xmax: 10
       ratio: true
-    n-1/CR-2/n_tops:
+    n-1/CR-2/multiplicity_topTag_veryloose:
       rebin: 1
       texts:
         -
@@ -393,7 +393,7 @@ plots:
       xmin: 0
       xmax: 10
       ratio: true
-    n-1/CR-3/n_tops:
+    n-1/CR-3/multiplicity_topTag_veryloose:
       rebin: 1
       texts:
         -
@@ -483,7 +483,7 @@ plots:
       xmin: 0
       xmax: 10
       ratio: true
-    n-1/CR-4/n_tops:
+    n-1/CR-4/multiplicity_topTag_veryloose:
       rebin: 1
       texts:
         -

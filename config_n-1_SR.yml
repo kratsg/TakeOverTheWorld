@@ -226,7 +226,7 @@ plots:
       xlabel: "# of #it{b}-jets"
       xmin: 0
       xmax: 10
-    n-1/SR-1/n_tops:
+    n-1/SR-1/multiplicity_topTag_veryloose:
       rebin: 1
       texts:
         -
@@ -346,7 +346,7 @@ plots:
       ymax: 0.5
       ylabel: events
       xlabel: "# of jets"
-    n-1/SR-2/n_tops:
+    n-1/SR-2/multiplicity_topTag_veryloose:
       rebin: 1
       texts:
         -
@@ -418,7 +418,7 @@ plots:
       ymax: 0.2
       ylabel: events
       xlabel: "# of jets"
-    n-1/SR-3/n_tops:
+    n-1/SR-3/multiplicity_topTag_veryloose:
       rebin: 1
       texts:
         -
@@ -442,7 +442,7 @@ plots:
       xlabel: "# of #it{b}-jets"
       xmin: 0
       xmax: 10
-    n-1/SR-4/n_tops:
+    n-1/SR-4/multiplicity_topTag_veryloose:
       rebin: 1
       texts:
         -
