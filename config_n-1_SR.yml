@@ -61,7 +61,7 @@ atlasinternal: &atlasinternal
 groups:
 #  - name: data
 #    files:
-#      - TA02_MBJ13V4_2/data_0L/fetch/data-optimizationTree/*.root
+#      - TA02_MBJ13V4-6/data_0L/fetch/data-optimizationTree/*.root
 #    styles:
 #      legendstyle: p
 #      color: black
@@ -69,8 +69,8 @@ groups:
 
   - name: "t#bar{t}"
     files:
-      - TA02_MBJ13V4_2/ttbarInc_0L/fetch/data-optimizationTree/*410000*.root
-      - TA02_MBJ13V4_2/ttbarExc_0L/fetch/data-optimizationTree/*407012*.root
+      - TA02_MBJ13V4-6/ttbarInc_0L/fetch/data-optimizationTree/*410000*.root
+      - TA02_MBJ13V4-6/ttbarExc_0L/fetch/data-optimizationTree/*407012*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -78,7 +78,7 @@ groups:
 
   - name: dijets
     files:
-      - TA02_MBJ13V4_2/dijet_0L/fetch/data-optimizationTree/*.root
+      - TA02_MBJ13V4-6/dijet_0L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -86,7 +86,7 @@ groups:
 
   - name: W+jets
     files:
-      - TA02_MBJ13V4_2/Wsherpa_0L/fetch/data-optimizationTree/*.root
+      - TA02_MBJ13V4-6/Wsherpa_0L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -94,7 +94,7 @@ groups:
 
   - name: Z+jets
     files:
-      - TA02_MBJ13V4_2/Zsherpa_0L/fetch/data-optimizationTree/*.root
+      - TA02_MBJ13V4-6/Zsherpa_0L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -102,8 +102,8 @@ groups:
 
   - name: "1-top: t-channel"
     files:
-      - TA02_MBJ13V4_2/singletop_0L/fetch/data-optimizationTree/*410011*.root
-      - TA02_MBJ13V4_2/singletop_0L/fetch/data-optimizationTree/*410012*.root
+      - TA02_MBJ13V4-6/singletop_0L/fetch/data-optimizationTree/*410011*.root
+      - TA02_MBJ13V4-6/singletop_0L/fetch/data-optimizationTree/*410012*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -111,8 +111,8 @@ groups:
 
   - name: "1-top: Wt-inclusive"
     files:
-      - TA02_MBJ13V4_2/singletop_0L/fetch/data-optimizationTree/*410013*.root
-      - TA02_MBJ13V4_2/singletop_0L/fetch/data-optimizationTree/*410014*.root
+      - TA02_MBJ13V4-6/singletop_0L/fetch/data-optimizationTree/*410013*.root
+      - TA02_MBJ13V4-6/singletop_0L/fetch/data-optimizationTree/*410014*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -120,7 +120,7 @@ groups:
 
   - name: top EW
     files:
-      - TA02_MBJ13V4_2/topEW_0L/fetch/data-optimizationTree/*.root
+      - TA02_MBJ13V4-6/topEW_0L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -128,7 +128,7 @@ groups:
 
   - name: diboson
     files:
-      - TA02_MBJ13V4_2/diboson_0L/fetch/data-optimizationTree/*.root
+      - TA02_MBJ13V4-6/diboson_0L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid

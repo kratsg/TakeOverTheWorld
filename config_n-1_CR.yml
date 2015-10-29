@@ -61,7 +61,7 @@ atlasinternal: &atlasinternal
 groups:
   - name: data
     files:
-      - TA01_MBJ13V4/data_1L/fetch/data-optimizationTree/*.root
+      - TA02_MBJ13V4-6/data_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: p
       color: black
@@ -69,8 +69,8 @@ groups:
 
   - name: "t#bar{t}"
     files:
-      - TA01_MBJ13V4/ttbarInc_1L/fetch/data-optimizationTree/*410000*.root
-      - TA01_MBJ13V4/ttbarExc_1L/fetch/data-optimizationTree/*407012*.root
+      - TA02_MBJ13V4-6/ttbarInc_1L/fetch/data-optimizationTree/*410000*.root
+      - TA02_MBJ13V4-6/ttbarExc_1L/fetch/data-optimizationTree/*407012*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -78,7 +78,7 @@ groups:
 
   - name: dijets
     files:
-      - TA01_MBJ13V4/dijet_1L/fetch/data-optimizationTree/*.root
+      - TA02_MBJ13V4-6/dijet_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -86,7 +86,7 @@ groups:
 
   - name: W+jets
     files:
-      - TA01_MBJ13V4/Wsherpa_1L/fetch/data-optimizationTree/*.root
+      - TA02_MBJ13V4-6/Wsherpa_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -94,7 +94,7 @@ groups:
 
   - name: Z+jets
     files:
-      - TA01_MBJ13V4/Zsherpa_1L/fetch/data-optimizationTree/*.root
+      - TA02_MBJ13V4-6/Zsherpa_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -102,7 +102,7 @@ groups:
 
   - name: single top
     files:
-      - TA01_MBJ13V4/singletop_1L/fetch/data-optimizationTree/*.root
+      - TA02_MBJ13V4-6/singletop_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -110,7 +110,7 @@ groups:
 
   - name: top EW
     files:
-      - TA01_MBJ13V4/topEW_1L/fetch/data-optimizationTree/*.root
+      - TA02_MBJ13V4-6/topEW_1L/fetch/data-optimizationTree/*.root
     styles:
       legendstyle: F
       fillstyle: solid
@@ -147,18 +147,6 @@ plots:
       entryheight: 0.02
 
   paths:
-    n-1/CR-1/mTb:
-      rebin: 4
-      texts:
-        -
-          y: 0.8
-          label: "CR1"
-          <<: *topline
-      ymin: 0.01
-      ymax: 300
-      ylabel: events
-      xlabel: "m_{T}^{b}"
-      ratio: true
     n-1/CR-1/m_effective:
       rebin: 4
       canvas:
@@ -236,18 +224,6 @@ plots:
       ymax: 50
       ylabel: events
       xlabel: "m_{T}"
-      ratio: true
-    n-1/CR-2/mTb:
-      rebin: 4
-      texts:
-        -
-          y: 0.8
-          label: "CR2"
-          <<: *topline
-      ymin: 0.01
-      ymax: 300
-      ylabel: events
-      xlabel: "m_{T}^{b}"
       ratio: true
     n-1/CR-2/m_effective:
       rebin: 4
@@ -327,18 +303,6 @@ plots:
       ylabel: events
       xlabel: "m_{T}"
       ratio: true
-    n-1/CR-3/mTb:
-      rebin: 4
-      texts:
-        -
-          y: 0.8
-          label: "CR3"
-          <<: *topline
-      ymin: 0.01
-      ymax: 300
-      ylabel: events
-      xlabel: "m_{T}^{b}"
-      ratio: true
     n-1/CR-3/m_effective:
       rebin: 4
       canvas:
@@ -416,18 +380,6 @@ plots:
       ymax: 50
       ylabel: events
       xlabel: "m_{T}"
-      ratio: true
-    n-1/CR-4/mTb:
-      rebin: 4
-      texts:
-        -
-          y: 0.8
-          label: "CR4"
-          <<: *topline
-      ymin: 0.01
-      ymax: 300
-      ylabel: events
-      xlabel: "m_{T}^{b}"
       ratio: true
     n-1/CR-4/m_effective:
       rebin: 4
