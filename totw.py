@@ -388,7 +388,7 @@ if __name__ == "__main__":
             ratio.yaxis.title = "Data / MC"
             ratio.yaxis.set_label_size(0.025)
             ratio.yaxis.set_decimals(True)
-            ratio.yaxis.set_range_user(0, 5)
+            ratio.yaxis.set_range_user(0, 2)
             ratio.yaxis.SetNdivisions(5)
 
             # copy over formatting
