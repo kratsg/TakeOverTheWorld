@@ -132,7 +132,7 @@ plots:
         y: 0.84
         font: 43
         size: 18
-        label: "#sqrt{s} = 13 TeV, L_{int} #approx 1.7 fb^{-1}"
+        label: "#sqrt{s} = 13 TeV, L_{int} #approx 1.03 fb^{-1}"
     canvas:
       width: 650
       height: 500
@@ -214,7 +214,7 @@ plots:
       xlabel: "# of tops (veryloose)"
       ratio: true
     n-1/CR-1/m_transverse:
-      rebin: 1
+      rebin: 4
       texts:
         -
           y: 0.8
@@ -292,7 +292,7 @@ plots:
       xlabel: "# of tops (veryloose)"
       ratio: true
     n-1/CR-2/m_transverse:
-      rebin: 1
+      rebin: 4
       texts:
         -
           y: 0.8
@@ -370,7 +370,7 @@ plots:
       xlabel: "# of tops (veryloose)"
       ratio: true
     n-1/CR-3/m_transverse:
-      rebin: 1
+      rebin: 4
       texts:
         -
           y: 0.8
@@ -448,7 +448,7 @@ plots:
       xlabel: "# of tops (veryloose)"
       ratio: true
     n-1/CR-4/m_transverse:
-      rebin: 1
+      rebin: 4
       texts:
         -
           y: 0.8
