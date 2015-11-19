@@ -54,7 +54,7 @@ from rootpy.io import root_open
 from rootpy.plotting.style import set_style, get_style
 from rootpy.plotting import Canvas, Legend, HistStack, Hist, Pad
 from rootpy.plotting.hist import _Hist
-from palettable import colorbrewer
+from palettable import colorbrewer, tableau
 from itertools import cycle, chain
 import copy
 import re
@@ -278,7 +278,7 @@ if __name__ == "__main__":
             logger.info("Scale factor for %s: %0.6f" % (did, scaleFactor))
 
         # set a list of colors to loop through if not set
-        default_colors = cycle(colorbrewer.qualitative.Paired_10.colors)
+        default_colors = cycle(tableau.BlueRed_12.colors)
         hists = map(lambda hgroup: hgroup.flatten, h)
         soloHists = []
         stackHists = []
