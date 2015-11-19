@@ -1,0 +1,261 @@
+---
+# we can have text properties which specify what text to draw (think atlas, prelim, internal)
+# NOTE indentation matters
+#   # this one pulls in all of the reference that's pre-defined
+#   texts:
+#     - *atlas
+#   # this one merges the &internal with the current hash so everything but the label is the same
+#   texts:
+#     - label: preliminary
+#       <<: *internal
+#   texts:
+#     - x: <position>
+#       y: <position>
+#       font: <number> (for SetTextFont(...))
+#       size: <number> (for SetTextSize(...))
+#       label: <string> (what to actually say)
+atlas: &atlas
+  x: 0.225
+  y: 0.88
+  font: 73
+  size: 25
+  label: ATLAS
+
+internal: &internal
+  x: 0.35
+  font: 43
+  label: Internal
+  <<: *atlas
+
+atlasinternal: &atlasinternal
+  - *atlas
+  - *internal
+
+# top level defines the label / grouping
+# second level is a list of files under that group, one can also specify a wildcard to match files so they all get grouped
+# third level specifies extra information for a given file such as plots to ignore
+# groups:
+#   - name: <group name>
+#     files:
+#       - <a file path or a file pattern to match a set of files>
+#     styles:
+#       <name of style>: <value for style>
+#   - name: <group name>
+#     files: [file1, file2, ...]
+#     styles: {style1: val1, style2: val2, ...}
+
+# styles are set on all hists associated with that group
+# styles:
+#   - drawstyle (passed into Draw(...), think 'same' or 'hist')
+#   - legendstyle (passed into Legend(...), think 'F')
+#   - markercolor (also set with 'color')
+#   - markerstyle
+#   - markersize
+#   - fillcolor (also set with 'color')
+#   - fillstyle
+#   - linecolor (also set with 'color')
+#   - linestyle
+#   - linewidth
+#   - color (sets markercolor, fillcolor, linecolor)
+
+groups:
+#  - name: data
+#    files:
+#      - TA02_MBJ13V4-6/data_0L/fetch/data-optimizationTree/*.root
+#    styles:
+#      legendstyle: p
+#      color: black
+#    do not scale me: true
+
+  - name: "t#bar{t}"
+    files:
+      - TA02_MBJ13V4-6/ttbarInc_0L/fetch/data-optimizationTree/*410000*.root
+      - TA02_MBJ13V4-6/ttbarExc_0L/fetch/data-optimizationTree/*407012*.root
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: dijets
+    files:
+      - TA02_MBJ13V4-6/dijet_0L/fetch/data-optimizationTree/*.root
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: W+jets
+    files:
+      - TA02_MBJ13V4-6/Wsherpa_0L/fetch/data-optimizationTree/*.root
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: Z+jets
+    files:
+      - TA02_MBJ13V4-6/Zsherpa_0L/fetch/data-optimizationTree/*.root
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "1-top: t-channel"
+    files:
+      - TA02_MBJ13V4-6/singletop_0L/fetch/data-optimizationTree/*410011*.root
+      - TA02_MBJ13V4-6/singletop_0L/fetch/data-optimizationTree/*410012*.root
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "1-top: Wt-inclusive"
+    files:
+      - TA02_MBJ13V4-6/singletop_0L/fetch/data-optimizationTree/*410013*.root
+      - TA02_MBJ13V4-6/singletop_0L/fetch/data-optimizationTree/*410014*.root
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: top EW
+    files:
+      - TA02_MBJ13V4-6/topEW_0L/fetch/data-optimizationTree/*.root
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: diboson
+    files:
+      - TA02_MBJ13V4-6/diboson_0L/fetch/data-optimizationTree/*.root
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "m_{#tilde{g}} = 1000, m_{#tilde{#chi}} = 200"
+    files:
+      - TA02_MBJ13V4-6/Gtt_0L/fetch/data-optimizationTree/*370105*.root
+      - TA02_MBJ13V4-6/Gtt_0L/fetch/data-optimizationTree/*370257*.root
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+
+  - name: "m_{#tilde{g}} = 1200, m_{#tilde{#chi}} = 200"
+    files:
+      - TA02_MBJ13V4-6/Gtt_0L/fetch/data-optimizationTree/*370116*.root
+      - TA02_MBJ13V4-6/Gtt_0L/fetch/data-optimizationTree/*370270*.root
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+
+  - name: "m_{#tilde{g}} = 1400, m_{#tilde{#chi}} = 200"
+    files:
+      - TA02_MBJ13V4-6/Gtt_0L/fetch/data-optimizationTree/*370131*.root
+      - TA02_MBJ13V4-6/Gtt_0L/fetch/data-optimizationTree/*370285*.root
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+
+  - name: "m_{#tilde{g}} = 1600, m_{#tilde{#chi}} = 200"
+    files:
+      - TA02_MBJ13V4-6/Gtt_0L/fetch/data-optimizationTree/*370145*.root
+      - TA02_MBJ13V4-6/Gtt_0L/fetch/data-optimizationTree/*370302*.root
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+
+
+# plots:
+#   config:  # here we set global configurations that are applied uniformly such as...
+#     canvas:
+#     legend:
+#     texts:
+
+plots:
+  config:
+    texts:
+      - *atlas
+      - *internal
+      - &topline
+        x: 0.25
+        y: 0.84
+        font: 43
+        size: 18
+        label: "#sqrt{s} = 13 TeV, , L_{int} #approx 1.03 fb^{-1}"
+      -
+        y: 0.8
+        label: "Preselection, signal lepton veto"
+        <<: *topline
+      -
+        y: 0.76
+        label: "#geq 4 jets, #geq 3 #it{b}-jets"
+        <<: *topline
+      -
+        y: 0.72
+        label: "#slash{E}_{T} > 200 GeV, #Delta #Phi_{min} > 0.4"
+        <<: *topline
+
+    canvas:
+      width: 650
+      height: 500
+      logy: true
+      ndivisions: 505
+    legend:
+      leftmargin: 0.425
+      topmargin: 0.025
+      rightmargin: 0.075
+      textsize: 14
+      entrysep: 0.01
+      entryheight: 0.02
+
+  paths:
+    n-1/Presel/met:
+      rebin: 4
+      ymin: 0.01
+      ymax: 50000
+      ylabel: events
+      xlabel: "#slash{E}_{T}"
+    n-1/Presel/multiplicity_jet:
+      rebin: 1
+      xmin: 3
+      xmax: 23
+      ymin: 0.01
+      ymax: 100000
+      ylabel: events
+      xlabel: "# of jets"
+    n-1/Presel/multiplicity_jet_b:
+      rebin: 1
+      ymin: 0.01
+      ymax: 500000
+      ylabel: events
+      xlabel: "# of #it{b}-jets"
+      xmin: 0
+      xmax: 10
+    n-1/Presel/multiplicity_topTag_veryloose:
+      rebin: 1
+      ymin: 0.01
+      ymax: 100000
+      ylabel: events
+      xlabel: "# of tops (veryloose)"
+    n-1/Presel/mTb:
+      rebin: 4
+      ymin: 0.01
+      ymax: 100000
+      ylabel: events
+      xlabel: "m_{T}^{b}"
+    n-1/Presel/m_effective:
+      rebin: 4
+      ymin: 0.01
+      ymax: 100000
+      ylabel: events
+      xlabel: "m_{eff}"
