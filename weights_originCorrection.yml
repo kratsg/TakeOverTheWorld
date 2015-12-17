@@ -27,13 +27,13 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 398400
+  num events: 39.84 #398400 (bump by 1e4 for better scales)
 '301332':
   cross section: 0.008679425
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 399600
+  num events: 39.96 #399600 (bump by 1e4 for better scales)
 '361024':
   cross section: 254627.69153729366
   errors: []
