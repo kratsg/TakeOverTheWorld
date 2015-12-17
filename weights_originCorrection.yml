@@ -1,0 +1,72 @@
+---
+# units:
+# ifb for luminosity
+# pb for cross-section
+global_luminosity: 1.00
+
+# default: # here we specify the global defaults, usually used for varying luminosity
+#   cross section: 1.0
+#   filter efficiency: 1.0
+#   k-factor: 1.0
+#   num events: 1.0
+#   luminosity: 0.5
+# <dataset id>: # specify a dataset id
+#   cross section: 27.8
+#   <<: *default_weights # this will fill in defaults for all but cross section
+
+default: &default_weights
+  cross section: 1.0
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 1.0
+
+# num events from (http://bigpanda.cern.ch/tasks/?workinggroup=perf-jets)
+# the rest from looking up dataset provenances manually
+'301330':
+  cross section: 0.027464500000000003
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 398400
+'301332':
+  cross section: 0.008679425
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 399600
+'361024':
+  cross section: 254627.69153729366
+  errors: []
+  filter efficiency: 0.0005311552710065108
+  k-factor: 1.0
+  num events: 1856483
+'361025':
+  cross section: 4553.489122280779
+  errors: []
+  filter efficiency: 0.0009251015354338599
+  k-factor: 1.0
+  num events: 1991700
+'361026':
+  cross section: 257.5340510766187
+  errors: []
+  filter efficiency: 0.0009410613000000014
+  k-factor: 1.0
+  num events: 1882396 # 1892356 - 9960
+'361027':
+  cross section: 16.214688204356488
+  errors: []
+  filter efficiency: 0.00039361889341347334
+  k-factor: 1.0
+  num events: 1785200
+'361028':
+  cross section: 0.6250240999999995
+  errors: []
+  filter efficiency: 0.010172920456000012
+  k-factor: 1.0
+  num events: 1741825
+'410000':
+  cross section: 696.1390191378407
+  errors: []
+  filter efficiency: 0.5440621128097156
+  k-factor: 1.0
+  num events: 1147974 # 3993768−2845894
