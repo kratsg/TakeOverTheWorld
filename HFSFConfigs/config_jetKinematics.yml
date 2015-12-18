@@ -68,23 +68,23 @@ groups:
       linewidth: 2
     stack it: false
 
-  - name: "Z' (2250)"
-    files:
-      - /Users/kratsg/hists_HFSF2015/fetch/*301330*
-    styles:
-      legendstyle: L
-      drawstyle: hist
-      linewidth: 2
-    stack it: false
-
-  - name: "Z' (2750)"
-    files:
-      - /Users/kratsg/hists_HFSF2015/fetch/*301332*
-    styles:
-      legendstyle: L
-      drawstyle: hist
-      linewidth: 2
-    stack it: false
+#  - name: "Z' (2250)"
+#    files:
+#      - /Users/kratsg/hists_HFSF2015/fetch/*301330*
+#    styles:
+#      legendstyle: L
+#      drawstyle: hist
+#      linewidth: 2
+#    stack it: false
+#
+#  - name: "Z' (2750)"
+#    files:
+#      - /Users/kratsg/hists_HFSF2015/fetch/*301332*
+#    styles:
+#      legendstyle: L
+#      drawstyle: hist
+#      linewidth: 2
+#    stack it: false
 
   - name: "dijet (4W-8W)"
     files:
@@ -104,22 +104,31 @@ groups:
 #     legend:
 #     texts:
 
+defaultTexts:
+  - &topline
+    x: 0.25
+    y: 0.84
+    font: 43
+    size: 18
+    label: "#sqrt{s} = 13 TeV, L_{int} = 1.00 fb^{-1}"
+
+  - &preselectionText
+    y: 0.80
+    font: 43
+    size: 18
+    label: "p_{T}^{jet} #geq 450 GeV"
+    <<: *topline
+
 plots:
   config:
     normalize: *normalize
     texts:
       - *atlas
       - *internal
-      - &topline
-        x: 0.25
-        y: 0.84
-        font: 43
-        size: 18
-        label: "#sqrt{s} = 13 TeV, L_{int} = 1.00 fb^{-1}"
     canvas:
       width: 650
       height: 500
-      logy: true
+      logy: false
       ndivisions: 505
     legend:
       leftmargin: 0.425
@@ -133,39 +142,54 @@ plots:
     kinematics/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetPt:
       ylabel: "truth jets"
       xlabel: "truth jet p_{T} [GeV]"
+      texts: [*preselectionText]
     kinematics/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetEta:
       ylabel: "truth jets"
       xlabel: "truth jet #eta"
+      texts: [*preselectionText]
     kinematics/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetMass:
       ylabel: "truth jets"
       xlabel: "truth jet mass [GeV]"
+      texts: [*preselectionText]
+
 # foo
     kinematics/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetPt:
       ylabel: "normal jets"
       xlabel: "normal jet p_{T} [GeV]"
+      texts: [*preselectionText]
     kinematics/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetEta:
       ylabel: "normal jets"
       xlabel: "normal jet #eta"
+      texts: [*preselectionText]
     kinematics/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetMass:
       ylabel: "normal jets"
       xlabel: "normal jet mass [GeV]"
+      texts: [*preselectionText]
+
 # foo
     kinematics/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetPt:
       ylabel: "pflow jets"
       xlabel: "pflow jet p_{T} [GeV]"
+      texts: [*preselectionText]
     kinematics/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetEta:
       ylabel: "pflow jets"
       xlabel: "pflow jet #eta"
+      texts: [*preselectionText]
     kinematics/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetMass:
       ylabel: "pflow jets"
       xlabel: "pflow jet mass [GeV]"
+      texts: [*preselectionText]
+
 # foo
     kinematics/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetPt:
       ylabel: "origin-corrected jets"
       xlabel: "origin-corrected jet p_{T} [GeV]"
+      texts: [*preselectionText]
     kinematics/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetEta:
       ylabel: "origin-corrected jets"
       xlabel: "origin-corrected jet #eta"
+      texts: [*preselectionText]
     kinematics/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetMass:
       ylabel: "origin-corrected jets"
       xlabel: "origin-corrected jet mass [GeV]"
+      texts: [*preselectionText]

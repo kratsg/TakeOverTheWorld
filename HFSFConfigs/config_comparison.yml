@@ -68,23 +68,23 @@ groups:
       linewidth: 2
     stack it: false
 
-  - name: "Z' (2250)"
-    files:
-      - /Users/kratsg/hists_HFSF2015/fetch/*301330*
-    styles:
-      legendstyle: L
-      drawstyle: hist
-      linewidth: 2
-    stack it: false
-
-  - name: "Z' (2750)"
-    files:
-      - /Users/kratsg/hists_HFSF2015/fetch/*301332*
-    styles:
-      legendstyle: L
-      drawstyle: hist
-      linewidth: 2
-    stack it: false
+#  - name: "Z' (2250)"
+#    files:
+#      - /Users/kratsg/hists_HFSF2015/fetch/*301330*
+#    styles:
+#      legendstyle: L
+#      drawstyle: hist
+#      linewidth: 2
+#    stack it: false
+#
+#  - name: "Z' (2750)"
+#    files:
+#      - /Users/kratsg/hists_HFSF2015/fetch/*301332*
+#    styles:
+#      legendstyle: L
+#      drawstyle: hist
+#      linewidth: 2
+#    stack it: false
 
   - name: "dijet (4W-8W)"
     files:
@@ -104,22 +104,33 @@ groups:
 #     legend:
 #     texts:
 
+defaultTexts:
+  - &topline
+    x: 0.25
+    y: 0.84
+    font: 43
+    size: 18
+    label: "#sqrt{s} = 13 TeV, L_{int} = 1.00 fb^{-1}"
+
+  - &preselectionText
+    y: 0.80
+    font: 43
+    size: 18
+    label: "p_{T}^{jet} #geq 450 GeV"
+    <<: *topline
+
+
 plots:
   config:
     normalize: *normalize
     texts:
       - *atlas
       - *internal
-      - &topline
-        x: 0.25
-        y: 0.84
-        font: 43
-        size: 18
-        label: "#sqrt{s} = 13 TeV, L_{int} = 1.00 fb^{-1}"
+      - *topline
     canvas:
       width: 650
       height: 500
-      logy: true
+      logy: false
       ndivisions: 505
     legend:
       leftmargin: 0.425
@@ -147,262 +158,346 @@ plots:
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(p_{T} [GeV])"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdEta:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#eta)"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetDR:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(R)"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdMass:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(M [GeV])"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau1:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#tau_{1})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau2:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#tau_{2})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau3:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#tau_{3})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau21:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#tau_{21})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau32:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#tau_{32})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau1_wta:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#tau_{1}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau2_wta:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#tau_{2}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau3_wta:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#tau_{3}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau21_wta:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#tau_{21}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#tau_{32}^{wta})"
+      texts: [*preselectionText]
 
 #foo
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
       ylabel: normal v. truth jets
       xlabel: "#Delta(p_{T} [GeV])"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetdEta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdEta:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#eta)"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetDR:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetDR:
       ylabel: normal v. truth jets
       xlabel: "#Delta(R)"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetdMass:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdMass:
       ylabel: normal v. truth jets
       xlabel: "#Delta(M [GeV])"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau1:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau1:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#tau_{1})"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau2:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau2:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#tau_{2})"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau3:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau3:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#tau_{3})"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau21:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau21:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#tau_{21})"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau32:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau32:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#tau_{32})"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau1_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau1_wta:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#tau_{1}^{wta})"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau2_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau2_wta:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#tau_{2}^{wta})"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau3_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau3_wta:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#tau_{3}^{wta})"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau21_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau21_wta:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#tau_{21}^{wta})"
-    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#tau_{32}^{wta})"
+      texts: [*preselectionText]
 
 #foo
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(p_{T} [GeV])"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetdEta:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#eta)"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetDR:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(R)"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetdMass:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(M [GeV])"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau1:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#tau_{1})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau2:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#tau_{2})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau3:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#tau_{3})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau21:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#tau_{21})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau32:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#tau_{32})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau1_wta:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#tau_{1}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau2_wta:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#tau_{2}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau3_wta:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#tau_{3}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau21_wta:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#tau_{21}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#tau_{32}^{wta})"
+      texts: [*preselectionText]
 
 #foo
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
       ylabel: o.c. v. truth jets
       xlabel: "#Delta(p_{T} [GeV])"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetdEta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdEta:
       ylabel: o.c. v. truth jets
       xlabel: "#Delta(#eta)"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetDR:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetDR:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(R)"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetdMass:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdMass:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(M [GeV])"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau1:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau1:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(#tau_{1})"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau2:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau2:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(#tau_{2})"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau3:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau3:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(#tau_{3})"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau21:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau21:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(#tau_{21})"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau32:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau32:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(#tau_{32})"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau1_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau1_wta:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(#tau_{1}^{wta})"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau2_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau2_wta:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(#tau_{2}^{wta})"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau3_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau3_wta:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(#tau_{3}^{wta})"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau21_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau21_wta:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(#tau_{21}^{wta})"
-    comparisons/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(#tau_{32}^{wta})"
+      texts: [*preselectionText]
 
 #foo
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(p_{T} [GeV])"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetdEta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetdEta:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#eta)"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetDR:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetDR:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(R)"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetdMass:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetdMass:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(M [GeV])"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau1:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau1:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#tau_{1})"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau2:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau2:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#tau_{2})"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau3:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau3:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#tau_{3})"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau21:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau21:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#tau_{21})"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau32:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau32:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#tau_{32})"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau1_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau1_wta:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#tau_{1}^{wta})"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau2_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau2_wta:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#tau_{2}^{wta})"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau3_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau3_wta:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#tau_{3}^{wta})"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau21_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau21_wta:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#tau_{21}^{wta})"
-    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#tau_{32}^{wta})"
+      texts: [*preselectionText]
 
 #foo
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
       ylabel: pflow v. o.c. jets
       xlabel: "#Delta(p_{T} [GeV])"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdEta:
       ylabel: pflow v. o.c. jets
       xlabel: "#Delta(#eta)"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetDR:
       ylabel: pflow v. o.c. jets
       xlabel: "#Delta(R)"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdMass:
       ylabel: pflow v. o.c. jets
       xlabel: "#Delta(M [GeV])"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau1:
       ylabel: pflow v. o.c jets
       xlabel: "#Delta(#tau_{1})"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau2:
       ylabel: pflow v. o.c jets
       xlabel: "#Delta(#tau_{2})"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau3:
       ylabel: pflow v. o.c jets
       xlabel: "#Delta(#tau_{3})"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau21:
       ylabel: pflow v. o.c jets
       xlabel: "#Delta(#tau_{21})"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau32:
       ylabel: pflow v. o.c jets
       xlabel: "#Delta(#tau_{32})"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau1_wta:
       ylabel: pflow v. o.c jets
       xlabel: "#Delta(#tau_{1}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau2_wta:
       ylabel: pflow v. o.c jets
       xlabel: "#Delta(#tau_{2}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau3_wta:
       ylabel: pflow v. o.c jets
       xlabel: "#Delta(#tau_{3}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau21_wta:
       ylabel: pflow v. o.c jets
       xlabel: "#Delta(#tau_{21}^{wta})"
+      texts: [*preselectionText]
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
       ylabel: pflow v. o.c jets
       xlabel: "#Delta(#tau_{32}^{wta})"
+      texts: [*preselectionText]
