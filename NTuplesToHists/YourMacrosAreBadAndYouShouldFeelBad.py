@@ -28,34 +28,32 @@ for f in args.files:
   print "\tmaking tdirectory {0}".format(args.outdir)
 
   tree = out_file.get(args.treename)
-  # get list of things to draw
-  for toDraw in config['draw']:
-    try: out_file.rmdir(toDraw['name'])
-    except: pass
-    try: out_file.rm(os.path.join(args.outdir, toDraw['name']))
-    except: pass
-    try: out_file.mkdir(os.path.join(args.outdir, toDraw['name']), recurse=True)
-    except: pass
-    out_file.cd(os.path.join(args.outdir, toDraw['name']))
 
-    # for each thing to draw, we want to apply a selection on them too
-    for cut in config['cuts']:
+  # for each thing to draw, we want to apply a selection on them too
+  for cut in config['cuts']:
+    innerDir = os.path.join(args.outdir, cut['name'])
+    try:
+        out_file.rmdir(innerDir)
+        out_file.rm(innerDir)
+        out_file.mkdir(innerDir, recurse=True)
+        out_file.cd(innerDir)
+    except: pass
+    # get list of things to draw
+    for toDraw in config['draw']:
+      histName = toDraw['name']
+
       histDimension = len(toDraw['draw'].split(':'))
       print "\tmaking {4}D histogram {0}\n\t{1} bins from {2} to {3}".format(toDraw['name'], toDraw['nbins'], toDraw['min'], toDraw['max'], histDimension)
 
-      # delete if exists
-      try: out_file.rm(os.path.join(args.outdir, toDraw['name'], cut['name']))
-      except: pass
-
       if histDimension == 1:
-        h = Hist(toDraw['nbins'], toDraw['min'], toDraw['max'], name=cut['name'])
+        h = Hist(toDraw['nbins'], toDraw['min'], toDraw['max'], name=histName)
       elif histDimension == 2:
         h = Hist2D(toDraw['nbins'][0], toDraw['min'][0], toDraw['max'][0],
-                   toDraw['nbins'][1], toDraw['min'][1], toDraw['max'][1], name=cut['name'])
+                   toDraw['nbins'][1], toDraw['min'][1], toDraw['max'][1], name=histName)
       elif histDimension == 3:
         h = Hist2D(toDraw['nbins'][0], toDraw['min'][0], toDraw['max'][0],
                    toDraw['nbins'][1], toDraw['min'][1], toDraw['max'][1],
-                   toDraw['nbins'][2], toDraw['min'][2], toDraw['max'][2], name=cut['name'])
+                   toDraw['nbins'][2], toDraw['min'][2], toDraw['max'][2], name=histName)
       else:
         raise ValueError('I dunno how to handle {0}'.format(toDraw))
 
