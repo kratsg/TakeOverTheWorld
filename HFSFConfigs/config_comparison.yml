@@ -211,6 +211,10 @@ plots:
       ylabel: normal v. o.c. jets
       xlabel: "#Delta(#tau_{32}^{wta})"
       texts: [*preselectionText]
+    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/numConstituents:
+      ylabel: normal v. o.c. jets
+      xlabel: "#Delta(num. constituents)"
+      texts: [*preselectionText]
 
 #foo
     comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
@@ -268,6 +272,10 @@ plots:
     comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
       ylabel: normal v. truth jets
       xlabel: "#Delta(#tau_{32}^{wta})"
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/numConstituents:
+      ylabel: normal v. truth jets
+      xlabel: "#Delta(num. constituents)"
       texts: [*preselectionText]
 
 #foo
@@ -327,6 +335,10 @@ plots:
       ylabel: normal v. pflow jets
       xlabel: "#Delta(#tau_{32}^{wta})"
       texts: [*preselectionText]
+    comparisons/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/numConstituents:
+      ylabel: normal v. pflow jets
+      xlabel: "#Delta(num. constituents)"
+      texts: [*preselectionText]
 
 #foo
     comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
@@ -384,6 +396,10 @@ plots:
     comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
       ylabel: o.c. v truth jets
       xlabel: "#Delta(#tau_{32}^{wta})"
+      texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/numConstituents:
+      ylabel: o.c. v truth jets
+      xlabel: "#Delta(num. constituents)"
       texts: [*preselectionText]
 
 #foo
@@ -443,6 +459,10 @@ plots:
       ylabel: pflow v. truth jets
       xlabel: "#Delta(#tau_{32}^{wta})"
       texts: [*preselectionText]
+    comparisons/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelectedvAntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/numConstituents:
+      ylabel: pflow v. truth jets
+      xlabel: "#Delta(num. constituents)"
+      texts: [*preselectionText]
 
 #foo
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetdPt:
@@ -500,4 +520,8 @@ plots:
     comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/dTau32_wta:
       ylabel: pflow v. o.c jets
       xlabel: "#Delta(#tau_{32}^{wta})"
+      texts: [*preselectionText]
+    comparisons/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelectedvOriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/numConstituents:
+      ylabel: pflow v. o.c jets
+      xlabel: "#Delta(num. constituents)"
       texts: [*preselectionText]

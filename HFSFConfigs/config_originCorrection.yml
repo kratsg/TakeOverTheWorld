@@ -139,74 +139,11 @@ plots:
       entryheight: 0.02
 
   paths:
-    kinematics/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetPt:
-      ylabel: "truth jets"
-      xlabel: "truth jet p_{T} [GeV]"
+    originCorrection/cluster_centerMag:
+      ylabel: "clusters"
+      xlabel: "cluster center magnitude"
       texts: [*preselectionText]
-    kinematics/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetEta:
-      ylabel: "truth jets"
-      xlabel: "truth jet #eta"
+    originCorrection/vxp_z:
+      ylabel: "events"
+      xlabel: "primary vertex z_{0}"
       texts: [*preselectionText]
-    kinematics/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/jetMass:
-      ylabel: "truth jets"
-      xlabel: "truth jet mass [GeV]"
-      texts: [*preselectionText]
-    kinematics/AntiKt10TruthTrimmedPtFrac5SmallR20JetsSelected/numConstituents:
-      ylabel: "truth jets"
-      xlabel: "num. constituents"
-      texts: [*preselectionText]
-
-# foo
-    kinematics/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetPt:
-      ylabel: "normal jets"
-      xlabel: "normal jet p_{T} [GeV]"
-      texts: [*preselectionText]
-    kinematics/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetEta:
-      ylabel: "normal jets"
-      xlabel: "normal jet #eta"
-      texts: [*preselectionText]
-    kinematics/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetMass:
-      ylabel: "normal jets"
-      xlabel: "normal jet mass [GeV]"
-      texts: [*preselectionText]
-    kinematics/AntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/numConstituents:
-      ylabel: "normal jets"
-      xlabel: "num. constituents"
-      texts: [*preselectionText]
-
-# foo
-    kinematics/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetPt:
-      ylabel: "pflow jets"
-      xlabel: "pflow jet p_{T} [GeV]"
-      texts: [*preselectionText]
-    kinematics/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetEta:
-      ylabel: "pflow jets"
-      xlabel: "pflow jet #eta"
-      texts: [*preselectionText]
-    kinematics/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/jetMass:
-      ylabel: "pflow jets"
-      xlabel: "pflow jet mass [GeV]"
-      texts: [*preselectionText]
-    kinematics/AntiKt10EMCPFlowTrimmedPtFrac5SmallR20JetsSelected/numConstituents:
-      ylabel: "pflow jets"
-      xlabel: "num. constituents"
-      texts: [*preselectionText]
-
-# foo
-    kinematics/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetPt:
-      ylabel: "origin-corrected jets"
-      xlabel: "origin-corrected jet p_{T} [GeV]"
-      texts: [*preselectionText]
-    kinematics/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetEta:
-      ylabel: "origin-corrected jets"
-      xlabel: "origin-corrected jet #eta"
-      texts: [*preselectionText]
-    kinematics/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/jetMass:
-      ylabel: "origin-corrected jets"
-      xlabel: "origin-corrected jet mass [GeV]"
-      texts: [*preselectionText]
-    kinematics/OriginCorrectionAntiKt10LCTopoTrimmedPtFrac5SmallR20JetsSelected/numConstituents:
-      ylabel: "origin-corrected jets"
-      xlabel: "num. constituents"
-      texts: [*preselectionText]
-
