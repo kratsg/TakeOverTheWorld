@@ -32,11 +32,13 @@ for f in args.files:
   # for each thing to draw, we want to apply a selection on them too
   for cut in config['cuts']:
     innerDir = os.path.join(args.outdir, cut['name'])
-    try:
-        out_file.rmdir(innerDir)
-        out_file.rm(innerDir)
-        out_file.mkdir(innerDir, recurse=True)
-        out_file.cd(innerDir)
+    try: out_file.rmdir(innerDir)
+    except: pass
+    try: out_file.rm(innerDir)
+    except: pass
+    try: out_file.mkdir(innerDir, recurse=True)
+    except: pass
+    try: out_file.cd(innerDir)
     except: pass
     # get list of things to draw
     for toDraw in config['draw']:
