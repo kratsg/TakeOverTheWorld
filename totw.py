@@ -274,7 +274,7 @@ if __name__ == "__main__":
             scaleFactor *= weight.get('filter efficiency')
             scaleFactor *= weight.get('k-factor')
             scaleFactor *= weights.get('global_luminosity')*1000
-            scaleFactor *= group.get('scale factor', 1.0)
+            scaleFactor *= groups.get(hgroup.group).get('scale factor', 1.0)
             hist.scale(scaleFactor)
             logger.info("Scale factor for %s: %0.6f" % (did, scaleFactor))
 
