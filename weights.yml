@@ -1350,6 +1350,24 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 10101.759313941002
+'407009':
+  cross section: 831.760009765625
+  errors: []
+  filter efficiency:  0.022921
+  k-factor: 1.0
+  num events: 6.79388891416
+'407010':
+  cross section: 831.760009765625
+  errors: []
+  filter efficiency: 0.003204335
+  k-factor: 1.0
+  num events: 1.34341275298
+'407011':
+  cross section: 831.760009765625
+  errors: []
+  filter efficiency: 0.000565234
+  k-factor: 1.0
+  num events: 0.339896615689
 '407012':
   cross section: 831.760009765625
   filter efficiency: 0.009219475090503693
