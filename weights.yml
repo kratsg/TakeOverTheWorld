@@ -2,7 +2,7 @@
 # units:
 # ifb for luminosity
 # pb for cross-section
-global_luminosity: 3.20
+global_luminosity: 35
 
 # default: # here we specify the global defaults, usually used for varying luminosity
 #   cross section: 1.0
@@ -38,1068 +38,72 @@ default: &default_weights
   filter efficiency: 0.45517000555992126
   k-factor: 1.0
   num events: 506676.0
-'361081':
-  cross section: 25.9950008392334
+'361091':
+  cross section: 24.885000228881836
   errors: []
   filter efficiency: 1.0
   k-factor: 0.9100000262260437
-  num events: 359086.96001780033
-'361082':
-  cross section: 25.974000930786133
+  num events: 390169.1833387464
+'361092':
+  cross section: 24.85700035095215
   errors: []
   filter efficiency: 1.0
   k-factor: 0.9100000262260437
-  num events: 359290.86299844086
-'361083':
-  cross section: 12.543000221252441
+  num events: 477549.86094613373
+'361093':
+  cross section: 11.494000434875488
   errors: []
   filter efficiency: 1.0
   k-factor: 0.9100000262260437
-  num events: 188351.1103552729
-'361084':
-  cross section: 3.7583000659942627
+  num events: 429867.1409405768
+'361094':
+  cross section: 3.4233999252319336
   errors: []
   filter efficiency: 1.0
   k-factor: 0.9100000262260437
-  num events: 18724.998305797577
-'361085':
-  cross section: 7.41510009765625
+  num events: 22728.550209648907
+'361095':
+  cross section: 6.7769999504089355
   errors: []
   filter efficiency: 1.0
   k-factor: 0.9100000262260437
-  num events: 66636.6145453155
-'361086':
-  cross section: 16.59000015258789
+  num events: 91101.5701237917
+'361096':
+  cross section: 16.44499969482422
   errors: []
-  filter efficiency: 0.14252999424934387
+  filter efficiency: 0.14306999742984772
   k-factor: 0.9100000262260437
-  num events: 65018.14877583459
-'361300':
-  cross section: 21380.0
-  errors: []
-  filter efficiency: 0.8914999961853027
-  k-factor: 0.90829998254776
-  num events: 13232097.046547849
-'361301':
-  cross section: 21380.0
-  errors: []
-  filter efficiency: 0.04845999926328659
-  k-factor: 0.90829998254776
-  num events: 2927790.2218554793
-'361302':
-  cross section: 21380.0
-  errors: []
-  filter efficiency: 0.05973000079393387
-  k-factor: 0.90829998254776
-  num events: 3681269.900016522
-'361303':
-  cross section: 632.7999877929688
-  errors: []
-  filter efficiency: 0.7278000116348267
-  k-factor: 0.90829998254776
-  num events: 1605040.8471640171
-'361304':
-  cross section: 632.7999877929688
-  errors: []
-  filter efficiency: 0.17599999904632568
-  k-factor: 0.90829998254776
-  num events: 2021776.8037607037
-'361305':
-  cross section: 632.7999877929688
-  errors: []
-  filter efficiency: 0.09636999666690826
-  k-factor: 0.90829998254776
-  num events: 1602618.0732320542
-'361306':
-  cross section: 90.12000274658203
-  errors: []
-  filter efficiency: 0.6832000017166138
-  k-factor: 0.90829998254776
-  num events: 1846625.6470611526
-'361307':
-  cross section: 90.12000274658203
-  errors: []
-  filter efficiency: 0.20479999482631683
-  k-factor: 0.90829998254776
-  num events: 2361506.472567571
-'361308':
-  cross section: 90.12000274658203
-  errors: []
-  filter efficiency: 0.11259999871253967
-  k-factor: 0.90829998254776
-  num events: 2569762.441194527
-'361309':
-  cross section: 5.747000217437744
-  errors: []
-  filter efficiency: 0.6513000130653381
-  k-factor: 0.9991300106048584
-  num events: 418685.52164327115
-'361310':
-  cross section: 5.747000217437744
-  errors: []
-  filter efficiency: 0.22100000083446503
-  k-factor: 0.9991300106048584
-  num events: 492545.8798481737
-'361311':
-  cross section: 5.747000217437744
-  errors: []
-  filter efficiency: 0.131400004029274
-  k-factor: 0.9991300106048584
-  num events: 484209.35856687324
-'361312':
-  cross section: 0.34790000319480896
-  errors: []
-  filter efficiency: 0.6305999755859375
-  k-factor: 0.9991300106048584
-  num events: 227771.91691670212
-'361313':
-  cross section: 0.34790000319480896
-  errors: []
-  filter efficiency: 0.23800000548362732
-  k-factor: 0.9991300106048584
-  num events: 175351.59223726782
-'361314':
-  cross section: 0.34790000319480896
-  errors: []
-  filter efficiency: 0.15940000116825104
-  k-factor: 0.9991300106048584
-  num events: 172017.43721551824
-'361315':
-  cross section: 0.061069998890161514
-  errors: []
-  filter efficiency: 0.623199999332428
-  k-factor: 0.9991300106048584
-  num events: 82830.2461796283
-'361316':
-  cross section: 0.061069998890161514
-  errors: []
-  filter efficiency: 0.2168000042438507
-  k-factor: 0.9991300106048584
-  num events: 57788.00232961037
-'361317':
-  cross section: 0.061069998890161514
-  errors: []
-  filter efficiency: 0.1615000069141388
-  k-factor: 0.9991300106048584
-  num events: 57976.43298593686
-'361318':
-  cross section: 0.006643000058829784
-  errors: []
-  filter efficiency: 0.6114000082015991
-  k-factor: 0.9991300106048584
-  num events: 20146.578959737788
-'361319':
-  cross section: 0.006643000058829784
-  errors: []
-  filter efficiency: 0.23749999701976776
-  k-factor: 0.9991300106048584
-  num events: 17601.41394086294
-'361320':
-  cross section: 0.006643000058829784
-  errors: []
-  filter efficiency: 0.1695999950170517
-  k-factor: 0.9991300106048584
-  num events: 17194.080507746068
-'361321':
-  cross section: 2.6589999833959155e-05
-  errors: []
-  filter efficiency: 0.600600004196167
-  k-factor: 0.9991300106048584
-  num events: 7851.424224878523
-'361322':
-  cross section: 2.6589999833959155e-05
-  errors: []
-  filter efficiency: 0.26100000739097595
-  k-factor: 0.9991300106048584
-  num events: 5109.7876968711935
-'361323':
-  cross section: 2.6589999833959155e-05
-  errors: []
-  filter efficiency: 0.18469999730587006
-  k-factor: 0.9991300106048584
-  num events: 5220.742727501391
-'361324':
-  cross section: 21380.0
-  errors: []
-  filter efficiency: 0.8914999961853027
-  k-factor: 0.90829998254776
-  num events: 13290142.732927859
-'361325':
-  cross section: 21380.0
-  errors: []
-  filter efficiency: 0.04845999926328659
-  k-factor: 0.90829998254776
-  num events: 4376726.6330611035
-'361326':
-  cross section: 21380.0
-  errors: []
-  filter efficiency: 0.05973000079393387
-  k-factor: 0.90829998254776
-  num events: 5512496.303008465
-'361327':
-  cross section: 632.7999877929688
-  errors: []
-  filter efficiency: 0.7278000116348267
-  k-factor: 0.90829998254776
-  num events: 1606850.3392930808
-'361328':
-  cross section: 632.7999877929688
-  errors: []
-  filter efficiency: 0.17599999904632568
-  k-factor: 0.90829998254776
-  num events: 2023263.6046467884
-'361329':
-  cross section: 632.7999877929688
-  errors: []
-  filter efficiency: 0.09636999666690826
-  k-factor: 0.90829998254776
-  num events: 1987968.6653556877
-'361330':
-  cross section: 90.12000274658203
-  errors: []
-  filter efficiency: 0.6832000017166138
-  k-factor: 0.90829998254776
-  num events: 1665351.4404549315
-'361331':
-  cross section: 90.12000274658203
-  errors: []
-  filter efficiency: 0.20479999482631683
-  k-factor: 0.90829998254776
-  num events: 2299513.312093683
-'361332':
-  cross section: 90.12000274658203
-  errors: []
-  filter efficiency: 0.11259999871253967
-  k-factor: 0.90829998254776
-  num events: 2558597.377219976
-'361333':
-  cross section: 5.747000217437744
-  errors: []
-  filter efficiency: 0.6513000130653381
-  k-factor: 0.9991300106048584
-  num events: 424012.79924626154
-'361334':
-  cross section: 5.747000217437744
-  errors: []
-  filter efficiency: 0.22100000083446503
-  k-factor: 0.9991300106048584
-  num events: 492481.3885087551
-'361335':
-  cross section: 5.747000217437744
-  errors: []
-  filter efficiency: 0.131400004029274
-  k-factor: 0.9991300106048584
-  num events: 482335.8156744764
-'361336':
-  cross section: 0.34790000319480896
-  errors: []
-  filter efficiency: 0.6305999755859375
-  k-factor: 0.9991300106048584
-  num events: 214649.31784727616
-'361337':
-  cross section: 0.34790000319480896
-  errors: []
-  filter efficiency: 0.23800000548362732
-  k-factor: 0.9991300106048584
-  num events: 173248.05183762897
-'361338':
-  cross section: 0.34790000319480896
-  errors: []
-  filter efficiency: 0.15940000116825104
-  k-factor: 0.9991300106048584
-  num events: 163983.4602131
-'361339':
-  cross section: 0.061069998890161514
-  errors: []
-  filter efficiency: 0.623199999332428
-  k-factor: 0.9991300106048584
-  num events: 86130.37664178401
-'361340':
-  cross section: 0.061069998890161514
-  errors: []
-  filter efficiency: 0.2168000042438507
-  k-factor: 0.9991300106048584
-  num events: 60201.07143394559
-'361341':
-  cross section: 0.061069998890161514
-  errors: []
-  filter efficiency: 0.1615000069141388
-  k-factor: 0.9991300106048584
-  num events: 56787.81534199318
-'361342':
-  cross section: 0.006643000058829784
-  errors: []
-  filter efficiency: 0.6114000082015991
-  k-factor: 0.9991300106048584
-  num events: 20666.38231877619
-'361343':
-  cross section: 0.006643000058829784
-  errors: []
-  filter efficiency: 0.23749999701976776
-  k-factor: 0.9991300106048584
-  num events: 17621.84063215468
-'361344':
-  cross section: 0.006643000058829784
-  errors: []
-  filter efficiency: 0.1695999950170517
-  k-factor: 0.9991300106048584
-  num events: 17198.186221682845
-'361345':
-  cross section: 2.6589999833959155e-05
-  errors: []
-  filter efficiency: 0.600600004196167
-  k-factor: 0.9991300106048584
-  num events: 7491.252665193406
-'361346':
-  cross section: 2.6589999833959155e-05
-  errors: []
-  filter efficiency: 0.26100000739097595
-  k-factor: 0.9991300106048584
-  num events: 5117.4916885347775
-'361347':
-  cross section: 2.6589999833959155e-05
-  errors: []
-  filter efficiency: 0.18469999730587006
-  k-factor: 0.9991300106048584
-  num events: 5257.818745111494
-'361348':
-  cross section: 21380.0
-  errors: []
-  filter efficiency: 0.8914999961853027
-  k-factor: 0.90829998254776
-  num events: 13374155.929263819
-'361349':
-  cross section: 21380.0
-  errors: []
-  filter efficiency: 0.04845999926328659
-  k-factor: 0.90829998254776
-  num events: 4445703.3649114715
-'361350':
-  cross section: 21380.0
-  errors: []
-  filter efficiency: 0.05973000079393387
-  k-factor: 0.90829998254776
-  num events: 4425615.034261689
-'361351':
-  cross section: 632.7999877929688
-  errors: []
-  filter efficiency: 0.7278000116348267
-  k-factor: 0.90829998254776
-  num events: 1616216.9499430526
-'361352':
-  cross section: 632.7999877929688
-  errors: []
-  filter efficiency: 0.17599999904632568
-  k-factor: 0.90829998254776
-  num events: 2043352.1407871312
-'361353':
-  cross section: 632.7999877929688
-  errors: []
-  filter efficiency: 0.09636999666690826
-  k-factor: 0.90829998254776
-  num events: 2027803.632166981
-'361354':
-  cross section: 90.12000274658203
-  errors: []
-  filter efficiency: 0.6832000017166138
-  k-factor: 0.90829998254776
-  num events: 1892841.6422022225
-'361355':
-  cross section: 90.12000274658203
-  errors: []
-  filter efficiency: 0.20479999482631683
-  k-factor: 0.90829998254776
-  num events: 2368315.3001889614
-'361356':
-  cross section: 90.12000274658203
-  errors: []
-  filter efficiency: 0.11259999871253967
-  k-factor: 0.90829998254776
-  num events: 2570086.230925411
-'361357':
-  cross section: 5.747000217437744
-  errors: []
-  filter efficiency: 0.6513000130653381
-  k-factor: 0.9991300106048584
-  num events: 422430.8803879339
-'361358':
-  cross section: 5.747000217437744
-  errors: []
-  filter efficiency: 0.22100000083446503
-  k-factor: 0.9991300106048584
-  num events: 498156.4021942356
-'361359':
-  cross section: 5.747000217437744
-  errors: []
-  filter efficiency: 0.131400004029274
-  k-factor: 0.9991300106048584
-  num events: 484504.9102302586
-'361360':
-  cross section: 0.34790000319480896
-  errors: []
-  filter efficiency: 0.6305999755859375
-  k-factor: 0.9991300106048584
-  num events: 209337.40716896649
-'361361':
-  cross section: 0.34790000319480896
-  errors: []
-  filter efficiency: 0.23800000548362732
-  k-factor: 0.9991300106048584
-  num events: 169571.2258423148
-'361362':
-  cross section: 0.34790000319480896
-  errors: []
-  filter efficiency: 0.15940000116825104
-  k-factor: 0.9991300106048584
-  num events: 165216.81431304588
-'361363':
-  cross section: 0.061069998890161514
-  errors: []
-  filter efficiency: 0.623199999332428
-  k-factor: 0.9991300106048584
-  num events: 84156.81839425999
-'361364':
-  cross section: 0.061069998890161514
-  errors: []
-  filter efficiency: 0.2168000042438507
-  k-factor: 0.9991300106048584
-  num events: 57494.6445087059
-'361365':
-  cross section: 0.061069998890161514
-  errors: []
-  filter efficiency: 0.1615000069141388
-  k-factor: 0.9991300106048584
-  num events: 56770.08161741764
-'361366':
-  cross section: 0.006643000058829784
-  errors: []
-  filter efficiency: 0.6114000082015991
-  k-factor: 0.9991300106048584
-  num events: 20136.260318281376
-'361367':
-  cross section: 0.006643000058829784
-  errors: []
-  filter efficiency: 0.23749999701976776
-  k-factor: 0.9991300106048584
-  num events: 17198.906299274007
-'361368':
-  cross section: 0.006643000058829784
-  errors: []
-  filter efficiency: 0.1695999950170517
-  k-factor: 0.9991300106048584
-  num events: 16523.818762105337
-'361369':
-  cross section: 2.6589999833959155e-05
-  errors: []
-  filter efficiency: 0.600600004196167
-  k-factor: 0.9991300106048584
-  num events: 8999.405071205321
-'361370':
-  cross section: 2.6589999833959155e-05
-  errors: []
-  filter efficiency: 0.26100000739097595
-  k-factor: 0.9991300106048584
-  num events: 5656.76838484488
-'361371':
-  cross section: 2.6589999833959155e-05
-  errors: []
-  filter efficiency: 0.18469999730587006
-  k-factor: 0.9991300106048584
-  num events: 5379.4876477510625
-'361372':
-  cross section: 2205.0
-  errors: []
-  filter efficiency: 0.7785000205039978
-  k-factor: 0.901199996471405
-  num events: 4004678.6221256126
-'361373':
-  cross section: 2205.0
-  errors: []
-  filter efficiency: 0.14219999313354492
-  k-factor: 0.901199996471405
-  num events: 1906158.6022422388
-'361374':
-  cross section: 2205.0
-  errors: []
-  filter efficiency: 0.0794999971985817
-  k-factor: 0.901199996471405
-  num events: 1341584.0692459443
-'361375':
-  cross section: 76.02999877929688
-  errors: []
-  filter efficiency: 0.6480000019073486
-  k-factor: 0.901199996471405
-  num events: 519492.6122729962
-'361376':
-  cross section: 76.02999877929688
-  errors: []
-  filter efficiency: 0.21979999542236328
-  k-factor: 0.901199996471405
-  num events: 218251.7955720827
-'361377':
-  cross section: 76.02999877929688
-  errors: []
-  filter efficiency: 0.13089999556541443
-  k-factor: 0.901199996471405
-  num events: 373556.33606827795
-'361378':
-  cross section: 11.640000343322754
-  errors: []
-  filter efficiency: 0.6139000058174133
-  k-factor: 0.901199996471405
-  num events: 615871.5222763875
-'361379':
-  cross section: 11.640000343322754
-  errors: []
-  filter efficiency: 0.2425999939441681
-  k-factor: 0.901199996471405
-  num events: 230710.3484251246
-'361380':
-  cross section: 11.640000343322754
-  errors: []
-  filter efficiency: 0.1467999964952469
-  k-factor: 0.901199996471405
-  num events: 494176.5174266366
-'361381':
-  cross section: 0.7645999789237976
-  errors: []
-  filter efficiency: 0.5835999846458435
-  k-factor: 0.991320013999939
-  num events: 211433.04527588724
-'361382':
-  cross section: 0.7645999789237976
-  errors: []
-  filter efficiency: 0.2632000148296356
-  k-factor: 0.991320013999939
-  num events: 144046.13289114076
-'361383':
-  cross section: 0.7645999789237976
-  errors: []
-  filter efficiency: 0.15940000116825104
-  k-factor: 0.991320013999939
-  num events: 154136.55590856905
-'361384':
-  cross section: 0.04628000035881996
-  errors: []
-  filter efficiency: 0.5691999793052673
-  k-factor: 0.991320013999939
-  num events: 127533.99455238064
-'361385':
-  cross section: 0.04628000035881996
-  errors: []
-  filter efficiency: 0.26919999718666077
-  k-factor: 0.991320013999939
-  num events: 97519.11457612089
-'361386':
-  cross section: 0.04628000035881996
-  errors: []
-  filter efficiency: 0.17180000245571136
-  k-factor: 0.991320013999939
-  num events: 99234.92134263412
-'361387':
-  cross section: 0.008078999817371368
-  errors: []
-  filter efficiency: 0.5625
-  k-factor: 0.991320013999939
-  num events: 20952.383173817972
-'361388':
-  cross section: 0.008078999817371368
-  errors: []
-  filter efficiency: 0.29580000042915344
-  k-factor: 0.991320013999939
-  num events: 14703.188089262563
-'361389':
-  cross section: 0.008078999817371368
-  errors: []
-  filter efficiency: 0.18060000240802765
-  k-factor: 0.991320013999939
-  num events: 15676.281326867436
-'361390':
-  cross section: 0.001062000053934753
-  errors: []
-  filter efficiency: 0.5498999953269958
-  k-factor: 0.991320013999939
-  num events: 12403.425057012355
-'361391':
-  cross section: 0.001062000053934753
-  errors: []
-  filter efficiency: 0.31349998712539673
-  k-factor: 0.991320013999939
-  num events: 9833.995175654738
-'361392':
-  cross section: 0.001062000053934753
-  errors: []
-  filter efficiency: 0.18610000610351562
-  k-factor: 0.991320013999939
-  num events: 11268.479537424573
-'361393':
-  cross section: 4.2339997889939696e-06
-  errors: []
-  filter efficiency: 0.48739999532699585
-  k-factor: 0.991320013999939
-  num events: 8076.862960015002
-'361394':
-  cross section: 4.2339997889939696e-06
-  errors: []
-  filter efficiency: 0.3077999949455261
-  k-factor: 0.991320013999939
-  num events: 4918.064812324417
-'361395':
-  cross section: 4.2339997889939696e-06
-  errors: []
-  filter efficiency: 0.20479999482631683
-  k-factor: 0.991320013999939
-  num events: 5141.831452221057
-'361396':
-  cross section: 2205.0
-  errors: []
-  filter efficiency: 0.7785000205039978
-  k-factor: 0.901199996471405
-  num events: 4010042.9527038997
-'361398':
-  cross section: 2205.0
-  errors: []
-  filter efficiency: 0.0794999971985817
-  k-factor: 0.901199996471405
-  num events: 1078751.8916268141
-'361399':
-  cross section: 76.02999877929688
-  errors: []
-  filter efficiency: 0.6480000019073486
-  k-factor: 0.901199996471405
-  num events: 525291.8002108025
-'361400':
-  cross section: 76.02999877929688
-  errors: []
-  filter efficiency: 0.21979999542236328
-  k-factor: 0.901199996471405
-  num events: 216676.468126679
-'361401':
-  cross section: 76.02999877929688
-  errors: []
-  filter efficiency: 0.13089999556541443
-  k-factor: 0.901199996471405
-  num events: 468476.0454667534
-'361402':
-  cross section: 11.640000343322754
-  errors: []
-  filter efficiency: 0.6139000058174133
-  k-factor: 0.901199996471405
-  num events: 521133.2143482213
-'361403':
-  cross section: 11.640000343322754
-  errors: []
-  filter efficiency: 0.2425999939441681
-  k-factor: 0.901199996471405
-  num events: 223094.30993544933
-'361404':
-  cross section: 11.640000343322754
-  errors: []
-  filter efficiency: 0.1467999964952469
-  k-factor: 0.901199996471405
-  num events: 410028.9746761427
-'361405':
-  cross section: 0.7645999789237976
-  errors: []
-  filter efficiency: 0.5835999846458435
-  k-factor: 0.991320013999939
-  num events: 211241.68340152648
-'361406':
-  cross section: 0.7645999789237976
-  errors: []
-  filter efficiency: 0.2632000148296356
-  k-factor: 0.991320013999939
-  num events: 142860.86327202077
-'361407':
-  cross section: 0.7645999789237976
-  errors: []
-  filter efficiency: 0.15940000116825104
-  k-factor: 0.991320013999939
-  num events: 155469.31760317646
-'361408':
-  cross section: 0.04628000035881996
-  errors: []
-  filter efficiency: 0.5691999793052673
-  k-factor: 0.991320013999939
-  num events: 125805.17100141376
-'361409':
-  cross section: 0.04628000035881996
-  errors: []
-  filter efficiency: 0.26919999718666077
-  k-factor: 0.991320013999939
-  num events: 98250.27902268659
-'361410':
-  cross section: 0.04628000035881996
-  errors: []
-  filter efficiency: 0.17180000245571136
-  k-factor: 0.991320013999939
-  num events: 106935.97437397657
-'361411':
-  cross section: 0.008078999817371368
-  errors: []
-  filter efficiency: 0.5625
-  k-factor: 0.991320013999939
-  num events: 20240.6005895282
-'361412':
-  cross section: 0.008078999817371368
-  errors: []
-  filter efficiency: 0.29580000042915344
-  k-factor: 0.991320013999939
-  num events: 14477.641512396644
-'361413':
-  cross section: 0.008078999817371368
-  errors: []
-  filter efficiency: 0.18060000240802765
-  k-factor: 0.991320013999939
-  num events: 16146.935454934224
-'361414':
-  cross section: 0.001062000053934753
-  errors: []
-  filter efficiency: 0.5498999953269958
-  k-factor: 0.991320013999939
-  num events: 13005.543868411383
-'361415':
-  cross section: 0.001062000053934753
-  errors: []
-  filter efficiency: 0.31349998712539673
-  k-factor: 0.991320013999939
-  num events: 9628.183940035815
-'361416':
-  cross section: 0.001062000053934753
-  errors: []
-  filter efficiency: 0.18610000610351562
-  k-factor: 0.991320013999939
-  num events: 10549.283299266579
-'361417':
-  cross section: 4.2339997889939696e-06
-  errors: []
-  filter efficiency: 0.48739999532699585
-  k-factor: 0.991320013999939
-  num events: 7992.785015830843
-'361418':
-  cross section: 4.2339997889939696e-06
-  errors: []
-  filter efficiency: 0.3077999949455261
-  k-factor: 0.991320013999939
-  num events: 4526.493950287484
-'361419':
-  cross section: 4.2339997889939696e-06
-  errors: []
-  filter efficiency: 0.20479999482631683
-  k-factor: 0.991320013999939
-  num events: 5021.858167951141
-'361420':
-  cross section: 2205.0
-  errors: []
-  filter efficiency: 0.7785000205039978
-  k-factor: 0.901199996471405
-  num events: 1338661.848763116
-'361421':
-  cross section: 2205.0
-  errors: []
-  filter efficiency: 0.14219999313354492
-  k-factor: 0.901199996471405
-  num events: 713827.414914245
-'361422':
-  cross section: 2205.0
-  errors: []
-  filter efficiency: 0.0794999971985817
-  k-factor: 0.901199996471405
-  num events: 1208891.3519178727
-'361423':
-  cross section: 76.02999877929688
-  errors: []
-  filter efficiency: 0.6480000019073486
-  k-factor: 0.901199996471405
-  num events: 531417.7276283638
-'361424':
-  cross section: 76.02999877929688
-  errors: []
-  filter efficiency: 0.21979999542236328
-  k-factor: 0.901199996471405
-  num events: 221798.27104726253
-'361425':
-  cross section: 76.02999877929688
-  errors: []
-  filter efficiency: 0.13089999556541443
-  k-factor: 0.901199996471405
-  num events: 471658.41511104535
-'361426':
-  cross section: 11.640000343322754
-  errors: []
-  filter efficiency: 0.6139000058174133
-  k-factor: 0.901199996471405
-  num events: 553228.7061806305
-'361427':
-  cross section: 11.640000343322754
-  errors: []
-  filter efficiency: 0.2425999939441681
-  k-factor: 0.901199996471405
-  num events: 230174.65692529106
-'361428':
-  cross section: 11.640000343322754
-  errors: []
-  filter efficiency: 0.1467999964952469
-  k-factor: 0.901199996471405
-  num events: 490570.0594490601
-'361429':
-  cross section: 0.7645999789237976
-  errors: []
-  filter efficiency: 0.5835999846458435
-  k-factor: 0.991320013999939
-  num events: 212832.92702795716
-'361430':
-  cross section: 0.7645999789237976
-  errors: []
-  filter efficiency: 0.2632000148296356
-  k-factor: 0.991320013999939
-  num events: 143564.06393688428
-'361431':
-  cross section: 0.7645999789237976
-  errors: []
-  filter efficiency: 0.15940000116825104
-  k-factor: 0.991320013999939
-  num events: 154680.63596296008
-'361432':
-  cross section: 0.04628000035881996
-  errors: []
-  filter efficiency: 0.5691999793052673
-  k-factor: 0.991320013999939
-  num events: 127136.83453128538
-'361433':
-  cross section: 0.04628000035881996
-  errors: []
-  filter efficiency: 0.26919999718666077
-  k-factor: 0.991320013999939
-  num events: 97509.57681118466
-'361434':
-  cross section: 0.04628000035881996
-  errors: []
-  filter efficiency: 0.17180000245571136
-  k-factor: 0.991320013999939
-  num events: 107102.73847318988
-'361435':
-  cross section: 0.008078999817371368
-  errors: []
-  filter efficiency: 0.5625
-  k-factor: 0.991320013999939
-  num events: 20540.067831173466
-'361436':
-  cross section: 0.008078999817371368
-  errors: []
-  filter efficiency: 0.29580000042915344
-  k-factor: 0.991320013999939
-  num events: 14685.930177645903
-'361437':
-  cross section: 0.008078999817371368
-  errors: []
-  filter efficiency: 0.18060000240802765
-  k-factor: 0.991320013999939
-  num events: 16643.412153502082
-'361438':
-  cross section: 0.001062000053934753
-  errors: []
-  filter efficiency: 0.5498999953269958
-  k-factor: 0.991320013999939
-  num events: 12799.7955665825
-'361439':
-  cross section: 0.001062000053934753
-  errors: []
-  filter efficiency: 0.31349998712539673
-  k-factor: 0.991320013999939
-  num events: 9900.757999196328
-'361440':
-  cross section: 0.001062000053934753
-  errors: []
-  filter efficiency: 0.18610000610351562
-  k-factor: 0.991320013999939
-  num events: 11528.045269747054
-'361441':
-  cross section: 4.2339997889939696e-06
-  errors: []
-  filter efficiency: 0.48739999532699585
-  k-factor: 0.991320013999939
-  num events: 7775.247145470599
-'361442':
-  cross section: 4.2339997889939696e-06
-  errors: []
-  filter efficiency: 0.3077999949455261
-  k-factor: 0.991320013999939
-  num events: 4837.250429834821
-'361443':
-  cross section: 4.2339997889939696e-06
-  errors: []
-  filter efficiency: 0.20479999482631683
-  k-factor: 0.991320013999939
-  num events: 5095.98625140018
-'361444':
-  cross section: 11940.0
-  errors: []
-  filter efficiency: 0.7785000205039978
-  k-factor: 0.9376000165939331
-  num events: 6638462.6210083775
-'361445':
-  cross section: 11940.0
-  errors: []
-  filter efficiency: 0.14010000228881836
-  k-factor: 0.9376000165939331
-  num events: 1751003.892248056
-'361446':
-  cross section: 11940.0
-  errors: []
-  filter efficiency: 0.07999999821186066
-  k-factor: 0.9376000165939331
-  num events: 3280234.4994117115
-'361447':
-  cross section: 427.8999938964844
-  errors: []
-  filter efficiency: 0.6496000289916992
-  k-factor: 0.9376000165939331
-  num events: 3780380.858626371
-'361448':
-  cross section: 427.8999938964844
-  errors: []
-  filter efficiency: 0.2184000015258789
-  k-factor: 0.9376000165939331
-  num events: 1088984.3809367297
-'361449':
-  cross section: 427.8999938964844
-  errors: []
-  filter efficiency: 0.13279999792575836
-  k-factor: 0.9376000165939331
-  num events: 1812203.548268508
-'361450':
-  cross section: 65.70999908447266
-  errors: []
-  filter efficiency: 0.6137999892234802
-  k-factor: 0.9376000165939331
-  num events: 1312783.6333562853
-'361451':
-  cross section: 65.70999908447266
-  errors: []
-  filter efficiency: 0.23899999260902405
-  k-factor: 0.9376000165939331
-  num events: 1111819.6558975526
-'361452':
-  cross section: 65.70999908447266
-  errors: []
-  filter efficiency: 0.1476999968290329
-  k-factor: 0.9376000165939331
-  num events: 2469842.3360482655
-'361453':
-  cross section: 4.261000156402588
-  errors: []
-  filter efficiency: 0.5856999754905701
-  k-factor: 1.0313600301742554
-  num events: 711439.8941654058
-'361454':
-  cross section: 4.261000156402588
-  errors: []
-  filter efficiency: 0.2606000006198883
-  k-factor: 1.0313600301742554
-  num events: 774045.4949791527
-'361455':
-  cross section: 4.261000156402588
-  errors: []
-  filter efficiency: 0.16169999539852142
-  k-factor: 1.0313600301742554
-  num events: 826141.5060982212
-'361456':
-  cross section: 0.2540999948978424
-  errors: []
-  filter efficiency: 0.5550000071525574
-  k-factor: 1.0313600301742554
-  num events: 217069.17929719388
-'361457':
-  cross section: 0.2540999948978424
-  errors: []
-  filter efficiency: 0.27489998936653137
-  k-factor: 1.0313600301742554
-  num events: 252839.4886193086
-'361458':
-  cross section: 0.2540999948978424
-  errors: []
-  filter efficiency: 0.164900004863739
-  k-factor: 1.0313600301742554
-  num events: 272529.1699310092
-'361459':
-  cross section: 0.04448999837040901
-  errors: []
-  filter efficiency: 0.557699978351593
-  k-factor: 1.0313600301742554
-  num events: 83703.28851766119
-'361460':
-  cross section: 0.04448999837040901
-  errors: []
-  filter efficiency: 0.30390000343322754
-  k-factor: 1.0313600301742554
-  num events: 48662.07730885342
-'361461':
-  cross section: 0.04448999837040901
-  errors: []
-  filter efficiency: 0.163100004196167
-  k-factor: 1.0313600301742554
-  num events: 55086.33575470416
-'361462':
-  cross section: 0.0056779999285936356
-  errors: []
-  filter efficiency: 0.5346999764442444
-  k-factor: 1.0313600301742554
-  num events: 21715.134481866335
-'361463':
-  cross section: 0.0056779999285936356
-  errors: []
-  filter efficiency: 0.31220000982284546
-  k-factor: 1.0313600301742554
-  num events: 14850.150742179874
-'361464':
-  cross section: 0.0056779999285936356
-  errors: []
-  filter efficiency: 0.1972000002861023
-  k-factor: 1.0313600301742554
-  num events: 16927.86547088022
-'361465':
-  cross section: 2.3349999537458643e-05
-  errors: []
-  filter efficiency: 0.5436000227928162
-  k-factor: 1.0313600301742554
-  num events: 8032.929948704044
-'361466':
-  cross section: 2.3349999537458643e-05
-  errors: []
-  filter efficiency: 0.3456000089645386
-  k-factor: 1.0313600301742554
-  num events: 4446.612364542227
-'361467':
-  cross section: 2.3349999537458643e-05
-  errors: []
-  filter efficiency: 0.21570000052452087
-  k-factor: 1.0313600301742554
-  num events: 5238.747685890608
+  num events: 323506.1387570943
+'361097':
+  cross section: 16.43199920654297
+  errors: []
+  filter efficiency: 0.28207001090049744
+  k-factor: 0.9100000262260437
+  num events: 66112.5294468794
 '363102':
   cross section: 71.68699645996094
   errors: []
   filter efficiency: 0.6687999963760376
   k-factor: 0.9750999808311462
-  num events: 573032.1756813454
+  num events: 569330.9493347333
 '363103':
   cross section: 71.65299987792969
   errors: []
   filter efficiency: 0.20080000162124634
   k-factor: 0.9750999808311462
-  num events: 249931.2894575004
+  num events: 248901.7463053711
 '363104':
   cross section: 71.67900085449219
   errors: []
   filter efficiency: 0.12636999785900116
   k-factor: 0.9750999808311462
-  num events: 558920.8520516226
+  num events: 337802.058894686
 '363105':
   cross section: 11.031000137329102
   errors: []
   filter efficiency: 0.6259999871253967
   k-factor: 0.9750999808311462
-  num events: 276429.14321800973
+  num events: 221178.65786921838
 '363106':
   cross section: 11.069000244140625
   errors: []
@@ -1189,7 +193,7 @@ default: &default_weights
   errors: []
   filter efficiency: 0.5212000012397766
   k-factor: 0.9750999808311462
-  num events: 12733.24497550726
+  num events: 11972.891297519207
 '363121':
   cross section: 4.541000180324772e-06
   errors: []
@@ -1197,155 +201,155 @@ default: &default_weights
   k-factor: 0.9750999808311462
   num events: 1918.9290208816528
 '363122':
-  cross section: 0.0
+  cross section: 4.561599780572578e-06
   errors: []
-  filter efficiency: 0.0
-  k-factor: 0.0
+  filter efficiency: 1.0
+  k-factor: 0.9750999808311462
   num events: 7227.193231344223
 '363331':
   cross section: 20024.0
   errors: []
   filter efficiency: 0.8144000172615051
-  k-factor: 1.0
-  num events: 13341345.912858082
+  k-factor: 0.9702000021934509
+  num events: 9978987.992872365
 '363332':
   cross section: 20028.0
   errors: []
   filter efficiency: 0.13809999823570251
-  k-factor: 1.0
-  num events: 3530169.200766953
+  k-factor: 0.9702000021934509
+  num events: 3530169.2007669522
 '363333':
   cross section: 20015.0
   errors: []
   filter efficiency: 0.046799998730421066
-  k-factor: 1.0
-  num events: 3707311.040919252
+  k-factor: 0.9702000021934509
+  num events: 3377358.4347342197
 '363334':
   cross section: 589.1400146484375
   errors: []
   filter efficiency: 0.6574000120162964
-  k-factor: 1.0
-  num events: 2059954.6969637643
+  k-factor: 0.9702000021934509
+  num events: 1828116.7265153052
 '363335':
   cross section: 590.1099853515625
   errors: []
   filter efficiency: 0.2524999976158142
-  k-factor: 1.0
-  num events: 2345873.662024737
+  k-factor: 0.9702000021934509
+  num events: 1604234.8849926153
 '363336':
   cross section: 589.8300170898438
   errors: []
   filter efficiency: 0.08579999953508377
-  k-factor: 1.0
-  num events: 2573331.8146737185
+  k-factor: 0.9702000021934509
+  num events: 2249363.105406169
 '363337':
   cross section: 84.22000122070312
   errors: []
   filter efficiency: 0.6140000224113464
-  k-factor: 1.0
-  num events: 2158062.3020979045
+  k-factor: 0.9702000021934509
+  num events: 1071999.5305786112
 '363338':
   cross section: 84.28199768066406
   errors: []
   filter efficiency: 0.2759000062942505
-  k-factor: 1.0
-  num events: 2654973.925118232
+  k-factor: 0.9702000021934509
+  num events: 1740084.981692537
 '363339':
   cross section: 84.177001953125
   errors: []
   filter efficiency: 0.10540000349283218
-  k-factor: 1.0
-  num events: 2833726.1848701746
+  k-factor: 0.9702000021934509
+  num events: 2030035.2123020357
 '363340':
   cross section: 6.0858001708984375
   errors: []
   filter efficiency: 0.5843999981880188
-  k-factor: 1.0
-  num events: 629113.7835447376
+  k-factor: 0.9702000021934509
+  num events: 380442.5813334128
 '363341':
   cross section: 6.065199851989746
   errors: []
   filter efficiency: 0.28690001368522644
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 394246.46079282556
 '363342':
   cross section: 6.078800201416016
   errors: []
   filter efficiency: 0.12060000002384186
-  k-factor: 1.0
-  num events: 830959.9025945533
+  k-factor: 0.9702000021934509
+  num events: 495741.16044640914
 '363343':
   cross section: 0.3810499906539917
   errors: []
   filter efficiency: 0.5677000284194946
-  k-factor: 1.0
-  num events: 339571.5220791851
+  k-factor: 0.9702000021934509
+  num events: 270979.9145662063
 '363344':
   cross section: 0.37793999910354614
   errors: []
   filter efficiency: 0.29670000076293945
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 5037.5829401016235
 '363345':
   cross section: 0.37626999616622925
   errors: []
   filter efficiency: 0.1315000057220459
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 220641.61170870066
 '363346':
   cross section: 0.07322199642658234
   errors: []
   filter efficiency: 0.5613999962806702
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 156815.5535359811
 '363347':
   cross section: 0.06796299666166306
   errors: []
   filter efficiency: 0.2922999858856201
-  k-factor: 1.0
-  num events: 86085.56717256829
+  k-factor: 0.9702000021934509
+  num events: 16748.019104599953
 '363348':
   cross section: 0.06727699935436249
   errors: []
   filter efficiency: 0.14489999413490295
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 92220.92969974875
 '363349':
   cross section: 0.009028499945998192
   errors: []
   filter efficiency: 0.5558000206947327
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 6700.863677978516
 '363350':
   cross section: 0.008911600336432457
   errors: []
   filter efficiency: 0.29030001163482666
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 8797.149687767029
 '363351':
   cross section: 0.009019999764859676
   errors: []
   filter efficiency: 0.1412999927997589
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 5362.333266735077
 '363352':
   cross section: 2.619299993966706e-05
   errors: []
   filter efficiency: 0.5605999827384949
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 4890.648401498795
 '363353':
   cross section: 3.098500019405037e-05
   errors: []
   filter efficiency: 0.2897000014781952
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 7212.607830047607
 '363354':
   cross section: 2.939200021501165e-05
   errors: []
   filter efficiency: 0.18039999902248383
-  k-factor: 1.0
-  num events: 5366.71064043045
+  k-factor: 0.9702000021934509
+  num events: 6762.675058841705
 '363361':
   cross section: 2076.5
   errors: []
@@ -1357,7 +361,7 @@ default: &default_weights
   errors: []
   filter efficiency: 0.11900000274181366
   k-factor: 0.9750999808311462
-  num events: 69358.28748608074
+  num events: 10895.996580383511
 '363363':
   cross section: 2078.800048828125
   errors: []
@@ -1375,7 +379,7 @@ default: &default_weights
   errors: []
   filter efficiency: 0.11860000342130661
   k-factor: 0.9750999808311462
-  num events: 1166756.5210950598
+  num events: 1166756.5210950596
 '363366':
   cross section: 2077.60009765625
   errors: []
@@ -1495,7 +499,7 @@ default: &default_weights
   errors: []
   filter efficiency: 0.5605999827384949
   k-factor: 0.9750999808311462
-  num events: 12545.712278395891
+  num events: 11097.32879152894
 '363386':
   cross section: 5.20269986736821e-06
   errors: []
@@ -1513,7 +517,7 @@ default: &default_weights
   errors: []
   filter efficiency: 0.810699999332428
   k-factor: 0.9750999808311462
-  num events: 1971589.4399992765
+  num events: 1707980.6139516258
 '363389':
   cross section: 2078.5
   errors: []
@@ -1525,25 +529,25 @@ default: &default_weights
   errors: []
   filter efficiency: 0.06949999928474426
   k-factor: 0.9750999808311462
-  num events: 1035313.232494813
+  num events: 851611.4763610212
 '363391':
   cross section: 71.68099975585938
   errors: []
   filter efficiency: 0.6693999767303467
   k-factor: 0.9750999808311462
-  num events: 577845.0901656877
+  num events: 465290.989384665
 '363392':
   cross section: 71.34100341796875
   errors: []
   filter efficiency: 0.20200000703334808
   k-factor: 0.9750999808311462
-  num events: 404629.971164565
+  num events: 404629.97116456495
 '363393':
   cross section: 71.74400329589844
   errors: []
   filter efficiency: 0.1266999989748001
   k-factor: 0.9750999808311462
-  num events: 559457.2096852562
+  num events: 559457.2096852564
 '363394':
   cross section: 11.095000267028809
   errors: []
@@ -1561,13 +565,13 @@ default: &default_weights
   errors: []
   filter efficiency: 0.1459999978542328
   k-factor: 0.9750999808311462
-  num events: 684750.5962261409
+  num events: 582607.127614107
 '363397':
   cross section: 0.8347700238227844
   errors: []
   filter efficiency: 0.5985000133514404
   k-factor: 0.9750999808311462
-  num events: 316540.6071852041
+  num events: 259352.7432188965
 '363398':
   cross section: 0.8291000127792358
   errors: []
@@ -1652,60 +656,30 @@ default: &default_weights
   filter efficiency: 0.15559999644756317
   k-factor: 0.9750999808311462
   num events: 7069.116419672966
-'363412':
-  cross section: 11220.0
-  errors: []
-  filter efficiency: 0.8108000159263611
-  k-factor: 0.9728000164031982
-  num events: 5261206.239337048
-'363413':
-  cross section: 11230.0
-  errors: []
-  filter efficiency: 0.11550000309944153
-  k-factor: 0.9728000164031982
-  num events: 2896680.0631892746
 '363414':
   cross section: 11215.0
   errors: []
   filter efficiency: 0.07129999995231628
   k-factor: 0.9728000164031982
-  num events: 2614420.545846354
+  num events: 0
 '363415':
   cross section: 403.30999755859375
   errors: []
   filter efficiency: 0.6679999828338623
   k-factor: 0.9728000164031982
-  num events: 1376663.7008297076
-'363416':
-  cross section: 403.2799987792969
-  errors: []
-  filter efficiency: 0.2004999965429306
-  k-factor: 0.9728000164031982
-  num events: 1015015.0284848226
+  num events: 1376663.7008297073
 '363417':
   cross section: 404.510009765625
   errors: []
   filter efficiency: 0.12449999898672104
   k-factor: 0.9728000164031982
-  num events: 1254964.8132217892
-'363418':
-  cross section: 62.12699890136719
-  errors: []
-  filter efficiency: 0.6266999840736389
-  k-factor: 0.9728000164031982
-  num events: 1068596.1209359253
+  num events: 1254964.813221789
 '363419':
   cross section: 62.099998474121094
   errors: []
   filter efficiency: 0.24140000343322754
   k-factor: 0.9728000164031982
-  num events: 1230026.0793524683
-'363420':
-  cross section: 62.29499816894531
-  errors: []
-  filter efficiency: 0.14480000734329224
-  k-factor: 0.9728000164031982
-  num events: 1348988.4417226608
+  num events: 869956.8366171716
 '363421':
   cross section: 4.631100177764893
   errors: []
@@ -1800,296 +774,284 @@ default: &default_weights
   cross section: 20011.0
   errors: []
   filter efficiency: 0.8136000037193298
-  k-factor: 1.0
-  num events: 13394720.377801925
+  k-factor: 0.9702000021934509
+  num events: 13337472.413192274
 '363437':
   cross section: 20033.0
   errors: []
   filter efficiency: 0.13760000467300415
-  k-factor: 1.0
-  num events: 3523381.1242886437
+  k-factor: 0.9702000021934509
+  num events: 3523276.858181093
 '363438':
   cross section: 20020.0
   errors: []
   filter efficiency: 0.04670000076293945
-  k-factor: 1.0
-  num events: 3686714.5195358023
+  k-factor: 0.9702000021934509
+  num events: 3685437.6737969164
 '363439':
   cross section: 589.739990234375
   errors: []
   filter efficiency: 0.6601999998092651
-  k-factor: 1.0
-  num events: 2057601.529933048
+  k-factor: 0.9702000021934509
+  num events: 2057601.5299330484
 '363440':
   cross section: 590.75
   errors: []
   filter efficiency: 0.2531999945640564
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 2353836.5086779664
 '363441':
   cross section: 590.0499877929688
   errors: []
   filter efficiency: 0.08699999749660492
-  k-factor: 1.0
-  num events: 2568517.210560955
+  k-factor: 0.9702000021934509
+  num events: 2567287.068155028
 '363442':
   cross section: 84.06800079345703
   errors: []
   filter efficiency: 0.6144999861717224
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 2157059.3071770603
 '363443':
   cross section: 84.2959976196289
-  errors: []
+  errors: ['root://fax.mwt2.org:1094//atlas/rucio/user.mswiatlo:user.mswiatlo.8714210._000004.output_xAOD.root']
   filter efficiency: 0.2766000032424927
-  k-factor: 1.0
-  num events: 2672074.4495697385
+  k-factor: 0.9702000021934509
+  num events: 2065486.9573115995
 '363444':
   cross section: 83.96399688720703
   errors: []
   filter efficiency: 0.10610000044107437
-  k-factor: 1.0
-  num events: 2876115.522160088
+  k-factor: 0.9702000021934509
+  num events: 2876115.5221600886
 '363445':
   cross section: 6.5040998458862305
   errors: []
   filter efficiency: 0.5849999785423279
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 704930.773025536
 '363446':
   cross section: 6.068399906158447
   errors: []
   filter efficiency: 0.28679999709129333
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 783877.7311235047
 '363447':
   cross section: 6.150300025939941
   errors: []
   filter efficiency: 0.12250000238418579
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 833779.747949332
 '363448':
   cross section: 0.38798001408576965
   errors: []
   filter efficiency: 0.5666999816894531
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 345154.61654650595
 '363449':
   cross section: 0.3795900046825409
   errors: []
   filter efficiency: 0.29089999198913574
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 251757.96204811428
 '363450':
   cross section: 0.3806999921798706
   errors: []
   filter efficiency: 0.13670000433921814
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 242507.1730172974
 '363451':
   cross section: 0.06830299645662308
   errors: []
   filter efficiency: 0.5600000023841858
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 141040.16923639318
 '363452':
   cross section: 0.06851699948310852
   errors: []
   filter efficiency: 0.2736999988555908
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 85764.14457440376
 '363453':
   cross section: 0.06821899861097336
   errors: []
   filter efficiency: 0.14249999821186066
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 89055.72002057731
 '363454':
   cross section: 0.008946100249886513
   errors: []
   filter efficiency: 0.5516999959945679
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 7139.3311977386475
 '363455':
   cross section: 0.008899100124835968
   errors: []
   filter efficiency: 0.289000004529953
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 8959.620300889015
 '363456':
   cross section: 0.008897500112652779
   errors: []
   filter efficiency: 0.14880000054836273
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 9072.222472190857
 '363457':
   cross section: 2.6342000637669116e-05
   errors: []
   filter efficiency: 0.4832000136375427
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 4496.180504083633
 '363458':
   cross section: 3.290699896751903e-05
   errors: []
   filter efficiency: 0.30730000138282776
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 8494.651215195656
 '363459':
   cross section: 2.7767000574385747e-05
   errors: []
   filter efficiency: 0.1973000019788742
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 6553.594656348228
 '363460':
   cross section: 20029.0
   errors: []
   filter efficiency: 0.8137999773025513
-  k-factor: 1.0
-  num events: 13362983.20525296
+  k-factor: 0.9702000021934509
+  num events: 10749709.592924532
 '363461':
   cross section: 20015.0
   errors: []
   filter efficiency: 0.13830000162124634
-  k-factor: 1.0
-  num events: 3536644.82880483
+  k-factor: 0.9702000021934509
+  num events: 3191924.2505822172
 '363462':
   cross section: 20004.0
   errors: []
   filter efficiency: 0.04699999839067459
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 3725310.1216163673
 '363463':
   cross section: 588.0399780273438
   errors: []
   filter efficiency: 0.6597999930381775
-  k-factor: 1.0
-  num events: 2048477.1468568454
+  k-factor: 0.9702000021934509
+  num events: 1936995.824722038
 '363464':
   cross section: 589.1199951171875
   errors: []
   filter efficiency: 0.25609999895095825
-  k-factor: 1.0
-  num events: 2349600.920185622
+  k-factor: 0.9702000021934509
+  num events: 1957338.7710779079
 '363465':
   cross section: 589.0599975585938
   errors: []
   filter efficiency: 0.08669999986886978
-  k-factor: 1.0
-  num events: 2578062.7687725388
+  k-factor: 0.9702000021934509
+  num events: 2136537.8568585967
 '363466':
   cross section: 84.10199737548828
   errors: []
   filter efficiency: 0.6154000163078308
-  k-factor: 1.0
-  num events: 2155108.648944433
+  k-factor: 0.9702000021934509
+  num events: 2036558.1841914272
 '363467':
   cross section: 84.19100189208984
   errors: []
   filter efficiency: 0.2766000032424927
-  k-factor: 1.0
-  num events: 2653521.5310163395
+  k-factor: 0.9702000021934509
+  num events: 2291137.587464935
 '363468':
   cross section: 84.12799835205078
   errors: []
   filter efficiency: 0.10610000044107437
-  k-factor: 1.0
-  num events: 2862034.133836565
+  k-factor: 0.9702000021934509
+  num events: 2599758.7011114387
 '363469':
   cross section: 6.092299938201904
   errors: []
   filter efficiency: 0.5817000269889832
-  k-factor: 1.0
-  num events: 630187.1733487425
+  k-factor: 0.9702000021934509
+  num events: 535287.056553564
 '363470':
   cross section: 6.079599857330322
   errors: []
   filter efficiency: 0.2874999940395355
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 788205.9984828881
 '363471':
   cross section: 6.082799911499023
   errors: []
   filter efficiency: 0.1242000013589859
-  k-factor: 1.0
-  num events: 865152.7566042203
+  k-factor: 0.9702000021934509
+  num events: 856636.4127588528
 '363472':
   cross section: 0.3816699981689453
   errors: []
   filter efficiency: 0.5712000131607056
-  k-factor: 1.0
-  num events: 325786.68867331184
+  k-factor: 0.9702000021934509
+  num events: 261698.49009051546
 '363473':
   cross section: 0.3811199963092804
   errors: []
   filter efficiency: 0.28999999165534973
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 254558.7885887809
 '363474':
   cross section: 0.3845199942588806
   errors: []
   filter efficiency: 0.13680000603199005
-  k-factor: 1.0
-  num events: 272579.4914279282
+  k-factor: 0.9702000021934509
+  num events: 189849.27041378617
 '363475':
   cross section: 0.06837800145149231
   errors: []
   filter efficiency: 0.557200014591217
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 140937.93167458422
 '363476':
   cross section: 0.06765100359916687
   errors: []
   filter efficiency: 0.2897999882698059
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 84235.07746231556
 '363477':
   cross section: 0.07206299901008606
   errors: []
   filter efficiency: 0.13570000231266022
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 90967.38706633821
 '363478':
   cross section: 0.008743899874389172
   errors: []
   filter efficiency: 0.5475999712944031
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 6482.8395384550095
 '363479':
   cross section: 0.008869700133800507
   errors: []
   filter efficiency: 0.2840000092983246
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 8406.68235874176
 '363480':
   cross section: 0.008886899799108505
   errors: []
   filter efficiency: 0.15160000324249268
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 9200.772668123245
 '363481':
   cross section: 3.1286999728763476e-05
   errors: []
   filter efficiency: 0.42739999294281006
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 4780.497862935066
-'363482':
-  cross section: 2.5888999516610056e-05
-  errors: []
-  filter efficiency: 0.0940999984741211
-  k-factor: 1.0
-  num events: 5484.196552157402
 '363483':
   cross section: 2.9070999516989104e-05
   errors: []
   filter efficiency: 0.131400004029274
-  k-factor: 1.0
+  k-factor: 0.9702000021934509
   num events: 5680.835121870041
-'370100':
-  cross section: 0.6774778962135315
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 100330.3677521944
 '370101':
   cross section: 0.6774778962135315
   errors: []
@@ -2114,24 +1076,12 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 101056.80299800634
-'370105':
-  cross section: 0.3253876864910126
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 92894.61607766151
 '370106':
   cross section: 0.3253876864910126
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 101031.34017127752
-'370107':
-  cross section: 0.3253876864910126
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 101059.08301818371
 '370108':
   cross section: 0.3253876864910126
   errors: []
@@ -2168,12 +1118,6 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 100806.36719936132
-'370114':
-  cross section: 0.08564179390668869
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 101591.34773391485
 '370115':
   cross section: 0.08564179390668869
   errors: []
@@ -2186,12 +1130,6 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 101586.8690071702
-'370117':
-  cross section: 0.08564179390668869
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 100599.57888662815
 '370118':
   cross section: 0.08564179390668869
   errors: []
@@ -2204,18 +1142,6 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 101600.72812747955
-'370120':
-  cross section: 0.08564179390668869
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 100591.24093085527
-'370121':
-  cross section: 0.08564179390668869
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 96516.92184919119
 '370122':
   cross section: 0.08564179390668869
   errors: []
@@ -2228,54 +1154,24 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 100407.41313421726
-'370124':
-  cross section: 0.045982301235198975
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 100402.974853158
 '370125':
   cross section: 0.045982301235198975
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 101412.25519782305
-'370126':
-  cross section: 0.045982301235198975
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 100407.82502037287
 '370127':
   cross section: 0.045982301235198975
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 99387.8984106183
-'370128':
-  cross section: 0.045982301235198975
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 97365.69797313213
 '370129':
   cross section: 0.02526012621819973
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 101197.83082520962
-'370130':
-  cross section: 0.02526012621819973
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 98169.9267270565
-'370131':
-  cross section: 0.02526012621819973
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 100179.41265177727
 '370132':
   cross section: 0.02526012621819973
   errors: []
@@ -2336,12 +1232,6 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 98979.46115601063
-'370142':
-  cross section: 0.014171450398862362
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 97973.82155042887
 '370143':
   cross section: 0.014171450398862362
   errors: []
@@ -2360,12 +1250,6 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 98841.74649822712
-'370146':
-  cross section: 0.008089760318398476
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 90759.83653402328
 '370147':
   cross section: 0.008089760318398476
   errors: []
@@ -2395,37 +1279,13 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 100869.76075863838
-'370152':
-  cross section: 0.004697468597441912
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 99738.9442679882
+  num events: 40343.01045721769
 '370153':
   cross section: 0.004697468597441912
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 98710.78492164612
-'370154':
-  cross section: 0.004697468597441912
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 100736.4618203044
-'370155':
-  cross section: 0.004697468597441912
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 99738.3819975853
-'370156':
-  cross section: 0.004697468597441912
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 100719.36855834723
 '370157':
   cross section: 0.004697468597441912
   errors: []
@@ -2438,24 +1298,12 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 98713.80065852404
-'370159':
-  cross section: 0.004697468597441912
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 99720.01214635372
 '370160':
   cross section: 0.0027583648916333914
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 100637.60077542067
-'370161':
-  cross section: 0.0027583648916333914
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 97604.50597912073
 '370162':
   cross section: 0.0027583648916333914
   errors: []
@@ -2467,7 +1315,7 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 100620.11432981491
+  num events: 98608.84570729733
 '370164':
   cross section: 0.0027583648916333914
   errors: []
@@ -2510,18 +1358,12 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 98552.13347697258
-'370171':
-  cross section: 0.0016337907873094082
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 99550.79919159412
 '370172':
   cross section: 0.0016337907873094082
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 99554.34121209383
+  num events: 59334.76461726427
 '370173':
   cross section: 0.0016337907873094082
   errors: []
@@ -2534,18 +1376,6 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 100566.64168906212
-'370175':
-  cross section: 0.0016337907873094082
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 98548.05676686764
-'370176':
-  cross section: 0.0016337907873094082
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 99546.31142252684
 '370177':
   cross section: 0.0016337907873094082
   errors: []
@@ -2575,7 +1405,7 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 98446.59886801243
+  num events: 58263.70811957121
 '370182':
   cross section: 0.0009802603162825108
   errors: []
@@ -2612,6 +1442,666 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 98443.13437730074
+'370239':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50229.44404870272
+'370240':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50223.180339336395
+'370241':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50227.06803941727
+'370243':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50227.377799868584
+'370244':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 49221.90569883585
+'370245':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50224.52528679371
+'370247':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50227.567033052444
+'370248':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 49220.44909119606
+'370250':
+  cross section: 0.6774778962135315
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10239.479195594788
+'370251':
+  cross section: 0.6774778962135315
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10248.58387863636
+'370252':
+  cross section: 0.6774778962135315
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10237.141974806786
+'370253':
+  cross section: 0.6774778962135315
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10239.5382193923
+'370254':
+  cross section: 0.6774778962135315
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20485.385372161865
+'370255':
+  cross section: 0.6774778962135315
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 18436.739342451096
+'370256':
+  cross section: 0.3253876864910126
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10201.7222635746
+'370257':
+  cross section: 0.3253876864910126
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10209.690702974796
+'370258':
+  cross section: 0.3253876864910126
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10199.446090221405
+'370259':
+  cross section: 0.3253876864910126
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10210.923949718475
+'370260':
+  cross section: 0.3253876864910126
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 18377.72277891636
+'370261':
+  cross section: 0.3253876864910126
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20409.691855967045
+'370262':
+  cross section: 0.16349056363105774
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10177.592575609684
+'370263':
+  cross section: 0.16349056363105774
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10181.488052785397
+'370264':
+  cross section: 0.16349056363105774
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10172.132798790932
+'370265':
+  cross section: 0.16349056363105774
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10178.197246789932
+'370266':
+  cross section: 0.16349056363105774
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10178.829557538033
+'370267':
+  cross section: 0.16349056363105774
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20354.58189356327
+'370268':
+  cross section: 0.16349056363105774
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20353.451397299767
+'370269':
+  cross section: 0.08564179390668869
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10167.552788376808
+'370270':
+  cross section: 0.08564179390668869
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10164.17928892374
+'370271':
+  cross section: 0.08564179390668869
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10168.464384496212
+'370272':
+  cross section: 0.08564179390668869
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10161.981982171535
+'370273':
+  cross section: 0.08564179390668869
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10163.097518503666
+'370274':
+  cross section: 0.08564179390668869
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20323.000921428204
+'370275':
+  cross section: 0.08564179390668869
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20326.33805155754
+'370276':
+  cross section: 0.045982301235198975
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10144.2611926198
+'370277':
+  cross section: 0.045982301235198975
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10144.442055225372
+'370278':
+  cross section: 0.045982301235198975
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10145.91722214222
+'370279':
+  cross section: 0.045982301235198975
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10140.754151940346
+'370280':
+  cross section: 0.045982301235198975
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10142.906466305256
+'370281':
+  cross section: 0.045982301235198975
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10137.228405177593
+'370282':
+  cross section: 0.045982301235198975
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20284.01529800892
+'370283':
+  cross section: 0.045982301235198975
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20279.995162844658
+'370284':
+  cross section: 0.02526012621819973
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10118.287756145
+'370285':
+  cross section: 0.02526012621819973
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10118.702031135559
+'370286':
+  cross section: 0.02526012621819973
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10123.0288772583
+'370287':
+  cross section: 0.02526012621819973
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10118.839872717857
+'370288':
+  cross section: 0.02526012621819973
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10119.654050707817
+'370289':
+  cross section: 0.02526012621819973
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10120.414171397686
+'370290':
+  cross section: 0.02526012621819973
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20228.263335049152
+'370291':
+  cross section: 0.02526012621819973
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 18222.368177235126
+'370292':
+  cross section: 0.014171450398862362
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10099.032511174679
+'370293':
+  cross section: 0.014171450398862362
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10093.93761652708
+'370294':
+  cross section: 0.014171450398862362
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10101.144412636757
+'370295':
+  cross section: 0.014171450398862362
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10096.629194617271
+'370296':
+  cross section: 0.014171450398862362
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10094.80871117115
+'370297':
+  cross section: 0.014171450398862362
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10102.168278455734
+'370298':
+  cross section: 0.014171450398862362
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10095.761422872543
+'370299':
+  cross section: 0.014171450398862362
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20196.541771650314
+'370300':
+  cross section: 0.014171450398862362
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 18177.339210808277
+'370301':
+  cross section: 0.008089760318398476
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10087.008968830109
+'370302':
+  cross section: 0.008089760318398476
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10086.94265049696
+'370303':
+  cross section: 0.008089760318398476
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10091.570348203182
+'370304':
+  cross section: 0.008089760318398476
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10086.824145436287
+'370305':
+  cross section: 0.008089760318398476
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10090.520542860031
+'370306':
+  cross section: 0.008089760318398476
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10087.120232999325
+'370307':
+  cross section: 0.008089760318398476
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10089.37444472313
+'370308':
+  cross section: 0.008089760318398476
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20166.899288356304
+'370309':
+  cross section: 0.008089760318398476
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20167.741208791733
+'370310':
+  cross section: 0.004697468597441912
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10078.020712077618
+'370311':
+  cross section: 0.004697468597441912
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 8061.894345343113
+'370312':
+  cross section: 0.004697468597441912
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10079.651246607304
+'370313':
+  cross section: 0.004697468597441912
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10068.548116326332
+'370314':
+  cross section: 0.004697468597441912
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10072.168139100075
+'370315':
+  cross section: 0.004697468597441912
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10072.60922664404
+'370316':
+  cross section: 0.004697468597441912
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10069.886490881443
+'370317':
+  cross section: 0.004697468597441912
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10072.349385201931
+'370318':
+  cross section: 0.004697468597441912
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20147.81368982792
+'370319':
+  cross section: 0.004697468597441912
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 19136.71148043871
+'370320':
+  cross section: 0.0027583648916333914
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10063.875736892223
+'370321':
+  cross section: 0.0027583648916333914
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10064.198124527931
+'370322':
+  cross section: 0.0027583648916333914
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10061.990213572979
+'370323':
+  cross section: 0.0027583648916333914
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10061.895013391972
+'370324':
+  cross section: 0.0027583648916333914
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10061.15298718214
+'370325':
+  cross section: 0.0027583648916333914
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10063.74971562624
+'370326':
+  cross section: 0.0027583648916333914
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10066.664049565792
+'370327':
+  cross section: 0.0027583648916333914
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10061.236336767673
+'370328':
+  cross section: 0.0027583648916333914
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20132.598693430424
+'370329':
+  cross section: 0.0027583648916333914
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20128.965635955334
+'370330':
+  cross section: 0.0016337907873094082
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10064.470009088516
+'370331':
+  cross section: 0.0016337907873094082
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10061.656831741333
+'370332':
+  cross section: 0.0016337907873094082
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10063.711552739143
+'370333':
+  cross section: 0.0016337907873094082
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10061.796972811222
+'370334':
+  cross section: 0.0016337907873094082
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10063.35175138712
+'370335':
+  cross section: 0.0016337907873094082
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10062.795257627964
+'370336':
+  cross section: 0.0016337907873094082
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10064.359183073044
+'370337':
+  cross section: 0.0016337907873094082
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10062.47262442112
+'370338':
+  cross section: 0.0016337907873094082
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10063.008926808834
+'370339':
+  cross section: 0.0016337907873094082
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20108.765115380287
+'370340':
+  cross section: 0.0016337907873094082
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20117.64903765917
+'370341':
+  cross section: 0.0009802603162825108
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10044.85781353712
+'370342':
+  cross section: 0.0009802603162825108
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10044.429250776768
+'370343':
+  cross section: 0.0009802603162825108
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10043.274684727192
+'370344':
+  cross section: 0.0009802603162825108
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10044.624192535877
+'370345':
+  cross section: 0.0009802603162825108
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10041.51529288292
+'370346':
+  cross section: 0.0009802603162825108
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10041.371294677258
+'370347':
+  cross section: 0.0009802603162825108
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10045.49179303646
+'370348':
+  cross section: 0.0009802603162825108
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10046.12789940834
+'370349':
+  cross section: 0.0009802603162825108
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 10044.928010046482
+'370350':
+  cross section: 0.0009802603162825108
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 18080.42703318596
+'370351':
+  cross section: 0.0009802603162825108
+  errors: []
+  filter efficiency: 1.0
+  k-factor: 1.0
+  num events: 20093.168346583843
 '370400':
   cross section: 0.6774778962135315
   errors: []
@@ -2641,13 +2131,13 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20431.909705519676
+  num events: 18386.131946980953
 '370405':
   cross section: 0.3253876864910126
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20418.97566753626
+  num events: 18380.1011942029
 '370406':
   cross section: 0.16349056363105774
   errors: []
@@ -2678,36 +2168,24 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 20327.866528391838
-'370411':
-  cross section: 0.08564179390668869
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 19316.060368835926
 '370412':
   cross section: 0.08564179390668869
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20330.940739631653
+  num events: 18294.53794425726
 '370413':
   cross section: 0.08564179390668869
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20325.005073428154
+  num events: 18294.415876209736
 '370414':
   cross section: 0.045982301235198975
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 19259.882658541203
-'370415':
-  cross section: 0.045982301235198975
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 20280.21288996935
 '370416':
   cross section: 0.045982301235198975
   errors: []
@@ -2725,13 +2203,13 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20279.310825288296
+  num events: 18249.25593984127
 '370419':
   cross section: 0.02526012621819973
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20237.721425890923
+  num events: 18213.282190203667
 '370420':
   cross section: 0.02526012621819973
   errors: []
@@ -2809,7 +2287,7 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20166.351667702198
+  num events: 18148.126659929752
 '370433':
   cross section: 0.008089760318398476
   errors: []
@@ -2864,18 +2342,12 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 20146.173284888268
-'370442':
-  cross section: 0.004697468597441912
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 20148.983994722366
 '370443':
   cross section: 0.0027583648916333914
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20129.199869155884
+  num events: 18116.371479272842
 '370444':
   cross section: 0.0027583648916333914
   errors: []
@@ -2888,12 +2360,6 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 19121.3301538229
-'370446':
-  cross section: 0.0027583648916333914
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 19125.39673215151
 '370447':
   cross section: 0.0027583648916333914
   errors: []
@@ -2953,7 +2419,7 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20113.435837686062
+  num events: 18103.40995544195
 '370457':
   cross section: 0.0016337907873094082
   errors: []
@@ -2972,12 +2438,6 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 19091.454359531403
-'370460':
-  cross section: 0.0009802603162825108
-  errors: []
-  filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 20092.45656579733
 '370461':
   cross section: 0.0009802603162825108
   errors: []
@@ -3037,7 +2497,7 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20421.165496587753
+  num events: 18378.29929947853
 '370505':
   cross section: 0.3253876864910126
   errors: []
@@ -3067,13 +2527,13 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20356.0900092721
+  num events: 18316.071542024612
 '370510':
   cross section: 0.08564179390668869
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20326.33077532053
+  num events: 18294.794789135456
 '370511':
   cross section: 0.08564179390668869
   errors: []
@@ -3103,7 +2563,7 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20284.024083673954
+  num events: 18256.700829565525
 '370516':
   cross section: 0.045982301235198975
   errors: []
@@ -3133,7 +2593,7 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20239.91721111536
+  num events: 18217.419602692127
 '370521':
   cross section: 0.02526012621819973
   errors: []
@@ -3253,7 +2713,7 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20145.525044202805
+  num events: 18132.546442985535
 '370541':
   cross section: 0.004697468597441912
   errors: []
@@ -3277,7 +2737,7 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20132.540077328682
+  num events: 18119.565818965435
 '370545':
   cross section: 0.0027583648916333914
   errors: []
@@ -3337,7 +2797,7 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0
-  num events: 20111.118143975735
+  num events: 18099.80935448408
 '370555':
   cross section: 0.0016337907873094082
   errors: []
@@ -3404,132 +2864,234 @@ default: &default_weights
   filter efficiency: 1.0
   k-factor: 1.0
   num events: 20088.850715637207
+'373421':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50210.24443370104
+'373423':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50218.037791371346
+'373424':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50217.9893733263
+'373425':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50216.08178627491
+'373426':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50215.24948579073
+'373428':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50214.29069471359
+'373430':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50220.55926293135
+'373431':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50217.993013978004
+'373433':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50220.121779084206
+'373435':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50214.22217440605
+'373437':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 49215.82797920704
+'373438':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50223.45712137222
+'373441':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50215.36381649971
+'373443':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 50204.744410157204
+'373447':
+  cross section: 0.0
+  errors: []
+  filter efficiency: 0.0
+  k-factor: 0.0
+  num events: 49210.43249851465
 '407009':
-  cross section: 831.760009765625
+  cross section: 696.219970703125
   errors: []
   filter efficiency: 0.02292099967598915
-  k-factor: 1.0
-  num events: 6.794234174299504
+  k-factor: 1.1949000358581543
+  num events: 9583000.0
 '407010':
-  cross section: 831.760009765625
+  cross section: 696.219970703125
   errors: []
   filter efficiency: 0.003204334992915392
-  k-factor: 1.0
-  num events: 1.343412752975837
+  k-factor: 1.1949000358581543
+  num events: 1830000.0
 '407011':
-  cross section: 831.760009765625
+  cross section: 696.22998046875
   errors: []
   filter efficiency: 0.0005652339896187186
-  k-factor: 1.0
-  num events: 0.3398966156892129
+  k-factor: 1.1949000358581543
+  num events: 493000.0
 '407012':
-  cross section: 831.760009765625
+  cross section: 696.219970703125
   errors: []
   filter efficiency: 0.009219475090503693
-  k-factor: 1.0
-  num events: 2.6883267555423345
+  k-factor: 1.1949000358581543
+  num events: 3513000.0
+'407018':
+  cross section: 34.00899887084961
+  errors: ['root://fax.mwt2.org:1094//atlas/rucio/user.mswiatlo:user.mswiatlo.8713903._000002.output_xAOD.root']
+  filter efficiency: 0.08846119791269302
+  k-factor: 1.0540000200271606
+  num events: 1870000.0
 '407019':
   cross section: 34.00899887084961
   errors: []
   filter efficiency: 0.011282499879598618
-  k-factor: 1.0
-  num events: 0.016575371315383336
+  k-factor: 1.0540000200271606
+  num events: 408000.0
+'407020':
+  cross section: 33.98899841308594
+  errors: []
+  filter efficiency: 0.08841519802808762
+  k-factor: 1.0540000200271606
+  num events: 2358000.0
 '407021':
   cross section: 33.98899841308594
   errors: []
   filter efficiency: 0.011259100399911404
-  k-factor: 1.0
-  num events: 0.016499317147584236
+  k-factor: 1.0540000200271606
+  num events: 410000.0
 '410000':
   cross section: 696.1099853515625
   errors: []
   filter efficiency: 0.5429999828338623
   k-factor: 1.1949000358581543
-  num events: 59321600.0
+  num events: 52222600.0
 '410001':
   cross section: 783.72998046875
   errors: []
   filter efficiency: 0.5429999828338623
   k-factor: 1.0613000392913818
-  num events: 19957000.0
+  num events: 18713000.0
 '410002':
   cross section: 611.0999755859375
   errors: []
   filter efficiency: 0.5429999828338623
   k-factor: 1.3610999584197998
-  num events: 19900000.0
+  num events: 18940000.0
 '410011':
   cross section: 43.73899841308594
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0094000101089478
-  num events: 0.21825279300280442
+  num events: 4686200.0
 '410012':
   cross section: 25.777999877929688
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0192999839782715
-  num events: 0.12869469328287408
+  num events: 4369800.0
 '410013':
   cross section: 34.00899887084961
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.0
-  num events: 4985800.0
+  k-factor: 1.0540000200271606
+  num events: 4406600.0
 '410014':
   cross section: 33.98899841308594
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.0
+  k-factor: 1.0540000200271606
   num events: 4985600.0
 '410025':
   cross section: 2.0517001152038574
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.6806000471115112
-  num events: 0.002048567510679611
+  k-factor: 1.0046000480651855
+  num events: 997800.0
 '410026':
   cross section: 1.2615000009536743
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.708799958229065
-  num events: 0.0012590499857492166
+  k-factor: 1.0214999914169312
+  num events: 995400.0
 '410066':
   cross section: 0.17655999958515167
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.25
-  num events: 1992400.0
+  k-factor: 1.3200000524520874
+  num events: 1846400.0
 '410067':
   cross section: 0.14061999320983887
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.25
-  num events: 2372533.1944731176
+  k-factor: 1.3200000524520874
+  num events: 2355815.1317760646
 '410068':
   cross section: 0.13680000603199005
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.25
-  num events: 1287775.554841578
+  k-factor: 1.3200000524520874
+  num events: 1179743.5146837533
 '410073':
   cross section: 0.1732099950313568
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.3300000429153442
-  num events: 1967000.0
+  k-factor: 1.4700000286102295
+  num events: 1659000.0
 '410074':
   cross section: 0.16532999277114868
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.3300000429153442
-  num events: 2407583.3633281887
+  k-factor: 1.4700000286102295
+  num events: 2238623.0907811224
 '410075':
   cross section: 0.17427000403404236
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.3300000429153442
-  num events: 1380470.2873318493
+  k-factor: 1.4700000286102295
+  num events: 1154603.2874208093
 '410080':
   cross section: 0.009162199683487415
   errors: []
@@ -3538,37 +3100,40 @@ default: &default_weights
   num events: 198800.0
 '410111':
   cross section: 0.00962349958717823
-  errors: []
+  errors: ['root://fax.mwt2.org:1094//atlas/rucio/user.mswiatlo:user.mswiatlo.8714178._000001.output_xAOD.root']
   filter efficiency: 1.0
-  k-factor: 1.350000023841858
-  num events: 289000.0
+  k-factor: 1.5099999904632568
+  num events: 0
 '410112':
   cross section: 0.017343999817967415
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.350000023841858
-  num events: 338374.21712595224
+  k-factor: 1.5099999904632568
+  num events: 336056.99136710167
 '410113':
   cross section: 0.009646199643611908
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.350000023841858
+  k-factor: 1.5099999904632568
   num events: 295000.0
 '410114':
   cross section: 0.017361000180244446
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.350000023841858
+  k-factor: 1.5099999904632568
   num events: 339402.94191661477
 '410115':
   cross section: 0.009887400083243847
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.350000023841858
+  k-factor: 1.5099999904632568
   num events: 295000.0
 '410116':
   cross section: 0.01779000088572502
   errors: []
   filter efficiency: 1.0
-  k-factor: 1.350000023841858
+  k-factor: 1.5099999904632568
   num events: 338152.417270869
+
+'2015.data.root.json': *default_weights
+'2016.data.root.json': *default_weights
