@@ -25,19 +25,22 @@ default: &default_weights
   errors: []
   filter efficiency: 0.10553999990224838
   k-factor: 1.0
-  num events: 1019260.0
+  num events: 95912.0
+  rel uncert: 1.0
 '341270':
   cross section: 0.5084999799728394
   errors: []
   filter efficiency: 0.43928998708724976
   k-factor: 1.0
-  num events: 509314.0
+  num events: 181234.0
+  rel uncert: 1.0
 '341271':
   cross section: 0.5084999799728394
   errors: []
   filter efficiency: 0.45517000555992126
   k-factor: 1.0
   num events: 506676.0
+  rel uncert: 1.0
 '361091':
   cross section: 24.885000228881836
   errors: []
@@ -3265,79 +3268,92 @@ default: &default_weights
   errors: []
   filter efficiency: 1.0
   k-factor: 1.3200000524520874
-  num events: 1846400.0
+  num events: 490000.0
+  rel uncert: 1.0
 '410067':
   cross section: 0.14061999320983887
   errors: []
   filter efficiency: 1.0
   k-factor: 1.3200000524520874
-  num events: 2355815.1317760646
+  num events: 547350.6759095192
+  rel uncert: 1.0
 '410068':
   cross section: 0.13680000603199005
   errors: []
   filter efficiency: 1.0
   k-factor: 1.3200000524520874
-  num events: 1179743.5146837533
+  num events: 206097.72870996594
+  rel uncert: 1.0
 '410073':
   cross section: 0.1732099950313568
   errors: []
   filter efficiency: 1.0
   k-factor: 1.4700000286102295
-  num events: 1659000.0
+  num events: 700000.0
+  rel uncert: 1.0
 '410074':
   cross section: 0.16532999277114868
   errors: []
   filter efficiency: 1.0
   k-factor: 1.4700000286102295
-  num events: 2238623.0907811224
+  num events: 733281.500977695
+  rel uncert: 1.0
 '410075':
   cross section: 0.17427000403404236
   errors: []
   filter efficiency: 1.0
   k-factor: 1.4700000286102295
-  num events: 1154603.2874208093
+  num events: 683229.031523943
+  rel uncert: 1.0
 '410080':
   cross section: 0.009162199683487415
   errors: []
   filter efficiency: 1.0
   k-factor: 1.0041999816894531
-  num events: 198800.0
+  num events: 50000.0
+  rel uncert: 1.0
 '410111':
   cross section: 0.00962349958717823
-  errors: ['root://fax.mwt2.org:1094//atlas/rucio/user.mswiatlo:user.mswiatlo.8714178._000001.output_xAOD.root']
+  errors: []
   filter efficiency: 1.0
   k-factor: 1.5099999904632568
-  num events: 0
+  num events: 239000.0
+  rel uncert: 1.0
 '410112':
   cross section: 0.017343999817967415
   errors: []
   filter efficiency: 1.0
   k-factor: 1.5099999904632568
-  num events: 336056.99136710167
+  num events: 183641.83722025156
+  rel uncert: 1.0
 '410113':
   cross section: 0.009646199643611908
   errors: []
   filter efficiency: 1.0
   k-factor: 1.5099999904632568
-  num events: 295000.0
+  num events: 259000.0
+  rel uncert: 1.0
 '410114':
   cross section: 0.017361000180244446
   errors: []
   filter efficiency: 1.0
   k-factor: 1.5099999904632568
-  num events: 339402.94191661477
+  num events: 196246.25617405772
+  rel uncert: 1.0
 '410115':
   cross section: 0.009887400083243847
   errors: []
   filter efficiency: 1.0
   k-factor: 1.5099999904632568
   num events: 295000.0
+  rel uncert: 1.0
 '410116':
   cross section: 0.01779000088572502
   errors: []
   filter efficiency: 1.0
   k-factor: 1.5099999904632568
   num events: 338152.417270869
+  rel uncert: 1.0
 
 '2015.data.root.json': *default_weights
 '2016.data.root.json': *default_weights
