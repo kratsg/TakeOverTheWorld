@@ -30,6 +30,7 @@ import argparse
 import subprocess
 import glob
 import yaml
+import json
 
 '''
   with tempfile.NamedTemporaryFile() as tmpFile:
@@ -147,6 +148,7 @@ def set_label(hist, config):
 did_regex = re.compile('(\d{6,8})')
 def get_did(hist):
   if not isinstance(hist, _Hist):
+    import pdb; pdb.set_trace()
     raise TypeError("Must pass in a rootpy Hist object")
   m = did_regex.search(hist.get_directory().get_file().name)
   if m is None:
@@ -169,7 +171,7 @@ if __name__ == "__main__":
   parser.add_argument('-b', '--batch', dest='batch_mode', action='store_true', help='Enable batch mode for ROOT.')
 
   parser.add_argument('--config', required=True, type=str, dest='config_file', metavar='<file.yml>', help='YAML file specifying input files and asssociated names')
-  parser.add_argument('--weights', required=True, type=str, dest='weights_file', metavar='<file.yml>', help='YAML file specifying the weights by dataset id')
+  parser.add_argument('--weights', required=True, type=str, dest='weights_file', metavar='<file.json>', help='json file specifying the weights by dataset id')
 
   parser.add_argument('-i', '--input', dest='topLevel', type=str, help='Top level directory containing plots.', default='all')
 
@@ -198,7 +200,7 @@ if __name__ == "__main__":
       # get the plots group configuration
       plots = configs.get('plots')
       # get the weights configurations for scaling
-      weights = yaml.load(file(args.weights_file))
+      weights = json.load(file(args.weights_file))
       # global configurations for plots
       plots_config = plots.get('config', {})
       # all paths to plot
@@ -269,6 +271,8 @@ if __name__ == "__main__":
             if weight is None:
               raise KeyError("Could not find the weights for did=%s" % did)
             scaleFactor = 1.0
+            if weight.get('num events') == 0:
+              raise ValueError("did=%s has num events == 0" % did)
             scaleFactor /= weight.get('num events')
             scaleFactor *= weight.get('cross section')
             scaleFactor *= weight.get('filter efficiency')
@@ -279,7 +283,7 @@ if __name__ == "__main__":
             logger.info("Scale factor for %s: %0.6f" % (did, scaleFactor))
 
         # set a list of colors to loop through if not set
-        default_colors = cycle(tableau.BlueRed_12.colors)
+        default_colors = cycle(tableau.Tableau_20.colors)
         hists = map(lambda hgroup: hgroup.flatten, h)
         soloHists = []
         stackHists = []
@@ -318,7 +322,7 @@ if __name__ == "__main__":
         hstack = HistStack(name=h.path)
         # for some reason, this causes noticable slowdowns
         hstack.drawstyle = 'hist'
-        map(hstack.Add, stackHists)
+        map(hstack.Add, stackHists[::-1])
 
         # this is where we would set various parameters of the min, max and so on?
         # need to set things like min, max, change to log, etc for hstack and soloHists
