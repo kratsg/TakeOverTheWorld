@@ -150,7 +150,7 @@ def get_did(hist):
   if not isinstance(hist, _Hist):
     import pdb; pdb.set_trace()
     raise TypeError("Must pass in a rootpy Hist object")
-  m = did_regex.search(hist.get_directory().get_file().name)
+  m = did_regex.search(hist.get_directory().GetFile().name)
   if m is None:
     raise ValueError("%s is not a valid filename" % hist.get_directory().get_file().name)
   return m.groups()[0]
