@@ -152,7 +152,7 @@ def get_did(hist):
     raise TypeError("Must pass in a rootpy Hist object")
   m = did_regex.search(hist.get_directory().GetFile().name)
   if m is None:
-    raise ValueError("%s is not a valid filename" % hist.get_directory().get_file().name)
+    raise ValueError("%s is not a valid filename" % hist.get_directory().GetFile().name)
   return m.groups()[0]
 
 if __name__ == "__main__":
@@ -336,9 +336,12 @@ if __name__ == "__main__":
           mcScale = 0.
           for hist in hstack:
             mcScale += hist.integral()
-          normalizeFactor = dataScale/mcScale
+          if mcScale != 0.:
+            normalizeFactor = dataScale/mcScale
+          else:
+            normalizeFactor = 1.
           for hist in hstack:
-            hist.scale(dataScale/mcScale)
+            hist.scale(normalizeFactor)
 
         # cycle through all draw options and make sure we don't overwrite
         drawOptions = ["same"]*len(soloHists)
