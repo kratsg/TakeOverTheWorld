@@ -15,6 +15,7 @@ parser.add_argument('--config', required=True, type=str, dest='config', metavar=
 parser.add_argument('--out_tdirectory', required=False, type=str, dest='outdir', metavar='', help='TDirectory to store all generated histograms', default='all')
 parser.add_argument('--treename', required=False, type=str, dest='treename', metavar='', help='Tree containing the ntuple information', default='oTree')
 parser.add_argument('--eventWeight', required=False, type=str, dest='eventWeightBranch', metavar='', help='Event Weight Branch name', default='weight')
+parser.add_argument('--newOutputs', action='store_true', default=False, help='create new output files for histograms')
 
 # parse the arguments, throw errors if missing any
 args = parser.parse_args()
@@ -23,11 +24,15 @@ config = json.load(file(args.config))
 
 for f in args.files:
   print "opening {0}".format(f)
-  out_file = root_open(f, "UPDATE")
+  if args.newOutputs:
+    in_file = root_open(f, "READ")
+    out_file = root_open(f+".hists", "RECREATE")
+    tree = in_file.get(args.treename)
+  else:
+    out_file = root_open(f, "UPDATE")
+    tree = out_file.get(args.treename)
   # create tdirectory and cd into it
   print "\tmaking tdirectory {0}".format(args.outdir)
-
-  tree = out_file.get(args.treename)
 
   # for each thing to draw, we want to apply a selection on them too
   for cut in config['cuts']:
