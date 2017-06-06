@@ -26,7 +26,7 @@ for f in args.files:
   print "opening {0}".format(f)
   if args.newOutputs:
     in_file = root_open(f, "READ")
-    out_file = root_open("hists_{0:s}".format(f), "RECREATE")
+    out_file = root_open(os.path.join(os.path.dirname(f), "hists_{0:s}".format(os.path.basename(f))), "RECREATE")
     tree = in_file.get(args.treename)
   else:
     out_file = root_open(f, "UPDATE")
