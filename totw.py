@@ -124,10 +124,10 @@ def ensure_dir(f):
 def get_axis(hist, xy='x'):
   return hist.xaxis if xy=='x' else hist.yaxis
 
-def set_minmax(hist, config):
+def set_minmax(hist, plots_path):
   for xy in ['x', 'y']:
-    min_val = config.get('%smin' % xy, None)
-    max_val = config.get('%smax' % xy, None)
+    min_val = plots_path.get('%smin' % xy, None)
+    max_val = plots_path.get('%smax' % xy, None)
     if min_val is not None and max_val is not None:
       if isinstance(hist, HistStack) and xy == 'y':
         hist.SetMaximum(max_val)
@@ -178,6 +178,7 @@ if __name__ == "__main__":
   parser.add_argument('--lumi', required=False, type=int, dest='global_luminosity', metavar='<ifb>', help='luminosity to use for scaling')
 
   parser.add_argument('-i', '--input', dest='topLevel', type=str, help='Top level directory containing plots.', default='all')
+  parser.add_argument('--file-ext', type=str, nargs='+', default=['root', 'pdf'], help='Output file extensions to make')
 
   # parse the arguments, throw errors if missing any
   args = parser.parse_args()
@@ -296,8 +297,9 @@ if __name__ == "__main__":
           group = groups.get(hist.title)
           hist_styles = group.get('styles', {})
 
-          # auto loop through colors
-          hist_styles['color'] = hist_styles.get('color', next(default_colors))
+          # auto loop through colors and add color if not set
+          if not any('color' in k for k in hist_styles.keys()):
+            hist_styles['color'] = hist_styles.get('color', next(default_colors))
           # decorate it
           hist.decorate(**hist_styles)
 
@@ -356,6 +358,16 @@ if __name__ == "__main__":
           set_minmax(hstack, plots_path)
           set_label(hstack, plots_path)
           get_axis(hstack, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
+          # set label/title sizes
+          get_axis(hstack, 'x').set_label_size(canvasConfigs.get('xlabel size', 30))
+          get_axis(hstack, 'x').set_title_size(canvasConfigs.get('xtitle size', 30))
+          get_axis(hstack, 'y').set_label_size(canvasConfigs.get('ylabel size', 30))
+          get_axis(hstack, 'y').set_title_size(canvasConfigs.get('ytitle size', 30))
+          # set label/title fonts
+          get_axis(hstack, 'x').set_label_font(canvasConfigs.get('label font', 43))
+          get_axis(hstack, 'x').set_title_font(canvasConfigs.get('title font', 43))
+          get_axis(hstack, 'y').set_label_font(canvasConfigs.get('label font', 43))
+          get_axis(hstack, 'y').set_title_font(canvasConfigs.get('title font', 43))
 
         for hist in soloHists:
           hist.Draw(next(drawOptions))
@@ -364,6 +376,16 @@ if __name__ == "__main__":
           if canvasConfigs.get('logy', False) == True:
             hist.set_minimum(1e-5)
           get_axis(hist, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
+          # set label/title sizes
+          get_axis(hist, 'x').set_label_size(canvasConfigs.get('xlabel size', 30))
+          get_axis(hist, 'x').set_title_size(canvasConfigs.get('xtitle size', 30))
+          get_axis(hist, 'y').set_label_size(canvasConfigs.get('ylabel size', 30))
+          get_axis(hist, 'y').set_title_size(canvasConfigs.get('ytitle size', 30))
+          # set label/title fonts
+          get_axis(hist, 'x').set_label_font(canvasConfigs.get('label font', 43))
+          get_axis(hist, 'x').set_title_font(canvasConfigs.get('title font', 43))
+          get_axis(hist, 'y').set_label_font(canvasConfigs.get('label font', 43))
+          get_axis(hist, 'y').set_title_font(canvasConfigs.get('title font', 43))
 
         # draw the text we need
         textConfigs = plots.get('config', {}).get('texts', [])
@@ -377,7 +399,7 @@ if __name__ == "__main__":
           label.Draw()
 
         # draw the ratio
-        if plots_path.get('ratio', False):
+        if plots_path.get('ratio', plots_config.get('ratio', False)):
           canvas.get_pad(0).set_bottom_margin(0.3)
           p = Pad(0,0,1,1)  # create new pad, fullsize to have equal font-sizes in both plots
           #p.set_top_margin(1-canvas.get_bottom_margin())  # top-boundary (should be 1-thePad->GetBottomMargin())
@@ -396,20 +418,29 @@ if __name__ == "__main__":
             #set_minmax(ratio, plots_path)
             #get_axis(ratio, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
 
-            ratio.yaxis.title = "Data / MC"
-            ratio.yaxis.set_label_size(0.025)
+            ratio.yaxis.title = plots_path.get('ratio label', plots_config.get('ratio label', "Data / MC"))
+
+            # set label/title sizes based on hstack/solo hists defaults
+            get_axis(ratio, 'x').set_label_size(canvasConfigs.get('xlabel size', 30))
+            get_axis(ratio, 'x').set_title_size(canvasConfigs.get('xtitle size', 30))
+            get_axis(ratio, 'y').set_label_size(plots_path.get('ratio ylabel size', plots_config.get('ratio ylabel size', 30)))
+            get_axis(ratio, 'y').set_title_size(plots_path.get('ratio ytitle size', plots_config.get('ratio ytitle size', 30)))
+            # set label/title fonts
+            get_axis(ratio, 'x').set_label_font(canvasConfigs.get('label font', 43))
+            get_axis(ratio, 'x').set_title_font(canvasConfigs.get('title font', 43))
+            get_axis(ratio, 'y').set_label_font(canvasConfigs.get('label font', 43))
+            get_axis(ratio, 'y').set_title_font(canvasConfigs.get('title font', 43))
+
             ratio.yaxis.set_decimals(True)
             ratio.yaxis.set_range_user(0, 2)
             ratio.yaxis.SetNdivisions(5)
 
-            # copy over formatting
-            ratio.xaxis.set_label_size(hstack.xaxis.get_label_size()/canvas.width)
+            # copy over some other settings for colors on x-axis
             ratio.xaxis.set_label_color(hstack.xaxis.get_label_color())
-            ratio.xaxis.set_title_size(hstack.xaxis.get_title_size()/canvas.width)
             ratio.xaxis.set_title_color(hstack.xaxis.get_title_color())
-
             ratio.xaxis.set_title_offset(hstack.xaxis.get_title_offset())
-            ratio.yaxis.set_title_offset(hstack.yaxis.get_title_offset())
+            # copy over title offset settings
+            ratio.yaxis.set_title_offset(plots_path.get('ratio ytitle offset', plots_config.get('ratio ytitle offset', hstack.yaxis.get_title_offset())))
 
             # clear the xaxis on the histograms
             hist.xaxis.set_label_size(0)
@@ -432,7 +463,7 @@ if __name__ == "__main__":
         file_name = "plots/{0:s}".format(h.path)
         print("Saving {0:s}... \r".format(file_name), end='\r')
         ensure_dir(file_name)
-        for file_ext in ["root", "pdf"]:
+        for file_ext in args.file_ext:
           canvas.SaveAs("{0:s}.{1:s}".format(file_name, file_ext))
         sys.stdout.flush()
         print("Saved {0:s} successfully.".format(file_name))
