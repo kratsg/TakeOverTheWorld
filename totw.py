@@ -52,6 +52,8 @@ ROOT.gROOT.SetBatch(True)
 import numpy as np
 import root_numpy as rnp
 import rootpy as rpy
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as pl
 from rootpy.io import root_open
 from rootpy.plotting.style import set_style, get_style
