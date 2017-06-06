@@ -45,6 +45,8 @@ import json
 
 # Set up ROOT
 import ROOT
+ROOT.PyConfig.IgnoreCommandLineOptions = True
+ROOT.gROOT.SetBatch(True)
 
 #root_numpy
 import numpy as np
@@ -168,7 +170,6 @@ if __name__ == "__main__":
   # general arguments for all
   parser.add_argument('-v','--verbose', dest='verbose', action='count', default=0, help='Enable verbose output of various levels. Use --debug to enable output for debugging.')
   parser.add_argument('--debug', dest='debug', action='store_true', help='Enable ROOT output and full-on debugging. Use this if you need to debug the application.')
-  parser.add_argument('-b', '--batch', dest='batch_mode', action='store_true', help='Enable batch mode for ROOT.')
 
   parser.add_argument('--config', required=True, type=str, dest='config_file', metavar='<file.yml>', help='YAML file specifying input files and asssociated names')
   parser.add_argument('--weights', required=True, type=str, dest='weights_file', metavar='<file.json>', help='json file specifying the weights by dataset id')
@@ -192,9 +193,6 @@ if __name__ == "__main__":
     with tempfile.NamedTemporaryFile() as tmpFile:
       if not args.debug:
         ROOT.gSystem.RedirectOutput(tmpFile.name, "w")
-
-      # if flag is shown, set batch_mode to true, else false
-      ROOT.gROOT.SetBatch(args.batch_mode)
 
       configs = yaml.load(file(args.config_file))
       groups = dict([(group['name'], group) for group in configs['groups']])

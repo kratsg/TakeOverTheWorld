@@ -11,7 +11,7 @@ pudb==2015.1
 pyparsing==2.0.3
 python-dateutil==2.4.0
 pytz==2014.10
-root-numpy==4.2.0
+root-numpy~=4.7
 rootpy==0.8.0
 six==1.9.0
 snakeviz==0.4.0
