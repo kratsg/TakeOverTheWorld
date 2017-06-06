@@ -174,7 +174,7 @@ if __name__ == "__main__":
   parser.add_argument('--debug', dest='debug', action='store_true', help='Enable ROOT output and full-on debugging. Use this if you need to debug the application.')
 
   parser.add_argument('--config', required=True, type=str, dest='config_file', metavar='<file.yml>', help='YAML file specifying input files and asssociated names')
-  parser.add_argument('--weights', required=True, type=str, dest='weights_file', metavar='<file.json>', help='json file specifying the weights by dataset id')
+  parser.add_argument('--weights', required=False, type=str, dest='weights_file', metavar='<file.json>', help='json file specifying the weights by dataset id')
   parser.add_argument('--lumi', required=False, type=int, dest='global_luminosity', metavar='<ifb>', help='luminosity to use for scaling')
 
   parser.add_argument('-i', '--input', dest='topLevel', type=str, help='Top level directory containing plots.', default='all')
@@ -201,7 +201,9 @@ if __name__ == "__main__":
       # get the plots group configuration
       plots = configs.get('plots')
       # get the weights configurations for scaling
-      weights = json.load(file(args.weights_file))
+      weights = {}
+      if args.weights_file:
+          weights = json.load(file(args.weights_file))
       # global configurations for plots
       plots_config = plots.get('config', {})
       # all paths to plot
