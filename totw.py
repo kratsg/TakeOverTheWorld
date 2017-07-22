@@ -135,15 +135,15 @@ def set_minmax(hist, plots_path):
       else:
         get_axis(hist, xy).SetRangeUser(min_val, max_val)
 
-def set_label(hist, config):
+def set_label(hist, config, canvasConfig):
     if isinstance(hist, HistStack):
       subhist = hist[0]
     else:
       subhist = hist
     get_axis(hist, 'x').title = config.get('xlabel', get_axis(subhist, 'x').title)
     get_axis(hist, 'y').title = config.get('ylabel', get_axis(subhist, 'y').title)
-    xtitleoffset = config.get('xtitleoffset', None)
-    ytitleoffset = config.get('ytitleoffset', None)
+    xtitleoffset = config.get('xtitleoffset', canvasConfig.get('xtitleoffset', None))
+    ytitleoffset = config.get('ytitleoffset', canvasConfig.get('ytitleoffset', None))
     if xtitleoffset:
       get_axis(hist, 'x').SetTitleOffset(xtitleoffset)
     if ytitleoffset:
@@ -356,7 +356,7 @@ if __name__ == "__main__":
           hstack.Draw(next(drawOptions))
           # set up axes
           set_minmax(hstack, plots_path)
-          set_label(hstack, plots_path)
+          set_label(hstack, plots_path, canvasConfigs)
           get_axis(hstack, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
           # set label/title sizes
           get_axis(hstack, 'x').set_label_size(canvasConfigs.get('xlabel size', 30))
@@ -372,7 +372,7 @@ if __name__ == "__main__":
         for hist in soloHists:
           hist.Draw(next(drawOptions))
           set_minmax(hist, plots_path)
-          set_label(hist, plots_path)
+          set_label(hist, plots_path, canvasConfigs)
           if canvasConfigs.get('logy', False) == True:
             hist.set_minimum(1e-5)
           get_axis(hist, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
