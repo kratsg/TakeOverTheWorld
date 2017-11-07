@@ -149,15 +149,22 @@ def set_label(hist, config, canvasConfig):
     if ytitleoffset:
       get_axis(hist, 'y').SetTitleOffset(ytitleoffset)
 
-did_regex = re.compile('(\d{6,8})')
+did_regex = re.compile('(?:00)?([1-9]\d{5})(?=\.[a-zA-Z_]+\.?)')
 def get_did(hist):
+  global did_regex
   if not isinstance(hist, _Hist):
-    import pdb; pdb.set_trace()
     raise TypeError("Must pass in a rootpy Hist object")
-  m = did_regex.search(hist.get_directory().GetFile().name)
+  filename = hist.get_directory().GetFile().name
+  # check if the dirname matches
+  m = did_regex.search(os.path.basename(os.path.dirname(filename)))
   if m is None:
-    raise ValueError("%s is not a valid filename" % hist.get_directory().GetFile().name)
-  return m.groups()[0]
+    # no, does the basename match?
+    m = did_regex.search(os.path.basename(filename))
+    if m is None:
+      # no, we have no idea what this shit is, use the basename of the filename
+      logger.warning('Can\'t figure out DID from dirname: {0:s}! Using the input basename instead: {1:s}'.format(os.path.basename(os.path.dirname(filename)), os.path.basename(filename)))
+      return os.path.basename(filename)
+  return m.group(1)
 
 if __name__ == "__main__":
   class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter):
@@ -271,16 +278,14 @@ if __name__ == "__main__":
           for hist in hgroup:
             # scale the histograms, look up weights by did
             did = get_did(hist)
-            weight = weights.get(did)
-            if weight is None:
-              raise KeyError("Could not find the weights for did=%s" % did)
+            weight = weights.get(did, {})
+	    if weight == {}:
+	      logger.warning("Could not get weights for {0:s}, assuming default.".format(did))
             scaleFactor = 1.0
-            if weight.get('num events') == 0:
-              raise ValueError("did=%s has num events == 0" % did)
-            scaleFactor /= weight.get('num events')
-            scaleFactor *= weight.get('cross section')
-            scaleFactor *= weight.get('filter efficiency')
-            scaleFactor *= weight.get('k-factor')
+            scaleFactor /= weight.get('num events', 1.0)
+            scaleFactor *= weight.get('cross section', 1.0)
+            scaleFactor *= weight.get('filter efficiency', 1.0)
+            scaleFactor *= weight.get('k-factor', 1.0)
             scaleFactor *= args.global_luminosity*1000
             scaleFactor *= groups.get(hgroup.group).get('scale factor', 1.0)
             hist.scale(scaleFactor)
