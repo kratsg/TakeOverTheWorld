@@ -392,10 +392,26 @@ if __name__ == "__main__":
           get_axis(hist, 'y').set_label_font(canvasConfigs.get('label font', 43))
           get_axis(hist, 'y').set_title_font(canvasConfigs.get('title font', 43))
 
+        # Kolmogorov-Smirnov test annotation
+        textKSstatistic = []
+        if plots_path.get('KSstatistic', False):
+            ks_text = "KS Statistic: NaN"
+            if len(soloHists) != 0:
+                if len(soloHists) > 1:
+                    logger.warning("Warning: len(soloHists) > 1, using the first solo hist for data when computing KolmogorovTest statistic!")
+                data_hist = soloHists[0]
+                mc_hist = sum(hstack)
+                if mc_hist.integral() != 0 and data_hist.integral() != 0:
+                    ks_value = mc_hist.KolmogorovTest(data_hist)
+                    ks_text = ("KS Statistic: %.3g" % ks_value)
+            textKSstatistic = plots.get('config', {}).get('KSstatistic', [])
+            if len(textKSstatistic) == 1:
+                textKSstatistic[0]['label'] = ks_text
+
         # draw the text we need
         textConfigs = plots.get('config', {}).get('texts', [])
         textLocals = plots_path.get('texts', [])
-        for text in chain(textConfigs, textLocals):
+        for text in chain(textConfigs, textLocals, textKSstatistic):
           # attach the label
           label = ROOT.TLatex(text['x'], text['y'], text['label'])
           label.SetTextFont(text['font'])
