@@ -268,7 +268,9 @@ if __name__ == "__main__":
         # create a legend (an entry for each group)
         legendConfigs = copy.copy(plots_config.get('legend', {}))
         legendConfigs.update(plots_path.get('legend', {}))
+        legend_numColumns = legendConfigs.pop('num columns', 1)
         legend = Legend(len(h), **legendConfigs)
+        legend.SetNColumns(legend_numColumns)
 
         # scale the histograms before doing anything else
         for hgroup in h:
