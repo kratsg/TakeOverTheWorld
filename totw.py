@@ -419,12 +419,26 @@ if __name__ == "__main__":
           label.SetNDC()
           label.Draw()
 
+        # setup variables for ratio and composition plots
+        ratio_and_composition = plots_path.get('ratio', plots_config.get('ratio', False)) and plots_path.get('composition', plots_config.get('composition', False))
+
+        single_div_height = 0.3
+        double_div_top_height = 0.13
+        double_div_bottom_height = 0.28 # needs to be larger to leave room for axis labels, just set by eye
+
         # draw the ratio
         if plots_path.get('ratio', plots_config.get('ratio', False)):
-          canvas.get_pad(0).set_bottom_margin(0.3)
           p = Pad(0,0,1,1)  # create new pad, fullsize to have equal font-sizes in both plots
-          #p.set_top_margin(1-canvas.get_bottom_margin())  # top-boundary (should be 1-thePad->GetBottomMargin())
-          p.set_top_margin(1-canvas.get_pad(0).get_bottom_margin())  # top-boundary (should be 1-thePad->GetBottomMargin())
+
+          if ratio_and_composition:
+            # ratio below composition
+            canvas.get_pad(0).set_bottom_margin(double_div_top_height+double_div_bottom_height)
+            p.set_top_margin(1-double_div_bottom_height)
+          else:
+            # ratio on the bottom
+            canvas.get_pad(0).set_bottom_margin(single_div_height)
+            p.set_top_margin(1-canvas.get_pad(0).get_bottom_margin())  # top-boundary (should be 1-thePad->GetBottomMargin())
+
           p.set_right_margin(canvas.get_right_margin())
           p.set_left_margin(canvas.get_left_margin())
           p.set_fill_style(0)  # needs to be transparent
@@ -468,6 +482,79 @@ if __name__ == "__main__":
             hist.xaxis.set_label_color(0)
             hist.xaxis.set_title_size(0)
             hist.xaxis.set_title_color(0)
+
+          # clear the xaxis on the stack
+          hstack.xaxis.set_label_size(0)
+          hstack.xaxis.set_label_color(0)
+          hstack.xaxis.set_title_size(0)
+          hstack.xaxis.set_title_color(0)
+
+        # draw the composition plot
+        if plots_path.get('composition', plots_config.get('composition', False)):
+          p = Pad(0,0,1,1)  # create new pad, fullsize to have equal font-sizes in both plots
+
+          if ratio_and_composition:
+            # composition above ratio
+            p.set_top_margin(1-double_div_top_height-double_div_bottom_height)
+            p.set_bottom_margin(double_div_bottom_height)
+          else:
+            # composition on the bottom
+            canvas.get_pad(0).set_bottom_margin(single_div_height)
+            p.set_top_margin(1-canvas.get_pad(0).get_bottom_margin())  # top-boundary (should be 1-thePad->GetBottomMargin())
+
+          p.set_right_margin(canvas.get_right_margin())
+          p.set_left_margin(canvas.get_left_margin())
+          p.set_fill_style(0)  # needs to be transparent
+          p.Draw()
+          p.cd()
+
+          # compute the compositions, make new hstack
+          stackHists_composition = copy.copy(stackHists)
+          for i in range(len(stackHists_composition)):
+            stackHists_composition[i] = Hist.divide(stackHists_composition[i], sum(hstack))
+
+          hstack_composition = HistStack(name=h.path+'_composition')
+          # for some reason, this causes noticable slowdowns
+          hstack_composition.drawstyle = 'hist'
+          map(hstack_composition.Add, stackHists_composition[::-1])
+
+          hstack_composition.SetMaximum(1.)
+          if ratio_and_composition:
+            hstack_composition.SetMinimum(1e-2)
+          else:
+            hstack_composition.SetMinimum(0.)
+
+          hstack_composition.Draw('')
+
+          hstack_composition.yaxis.set_decimals(True)
+          set_label(hstack_composition, plots_path, canvasConfigs)
+          get_axis(hstack_composition, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
+          hstack_composition.yaxis.title = plots_path.get('composition label', plots_config.get('composition label', "Composition"))
+
+          # set label/title sizes based on hstack/solo hists defaults
+          get_axis(hstack_composition, 'x').set_label_size(canvasConfigs.get('xlabel size', 30))
+          get_axis(hstack_composition, 'x').set_title_size(canvasConfigs.get('xtitle size', 30))
+          get_axis(hstack_composition, 'y').set_label_size(plots_path.get('composition ylabel size', plots_config.get('composition ylabel size', 30)))
+          get_axis(hstack_composition, 'y').set_title_size(plots_path.get('composition ytitle size', plots_config.get('composition ytitle size', 30)))
+          # set label/title fonts
+          get_axis(hstack_composition, 'x').set_label_font(canvasConfigs.get('label font', 43))
+          get_axis(hstack_composition, 'x').set_title_font(canvasConfigs.get('title font', 43))
+          get_axis(hstack_composition, 'y').set_label_font(canvasConfigs.get('label font', 43))
+          get_axis(hstack_composition, 'y').set_title_font(canvasConfigs.get('title font', 43))
+
+          # copy over some other settings for colors on x-axis
+          hstack_composition.xaxis.set_label_color(hstack.xaxis.get_label_color())
+          hstack_composition.xaxis.set_title_color(hstack.xaxis.get_title_color())
+          hstack_composition.xaxis.set_title_offset(hstack.xaxis.get_title_offset())
+          # copy over title offset settings
+          hstack_composition.yaxis.set_title_offset(plots_path.get('composition ytitle offset', plots_config.get('composition ytitle offset', hstack.yaxis.get_title_offset())))
+
+          if ratio_and_composition:
+            # clear the xaxis on the hstack_composition
+            hstack_composition.xaxis.set_label_size(0)
+            hstack_composition.xaxis.set_label_color(0)
+            hstack_composition.xaxis.set_title_size(0)
+            hstack_composition.xaxis.set_title_color(0)
 
           # clear the xaxis on the stack
           hstack.xaxis.set_label_size(0)
