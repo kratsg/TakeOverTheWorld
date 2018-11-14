@@ -124,8 +124,8 @@ def ensure_dir(f):
 def get_axis(hist, xy='x'):
   return hist.xaxis if xy=='x' else hist.yaxis
 
-def set_minmax(hist, plots_path):
-  for xy in ['x', 'y']:
+def set_minmax(hist, plots_path, xys=['x','y']):
+  for xy in xys:
     min_val = plots_path.get('%smin' % xy, None)
     max_val = plots_path.get('%smax' % xy, None)
     if min_val is not None and max_val is not None:
@@ -452,7 +452,7 @@ if __name__ == "__main__":
           for hist in soloHists:
             ratio = Hist.divide(hist, sum(hstack))
             ratio.draw()
-            #set_minmax(ratio, plots_path)
+            set_minmax(ratio, plots_path, ['x'])
             #get_axis(ratio, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
 
             ratio.yaxis.title = plots_path.get('ratio label', plots_config.get('ratio label', "Data / MC"))
@@ -511,9 +511,9 @@ if __name__ == "__main__":
           p.cd()
 
           # compute the compositions, make new hstack
-          stackHists_composition = copy.copy(stackHists)
-          for i in range(len(stackHists_composition)):
-            stackHists_composition[i] = Hist.divide(stackHists_composition[i], sum(hstack))
+          stackHists_composition = []
+          for i in range(len(stackHists)):
+            stackHists_composition.append(Hist.divide(stackHists[i], sum(hstack)))
 
           hstack_composition = HistStack(name=h.path+'_composition')
           # for some reason, this causes noticable slowdowns
@@ -527,6 +527,7 @@ if __name__ == "__main__":
             hstack_composition.SetMinimum(0.)
 
           hstack_composition.Draw('')
+          set_minmax(hstack_composition, plots_path, ['x'])
 
           hstack_composition.yaxis.set_decimals(True)
           set_label(hstack_composition, plots_path, canvasConfigs)
